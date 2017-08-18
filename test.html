@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <style>
+        div{
+            width: 100px;
+            height:100px;
+            border: 5px solid blue;
+                text-align: center;
+   line-height:100px;
+        }
+    </style>
+    
+    </head>
+<body>
+   <div>#656565 </div>
+    <button onclick="x()">click</button>
+    <script>
+var settings=[{color:"orange",backgroundColor:"#4CAF50",height:"30px",width:"30px"},{height:"150px",color:"white",width:"90px",backgroundColor:"#2196F3"},
+     {width:"200px",height:"200px",color:"#FBFF64",backgroundColor:"#F44336"},{backgroundColor:"#2196F3",width:"500px",height:"320px",color:"black"}];
+        var i=0;
+        function x(){
+           var d = document.getElementsByTagName("div")[0];
+        d.style.backgroundColor = settings[i].backgroundColor;
+        d.innerHTML = settings[i].backgroundColor;
+        
+        if(i == settings.length-1){
+           i = 0; 
+        }
+        else{
+            i++;
+        }
+        
+    }
+        
+        
+        
+        
+    </script>
+        
+        
+        
+        </body>
+	
+	
+	
+	
+</html>
