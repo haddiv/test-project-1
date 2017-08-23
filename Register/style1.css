@@ -1,0 +1,29 @@
+.email{
+    margin-left: 28px;
+}
+.lastname{
+    margin-left: 3px;
+}
+.input_text{
+    width:50%;
+    height: 25px;
+}
+label{
+    font-weight: bold;
+    font-size: 16px;
+}
+.contanier{
+    width: 30%;
+    border: 3px solid cornflowerblue;
+    text-align: center;
+    margin: auto;
+}
+.submit{
+    background-color: cornflowerblue;
+    font-weight: bold;
+    width: 26%;
+    height: 30px;
+}
+img{
+    width: 5%;
+}

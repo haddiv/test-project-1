@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body ng-app>
+<div class="contanier">
+<form name="register">
+    <p>
+    <h3>Username</h3>
+        <input type="text" ng-model="user" name="user" placeholder="please enter your username" class="input_text" required>
+        <span ng-show="register.user.$dirty && register.user.$invalid"><img src="148766.svg"></span>
+        <span ng-show="register.user.$valid"><img src="148767.svg"></span>
+    </p>
+    <hr>
+    <p class="lastname">
+    <h3>Lastname</h3>
+        <input type="text" ng-model="lastname" name="lastname" placeholder="Please enter your lastname" class="input_text" required>
+    <span ng-show="register.lastname.$dirty && register.lastname.$invalid"><img src="148766.svg"></span>
+    <span ng-show="register.lastname.$valid"><img src="148767.svg"></span>
+    </p>
+    <hr>
+    <p class="email">
+    <h3>Email</h3>
+        <input type="email" ng-model="email" name="email" placeholder="Please enter your email" class="input_text" required>
+        <span ng-show="register.email.$dirty && register.email.$invalid"><img src="148766.svg"></span>
+        <span ng-show="register.email.$valid"><img src="148767.svg"></span>
+    </p>
+    <hr>
+    <p>
+        <h3>Date of Birth</h3>
+        <select ng-init="day=['day',1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]">
+            <option ng-repeat="num in day">{{num}}</option>
+        </select>
+        <select ng-init="month=['month','Jan','Fab','March','Apr','May','June','July','Aug','Sep','Okt','Nov','Dec']">
+            <option ng-repeat="mon in month">{{mon}}</option>
+        </select>
+        <select ng-init="year=['year',1998,1997,1996,1995,1994,1993,1992,1991,1990]">
+            <option ng-repeat="num in year">{{num}}</option>
+        </select>
+    </p>
+    <hr>
+    <p>
+        <label>Male</label>
+        <input type="radio" name="gender">
+        <label>Fmale</label>
+        <input type="radio" name="gender">
+    </p>
+    <hr>
+    <p>
+        <h3>Password</h3>
+        <input type="password" name="password" placeholder="Please enter your password" class="input_text">
+    </p>
+    <hr>
+    <p>
+        <h3>Repeat Password</h3>
+        <input type="password" name="re_password" placeholder="Please repeat your password" class="input_text">
+    </p>
+    <input type="submit" value="Sing up" class="submit">
+    <br>
+</form>
+
+</div>
+</body>
+</html>
