@@ -1,0 +1,123 @@
+*{
+	margin:0 auto;
+	padding:0
+	}
+body{
+	background-color:#f7f7f7;
+	}
+.main{
+	border:1px solid gray;
+	border-radius:10px;
+	background-color:#dddddd;
+	
+	}	
+.title{
+background-color:#65e79e;
+width:100%;
+height:50px;
+
+}
+input{
+	border-bottom:1px solid green;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+
+		}
+input[type="radio"]{
+
+    margin-right: 30px;
+	}		
+#birthLabel{
+	margin-left: 0px;	
+		}	
+label{
+
+	width:125px;
+	margin-left: 31px;
+
+	}	
+	
+#submitBtn{
+	background-color:#65e79e;
+	text-align:center;
+	color:black;
+	border-radius:10%;
+	float:right;
+	margin-right:80px;
+	margin-bottom:20px;
+	width:100px
+	}
+
+.inputFields{
+		width:150px;
+		display:inline;
+		height:30px
+}
+.selectBoxes{
+		width:150px;
+		display:inline;
+		margin-bottom: 20px;
+		margin-left: -20px
+		}
+.agreeCheckox{
+	width:100%;
+	background-color:#c6c6c6;
+	font-size:20px;
+	font-weight:bold;
+	text-align:center
+	
+	}	
+
+.captchaDiv{
+		width:150px;
+		height:40px;
+		position:absolute;
+		}	
+.refreshCaptchDiv{
+		width:25px;
+		height:25px;
+		position:relative;
+		bottom: 7px;
+		right: 208px;
+		z-index: 1;
+	
+	}	
+	
+#captcha, #refresh{
+	width:100%;
+	height:100%
+	}
+
+.captchaInput{
+	padding-top:25px
+	}
+.typeOfInfo{
+	font-size:25px;
+	font-style:italic
+	
+	}
+	
+/*validation*/
+
+
+.registrationForm{
+   transition:all linear 0.5s;
+   background: transparent;
+ }
+
+
+
+input.ng-touched {
+		border:1px solid red;
+		background-image:url("../captcha/img-invalid.jpg");
+		background-repeat:no-repeat;
+		background-position:right center
+		}
+		
+input.ng-valid{
+	border:1px solid green;
+	background-image:url("../captcha/check.png");
+	background-repeat:no-repeat;
+	background-position:right center
+	}		
