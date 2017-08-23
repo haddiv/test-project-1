@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registration</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <script src="js/script.js"> </script>
+    </head>
+    <body ng-app="myApp">
+        <header>
+                <h1> Welcome !!!  </h1>
+        </header>
+        <div class="container content-background">
+            <div class="row">
+                <div class="col-sm-4 col-md-4 col-lg-4 col-xs-12 padding">
+                    <form action="#" method="post" class="form-group">
+                        <fieldset>
+                            <legend>Log in</legend>
+                            <input type="text" name="login" placeholder="login" class="form-control"> <br>
+                            <input type="text" name="password" placeholder="password" class="form-control"><br>
+                            <div  class="row">
+                                <div  class="col-sm-6 col-md-6 col-lg-6 col-xs-12" id="rememberMe">
+                                    <input type="checkbox" value="remember" checked="checked"> Remember me
+                                </div>
+                                <div  class="col-sm-6 col-md-6 col-lg-6 col-xs-12" id="logInButtonDiv">
+                                    <input type="button" value="Log in" class="btn btn-primary btn-sm">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="col-sm-8 col-md-8 col-lg-8 col-xs-12 padding">
+                    <form action="#" method="post" class="form-group" name="myForm" >
+                        <fieldset>
+                            <legend> Create a new account </legend>
+                            <div ng-controller="nameValidationCtrl">
+                                <input type="text" name="name" placeholder="Your name "class="form-control" ng-model="name" required > <br>
+                                <input type="text" name="lastName" placeholder="Last name" class="form-control" ng-model="lastname" required> <br>
+                            </div>
+                            <p> Birthday </p>
+                            <div ng-init=" days=[1,2,3,4,5,6,7,8,9,10,11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]">
+                            </div>
+                            <div  ng-init=" months=['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']">
+                            </div>
+                            <div class="form-control">
+                                <select>
+                                    <option ng-repeat="day in days">{{ day }}</option>
+                                </select>
+                                <select>
+                                    <option ng-repeat="month in  months">{{ month }}</option>
+                                </select>
+                                <select  ng-controller="selectAge">
+                                    <option ng-repeat="year in  years">{{ year }}</option>
+                                </select>
+                            </div>
+                            <br>
+                            <br>
+                            <label><input type="radio" name="gender" value="male"> Male </label>
+                            <label><input type="radio" name="gender" value="female"> Female</label> <br><br>
+                            <input type="text" name="login" placeholder="login or e-mail" class="form-control" maxlength="25" minlength="6" ng-controller="checkemail" ng-pattern="emailFormat" ng-model="email.text" required><br>
+                            <div ng-controller="checkPassword">
+                                <input type="password" name="password" placeholder="password" class="form-control"  ng-model="password"><br>
+                                <input type="password" name="repeatPassword" placeholder="repeat password" class="form-control" ng-model="repeatPass" ><br>
+                            </div>
+                                <div id="SignUpButtonDiv">
+                                    <input type="button" value="Create account" class="btn btn-primary btn-sm">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer>
+            &copy; Astghik
+        </footer>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script>
+            var app = angular.module('myApp', []);
+
+            // get years from 1970 to 2017
+            function getYear (startYear) {
+                var currentYear = new Date().getFullYear(), years = [];
+                startYear = startYear || 1970;
+
+                while ( startYear <= currentYear ) {
+                    years.push(startYear++);
+                }
+
+                return years;
+            }
+            var YearArr = getYear();
+            console.log(YearArr);
+
+            // controller for select year
+            app.controller('selectAge', function($scope) {
+                $scope.years = YearArr;
+            });
+
+            //array of symbols which cannot use for name and last name fields
+            var keys ={space : ' ', star : '*',  sharp: '#', numbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], present: '%' }
+            // controller for name validation
+            app.controller('nameValidationCtrl' , function ($scope) {
+                //function which prevent the input keys
+
+                $scope.name != keys;
+                $scope.Lastname != keys;
+            });
+
+            //e-mail validation
+            app.controller('checkemail',  function($scope) {
+                $scope.emailFormat = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
+            });
+
+            //controller for check repeat password
+            app.controller('checkPassword',  function($scope) {
+                $scope.password = {};
+                $scope.repeatPass = {};
+                $scope.compare = function() {
+                    return angular.equals($scope.password , $scope.repeatPass);
+                };
+            });
+
+
+        </script>
+    </body>
+</html>

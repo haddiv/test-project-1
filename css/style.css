@@ -1,0 +1,41 @@
+body{
+  background-color :;
+}
+header, footer{
+  height : 60px;
+  text-align :center;
+  width: 100%;
+  color :#337ab7;
+  font-family:  'Grand Hotel';
+}
+header{
+  border-bottom : 2px solid #337ab7;
+  padding-bottom: 96px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+footer{
+  border-top : 2px solid #337ab7;
+  font-size : 25px;
+}
+.padding{
+  padding: 27px 37px;
+}
+#SignUpButtonDiv, #logInButtonDiv{
+  text-align :right;
+}
+input.ng-invalid {
+  background-image: url("../image/invalid.png");
+  background-repeat: no-repeat;
+  background-position:  98% 50%;
+
+}
+
+input.ng-valid {
+  background-image: url("../image/valid.png");
+  background-repeat: no-repeat;
+  background-position:  98% 50%;
+}
+.content-background{
+    background-color :  #f8f8f8;
+}
