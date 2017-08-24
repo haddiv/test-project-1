@@ -13,12 +13,12 @@
     </head>
     <body>
     <header>
-        <h1>  Controllers </h1>
+        <h1> Table </h1>
         <div>  Examples </div>
     </header>
     <div class="container" ng-app="tableDemo">
         <div class="row border" ng-controller="createTable">
-            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6" >
 
                 <div init="students:[
                           {name:'Physics',marks:70},
@@ -35,33 +35,31 @@
                         <td> {{ student.marks }}</td>
                     </tr>
                 </table>
+            </div>
 
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
                 <p> Write please Your name of favorite book and author </p>
                 <table class="table table-striped">
                     <tr>
-                        <td> Enter the author:</td>
-                        <td>
-                            <add-input></add-input>
-                        </td>
+                        <td> Enter the author: </td>
+                        <td> <add-input></add-input></td>
                     </tr>
                     <tr>
-                        <td> Enter the name:</td>
-                        <td>
-                            <add-input></add-input>
-                        </td>
+                        <td> Enter the name: </td>
+                        <td> <add-input></add-input></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input type="button" value="add" id="tableButton"></td>
+                        <td colspan="2"> <input type="button" value="add" id="tableButton"></td>
                     </tr>
                     <tr>
-                        <td> hera are some books</td>
+                        <td> hera are some books </td>
                         <td>
                             <table class="table table-striped table-bordered">
                                 <tr>
-                                    <td> author</td>
-                                    <td> name</td>
+                                    <td> author </td>
+                                    <td> name </td>
                                 </tr>
-                                <tr ng-repeat="book in books.book">
+                                <tr ng-repeat="book in books.book" >
                                     <td> {{book.author}}</td>
                                     <td> {{book.name}}</td>
                                 </tr>
@@ -71,7 +69,6 @@
                 </table>
 
             </div>
-
         </div>
 
         <div class="row border">
