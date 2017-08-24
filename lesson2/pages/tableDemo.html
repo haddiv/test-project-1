@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <title> Lesson 2 </title>
+    </head>
+    <body>
+    <header>
+        <h1>  Controllers </h1>
+        <div>  Examples </div>
+    </header>
+    <div class="container" ng-app="tableDemo">
+        <div class="row border" ng-controller="createTable">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+
+                <div init="students:[
+                          {name:'Physics',marks:70},
+                          {name:'Chemistry',marks:80},
+                          {name:'Math',marks:65},
+                          {name:'English',marks:75},
+                          {name:'Hindi',marks:67}
+                       ]">
+
+                </div>
+                <table border="1">
+                    <tr ng-repeat="student in students">
+                        <td> {{ student.name }}</td>
+                        <td> {{ student.marks }}</td>
+                    </tr>
+                </table>
+
+                <p> Write please Your name of favorite book and author </p>
+                <table class="table table-striped">
+                    <tr>
+                        <td> Enter the author:</td>
+                        <td>
+                            <add-input></add-input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Enter the name:</td>
+                        <td>
+                            <add-input></add-input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="button" value="add" id="tableButton"></td>
+                    </tr>
+                    <tr>
+                        <td> hera are some books</td>
+                        <td>
+                            <table class="table table-striped table-bordered">
+                                <tr>
+                                    <td> author</td>
+                                    <td> name</td>
+                                </tr>
+                                <tr ng-repeat="book in books.book">
+                                    <td> {{book.author}}</td>
+                                    <td> {{book.name}}</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+
+        <div class="row border">
+            <div>
+                <p> Go to next page by using &lt next-page-image &gt </p>
+                <a href="filtersDemo.html"><img  src="../img/next_icon.png" style='float: right';> </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer> &copy; Asti </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+        var app = angular.module('tableDemo', []);
+
+
+        app.controller('createTable', function($scope) {
+            $scope.books = {
+                author: " ",
+                name: "",
+                fees:500,
+
+                book:[
+                    {author: "Daniel Defoe", name: "Robinson Crusoe"},
+                    {author: "Charles Dickens", name: "David Copperfield"},
+                    {author: "Gustave Flaubert", name: "Madame Bovary"},
+                    {author: "Wilkie Collins", name: "The Woman in White"},
+                    {author: "Leo Tolstoy", name: "Anna Karenina"}
+                ],
+
+                bookForAdd : function () {
+                    var bookObject;
+                    bookObject=$scope.books;
+                }
+            };
+        });
+
+        app.directive('addInput', function () {
+            return{
+                template : "<input type='text'>"
+            };
+        });
+    </script>
+
+    </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <title> Lesson 2 </title>
+    </head>
+    <body>
+    <header>
+        <h1>  Create directives  </h1>
+        <div>  Examples </div>
+    </header>
+    <div class="container" ng-app="homeWork">
+        <!-- Create directives -->
+        <div class="row border" >
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <h2> Create directives by using:</h2>
+                <ul>
+                    <li> Element name</li>
+                    <li> Attribute</li>
+                </ul>
+                <div ng-init="cars = ['Audi', 'BMW', 'Ferrari', 'Jaguar' , 'Bentley', 'Infiniti']" > </div>
+                <select>
+                    <option ng-repeat="car in cars">{{ car }}</option>
+                </select> <br><br>
+                <my-own-directive1></my-own-directive1>
+                <create-my-input-directive></create-my-input-directive>
+                <br><br>
+                <div create-property>   </div>
+           </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <h2> Create directives by using:</h2>
+                <ul>
+                    <li> Element name</li>
+                    <li> Class </li>
+                </ul>
+                <div class="new-directive-by-class"></div>
+                <div add-description-text>  </div>
+                <new-directive-by-el-name></new-directive-by-el-name>
+            </div>
+        </div>
+        <!-- end  -->
+        <div class="row border">
+            <div>
+                <p> Go to next page by using &lt next-page-image &gt </p>
+                <a href="pages/controllersDemo.html"><next-page-image></next-page-image> </a>
+            </div>
+        </div>
+    </div>
+    <footer> &copy; Asti </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+
+        var app=angular.module('homeWork', []);
+        app.directive("myOwnDirective1", function () {
+            return {
+                template : "<p> Add name of care </p>"
+            };
+        });
+        app.directive("createMyInputDirective",function () {
+            return {
+                template : "<input type='text' placeholder='Made by a directive! '>"
+            };
+        });
+        app.directive("createProperty", function () {
+            return{
+                restrict : "A",
+                template : "<input type='button' value='add' title='Made by a directive!'>"
+            };
+        });
+
+        app.directive("newDirectiveByClass", function () {
+            return {
+                restrict : "C",
+                template : "<textarea cols='25' rows='3'>created by using directive and with restrict property </textarea>"
+            };
+        });
+        app.directive("newDirectiveByElName", function () {
+            return {
+                template : "<img src='img/image.png'>"
+            };
+        });
+        app.directive("addDescriptionText", function () {
+            return{
+                restrict : "A",
+                template : "<h4> image added by using my  &lt new-directive-by-el-name &gt tag and &lth4&gt added by using add-description-text attribute </h4>"
+            };
+        });
+        app.directive("nextPageImage", function () {
+            return{
+                restrict : "E",
+                template : "<img src='img/next_icon.png' style='float: right;'>"
+            };
+        });
+    </script>
+    </body>
+</html>
