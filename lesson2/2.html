@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Directives, Controllers, Filters, Tables</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="content" ng-app="mainApp" ng-controller="productCtrl">
+    <product></product>
+    <div class="discount"></div>
+    <table align="center">
+        <th>#</th>
+        <th>Price $</th>
+        <th>25% off</th>
+        <th>50% off</th>
+        <th>75% off</th>
+        <tr ng-repeat="key in products">
+            <td>{{ key.name }}</td>
+            <td>{{ key.price }}</td>
+            <td>{{ key.price - key.price*25/100 }}</td>
+            <td>{{ key.price - key.price*50/100 }}</td>
+            <td>{{ key.price - key.price*75/100 }}</td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    var app = angular.module("mainApp", []);
+    app.directive("product", function () {
+        return {
+            restrict: "E",
+            template: '<div class="product" ng-repeat="key in products | orderBy:\'price\'">' +
+            '<h3>{{key.name | uppercase }}</h3>' +
+            '<img src="images/{{key.img_src}}" class="product_img">' +
+            ' <p>{{key.price | currency}}</p>' +
+            '</div>'
+        };
+    });
+
+    app.controller('productCtrl', function ($scope) {
+        $scope.products = [
+            {name: 'Bag', price: 150, img_src: "bag.jpg"},
+            {name: 'Watch', price: 65, img_src: "watch.jpg"},
+            {name: 'Ring', price: 80, img_src: "ring.jpg"},
+            {name: 'Cup', price: 35, img_src: "cup.jpg"},
+            {name: 'Notebook', price: 25, img_src: "notebook.jpg"},
+            {name: 'Kids Clothes', price: 220, img_src: "clothes.jpg"},
+            {name: 'Smartphone', price: 800, img_src: "smartphone.jpg"},
+            {name: 'Earphone', price: 15, img_src: "earphone.jpg"}
+        ];
+    });
+</script>
+</body>
+</html>
