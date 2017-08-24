@@ -11,7 +11,7 @@
 <body>
 	<div class = "container">
 		<div class="row">
-		<div class="main col-xs-12 col-md-12 col-lg-12 col-xl-12" ng-app="myApp" ng-controller= "FormController">
+		<div class="main col-xs-12 col-md-12 col-lg-12 col-xl-12" ng-app="myApp" >
 			<div class="title">
 				<h3>Registration Form</h3>
 			</div>
@@ -88,12 +88,12 @@
 				
 				<p class="typeOfInfo">Verification</p>
 				
-				<div class = "form-group">
+				<div class = "form-group" ng-controller="CaptchaChanging">
 					
 					<div class = "captchaDiv">
-						<img src = "captcha/captcha2.png" id = "captcha">
+						<img ng-src = {{img}} src="captcha/captcha1.png" id = "captcha">
 					</div>
-					<div class = "refreshCaptchDiv">
+					<div class = "refreshCaptchDiv" ng-click = "changeCaptcha()">
 						<img src = "captcha/refresh-icon.png" id = "refresh">
 					</div>
 					<p class= "captchaInput">Type text here</p>
@@ -101,12 +101,14 @@
 				</div>
 				
 				
-				<div class="agreeCheckox">
+				
+				
+				
+				<div class="agreeCheckox" ng-controller= "FormController">
 					<p ng-if="checkbox" class="animate-if">{{isAgree}}</p>
 					<p ng-if="!checkbox" class="animate-if">{{agreemant}}</p>
 					<input type = "checkbox" name="agree" ng-model = "checkbox">
-					
-					
+									
 					
 				</div>
 				
@@ -131,11 +133,28 @@
 <script>
 var app = angular.module("myApp",[]);
 
+
 app.controller("FormController", ['$scope',  function($scope){
 		$scope.agreemant = "Accept the privacy policy and terms of service.";
 		$scope.isAgree = "You have accepted the privacy policy and terms of service.";
 		
+
+
 	
+	
+		
+	}
+	])
+	app.controller("CaptchaChanging",['$scope', function($scope){
+				$scope.camptchImages = ["captcha/captcha1.png","captcha/captcha2.png","captcha/captcha3.png"];
+				$scope.changeCaptcha = function(){
+					var index = (Math.floor(Math.random() * 3 ));
+					console.log(index);
+				$scope.img = $scope.camptchImages[index];
+				console.log($scope.img);
+						
+					
+					}	
 	}])
 
 </script>
