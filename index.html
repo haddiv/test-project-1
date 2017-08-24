@@ -75,11 +75,11 @@
                 <label class="fontSize">Password:</label><br>
                 <input type="password" name="inputPassword" 
                 ng-init="pat_pass = '*' " ng-model="text3">
-                <span ng-if="text3 == pat_pass" >Error</span><br><br>
+                <span ng-if="text3 == pat_pass" >Do not start with '*'</span><br><br>
                 
                 <label class="fontSize">Confirm Password:</label><br>
                 <input type="password" name="inputPassword" ng-model="text4">
-                <span ng-if="text4 !== text3 ">Error</span><br><br>
+                <span ng-if="text4 !== text3 ">Password_1 !== Password_2</span><br><br>
                 
                 <button id="regis">REGISTER</button>
             </form>
