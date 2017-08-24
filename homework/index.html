@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style>
+        body {
+            background-image: url(img.jpg)
+        }
+
+        form {
+            margin: 0 auto;
+            width: 10%;
+        }
+
+        #img {
+            height: 150px;
+            width: 100%;
+        }
+
+        img {
+            height: 20px;
+            width: 20px
+        }
+
+        span {
+            color: red;
+        }
+
+    </style>
+</head>
+<body ng-app="">
+
+<img src="img1.jpg" id="img">
+<form name="myform">
+
+    Name:<br>
+    <input type="text" name="first" ng-model="first" placeholder="First" ng-minlength="15" ng-maxlength="14" required>
+    <span ng-show="myform.first.$error.required">
+        Insert your firstname
+      </span>
+    <span ng-show="myform.first.$error.minlength">
+         <img ng-src="yes.png">
+       </span>
+    <span ng-show="myform.first.$error.maxlength">
+      <img ng-src="no.png">
+    </span>
+    <br><br>
+    Name:<br>
+    <input type="text" name="last" ng-model="lastname" placeholder="Last" ng-minlength="20" ng-maxlength="19"
+           required><br>
+    <span ng-show="myform.last.$error.required">
+        Insert your lastname
+      </span>
+    <span ng-show="myform.last.$error.minlength">
+        <img ng-src="yes.png">
+      </span>
+    <span ng-show="myform.last.$error.maxlength">
+        <img ng-src="no.png">
+      </span>
+    <br><br>
+    Email:<br>
+    <input type="email" name="email" ng-model="email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required>
+    <span ng-show="myform.email.$error.required">
+        Insert your email
+      </span>
+    <span ng-show="myform.email.$error.email">
+        <img ng-src="no.png">
+      </span>
+    <span ng-show="myform.email.$dirty.pattern">
+        <img ng-src="yes.png">
+      </span>
+    <br><br>
+    Password:<br>
+    <input type="password" ng-required="true" ng-model="userpassword" name="password" ng-minlength="9" ng-maxlength="8"
+           class="form-control " placeholder="Password atleast 8 character" required>
+    <span ng-show="myform.password.$error.required">
+        Insert your Password
+      </span>
+    <span ng-show="myform.password.$error.maxlength">
+        <img ng-src="yes.png">
+      </span>
+    <span ng-show="myform.password.$error.minlength">
+        <img ng-src="no.png">
+      </span>
+    <br><br>
+    Address:
+    <input name="address" type="text" ng-minlength="25" ng-maxlength="24" ng-model="address" required>
+    <span ng-show="myform.address.$error.required">
+        Insert your address
+      </span>
+    <span ng-show="myform.address.$error.maxlength">
+        <img ng-src="no.png">
+      </span>
+    <span ng-show="myform.address.$error.minlength">
+        <img ng-src="yes.png">
+      </span>
+    <br><br>
+
+    Birthday(mm/dd/yyyy):<br>
+    <input type="date" name="bday" ng-model="bday" ng-minlength="8" required>
+    <span ng-show="myform.bday.$error.required">
+        Insert your birthday
+      </span>
+    <span ng-show="myform.bday.$error.minlength">
+        <img ng-src="yes.png">
+      </span><br><br>
+    <input type="radio" name="gender" ng-model="male" required> Male<br>
+    <input type="radio" name="gender" ng-model="female" required> Female<br>
+    <input type="radio" name="gender" ng-model="other" required> Other<br>
+    <input type="submit" value="Registration">
+</form>
+
+</body>
+</html>
