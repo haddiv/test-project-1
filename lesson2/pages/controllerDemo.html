@@ -16,24 +16,36 @@
         <h1>  Controllers </h1>
         <div>  Examples </div>
     </header>
-    <div class="container" ng-app="controllersDemo">
-        <div class="row border" >
+    <div class="container" ng-app="controllerDemo">
+        <div class="row border">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6" ng-controller="hideText">
+                <div ng-controller="sayHello"> {{hello}} Astghik </div> <br>
+                <div ng-controller="addText">{{text}}</div> <br>
+                <input type="button" value="Show Hide DIV" ng-click="hideThis()" />
+                <br>
+                <div ng-show = "IsVisible">My DIV</div> <br> <br>
+                <br> <br>
+                <div ng-controller="changeNumber">
+                    <input type="number" ng-model="number" ng-onmouseleave="chNumber()">
+                    <p > {{ chNumber }} </p>
+                </div>
+
+
+            </div>
             <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6" ng-controller="addElement">
-              <!--  <div ng-init="cars = ['Audi', 'BMW', 'Ferrari', 'Jaguar' , 'Bentley', 'Infiniti']" > </div> -->
+                <!--  <div ng-init="cars = ['Audi', 'BMW', 'Ferrari', 'Jaguar' , 'Bentley', 'Infiniti']" > </div> -->
+                <!-- I can't realize this part  -->
                 <select class="form-control">
                     <option ng-model="name" ng-repeat="car in cars">{{ car }}</option>
                 </select><br>
                 <input type="text" name="careName" id="careName" class="form-control" ng-model="name"> <br>
                 <input type="button" name="button" id="addButton" value="add" >
-                <p> {{name}} </p>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-
+                <p> {{newValue}} </p>
             </div>
         </div>
 
         <div class="row border">
-            <div name></div>
+            <div></div>
             <div>
                 <p> Go to next page </p>
                 <a href="../index.html"><img  src="../img/next_icon.png" style='float: right';> </a>
@@ -48,14 +60,43 @@
     <script>
 
 
-        var app = angular.module('controllersDemo', []);
-        var cars = ['Audi', 'BMW', 'Ferrari', 'Jaguar' , 'Bentley', 'Infiniti'];
+        var app = angular.module('controllerDemo', []);
+       /* var cars = ['Audi', 'BMW', 'Ferrari', 'Jaguar' , 'Bentley', 'Infiniti'];
+        app.controller("addElement", function ($scope) {
+            $scope.addCar=function(){
+                $scope.name.push($scope.cars);
+            }
+        });*/
+
         app.controller("addElement", function ($scope) {
             $scope.addCar=function(){
                 $scope.name.push($scope.cars);
             }
         });
 
+        app.controller('hideText', function ($scope) {
+            $scope.IsVisible = false;
+            $scope.hideThis = function () {
+                $scope.IsVisible =  true;
+            }
+        });
+
+        app.controller('sayHello', function ($scope) {
+            $scope.hello = 'Hello';
+        });
+
+        app.controller('addText', function ($scope) {
+            $scope.text = 'This text added by using controller';
+        });
+
+
+
+        app.controller('changeNumber', ['$scope', function ($scope) {
+
+            $scope.chNumber = function() {
+                $scope.newValue = $scope.number + 12;
+            }
+        }]);
     </script>
 
     </body>
