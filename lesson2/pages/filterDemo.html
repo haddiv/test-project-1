@@ -26,7 +26,7 @@
                 </ul>
 
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6" ng-controller="orderElementTable">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6" ng-controller="orderElement2">
                 <h4> Simple table example: orderd by subject name </h4>
                 <table class="table table-striped table-bordered">
                     <tr ng-repeat="sub in subjectsTable | orderBy: 'name' ">
@@ -65,7 +65,7 @@
             <div name></div>
             <div>
                 <p> Go to next page </p>
-                <a href="../index.html"><img  src="../img/next_icon.png" style='float: right';> </a>
+                <a href="controllerDemo.html"><img  src="../img/next_icon.png" style='float: right';> </a>
             </div>
         </div>
     </div>
@@ -81,7 +81,7 @@
         app.controller("orderElement", function ($scope) {
             $scope.subjects = ['English', 'Physics', 'Chemistry', 'Biology', 'Geology', 'Meteorology', 'Physical Science'];
         });
-        app.controller("orderElementTable", function ($scope) {
+        app.controller("orderElement2", function ($scope) {
             $scope.subjectsTable = [
                 {name:'Math',marks:65},
                 {name:'Physics',marks:70},
