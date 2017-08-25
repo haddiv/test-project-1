@@ -35,12 +35,13 @@
             <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6" ng-controller="addElement">
                 <!--  <div ng-init="cars = ['Audi', 'BMW', 'Ferrari', 'Jaguar' , 'Bentley', 'Infiniti']" > </div> -->
                 <!-- I can't realize this part  -->
+
                 <select class="form-control">
-                    <option ng-model="name" ng-repeat="car in cars">{{ car }}</option>
+                    <option  ng-repeat="car in cars">{{ car }}</option>
                 </select><br>
                 <input type="text" name="careName" id="careName" class="form-control" ng-model="name"> <br>
-                <input type="button" name="button" id="addButton" value="add" >
-                <p> {{newValue}} </p>
+                <input type="button" name="button" id="addButton" value="add" ng-click="addCar()">
+                <p> {{name}} </p>
             </div>
         </div>
 
@@ -61,18 +62,17 @@
 
 
         var app = angular.module('controllerDemo', []);
-       /* var cars = ['Audi', 'BMW', 'Ferrari', 'Jaguar' , 'Bentley', 'Infiniti'];
-        app.controller("addElement", function ($scope) {
-            $scope.addCar=function(){
-                $scope.name.push($scope.cars);
-            }
-        });*/
 
-        app.controller("addElement", function ($scope) {
+        app.controller("addElement", ['$scope', function ($scope) {
+            $scope.cars = ['Audi', 'BMW', 'Ferrari', 'Jaguar' , 'Bentley', 'Infiniti'];
+
             $scope.addCar=function(){
-                $scope.name.push($scope.cars);
+                $scope.cars.push($scope.name);
             }
-        });
+
+        }]);
+
+
 
         app.controller('hideText', function ($scope) {
             $scope.IsVisible = false;
