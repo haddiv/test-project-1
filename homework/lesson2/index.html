@@ -1,0 +1,322 @@
+<html>
+    <head>
+        <title>Homework</title>
+        
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        
+        <style>
+            #dir1{
+                color:red;
+                text-align: center;
+                font-size: 50px;
+            }
+            #dir2{
+                color:blue;
+                text-align: center;
+                font-size: 50px;
+            }
+            #dir3{
+                color:green;
+                text-align: center;
+                font-size: 50px;
+            }
+            #dir4{
+                color:orange;
+                text-align: center;
+                font-size: 150px;
+            }
+            .xy{
+                text-align: center;
+                font-size: 50px;
+                margin-top: 50px;
+                color:  cornflowerblue;
+            }
+            #full{
+                color: darkslateblue ;
+            }
+            .birt{
+                text-align: center;
+                font-size: 50px;
+                color: #800000 ;
+            }
+            .opt{
+                font-size: 20px;
+                background-color: #ff8080;
+                color:aliceblue;
+                margin: 20px;
+            }
+            .capit{
+                text-align: center;
+                font-size: 30px;
+                color: #006699;
+            }
+            #count{
+                text-align: center;
+                color: #79a6d2
+            }
+            #money{
+                text-align: center;
+                font-size: 30px;
+                color: #00cc00;
+            }
+            #mon{
+                color: #008000;
+            }
+            #table1{
+                text-align: center;
+                font-size: 30px;
+                color:  cornflowerblue;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body >
+        
+        
+    <!--  Directive -->
+        
+        
+<!--    <div ng-app="myDirective">
+
+            <my-directive-one></my-directive-one>
+            <script>
+                var app = angular.module("myDirective", []);
+                app.directive("myDirectiveOne", function() {
+                    return {
+                        restrict:"E",
+                        template : '<h1 id="dir1" ><i> Element  - "E" </i> </h1>'
+                    };
+                });
+            </script>
+        </div>    -->
+    
+  
+<!--   <div ng-app="myNewApp">
+            
+            <div class="class-dir"></div>
+            <script>
+                var x = angular.module("myNewApp",[]);
+                x.directive("classDir",function(){
+                    return{
+                        restrict:"C",
+                        template:'<h1 id="dir2"> Class  -  "C" </h1>'
+                    }
+                })
+            </script>
+            
+        </div>    -->
+        
+        
+ <!--   <div ng-app="newApp">
+        
+            <ul>
+                <li attribute-directive></li>
+            </ul>    
+
+            <script>
+                var y = angular.module("newApp",[]);
+                y.directive("attributeDirective",function(){
+                    return{
+                        restrict:"A",
+                        template:'<h1 id="dir3"> Attribute  -  "A" </h1>'
+                    }    
+                })
+            </script>
+        
+        </div>    -->
+        
+        
+<!--    <div ng-app="elemAndClass">
+            <element></element>
+            <div class="dir-class"></div>
+
+            <script>
+                var app = angular.module("elemAndClass", []);
+                app.directive("dirClass", function() {
+                    return {
+                        restrict : "C",
+                        template : '<h1 id="dir4">The text is in the "class"!</h1>'
+                    };
+                });
+            </script>
+        </div>           -->
+        
+        
+        <!--  Controller  -->
+        
+     
+ <!--   <div class="xy">
+            <div ng-app="Cont" ng-controller="myCont">
+
+            X : <input type="number" ng-model="nmb1" class="xy"><br>
+            Y : <input type="number" ng-model="nmb2" class="xy"><br>
+            <br>
+                <h3>X * Y = {{nmb1 * nmb2}} </h3>
+
+            </div>
+
+            <script>
+            var app = angular.module('Cont', []);
+            app.controller('myCont', function($scope) {
+                $scope.nmb1 = 5;
+                $scope.nmb2 = 5;
+            });
+            </script>
+        </div>                -->
+          
+        
+        
+        
+        
+        
+<!--   <div class="xy">
+            <div ng-app="contrFunc" ng-controller="function">
+                
+               First Name: <input type="text" ng-model="fName" class="xy"><br>
+               Last Name: <input type="text" ng-model="lName" class="xy"><br><br>
+               <p id="full">Full Name: {{ fullName() }} </p>
+                
+            </div>
+            
+            <script>
+                var func = angular.module("contrFunc",[]);
+                func.controller("function",function($scope){
+                    $scope.fName = "Hakob" ,
+                    $scope.lName = "Hakobyan" ,
+                    $scope.fullName = function(){
+                        return $scope.fName + " " + $scope.lName;
+                    }   
+                })
+            </script>
+        </div>             -->
+        
+        
+        
+ <!--   <div class="birt">
+            <div ng-app="plus" ng-controller="select">
+                <h2>Birthday</h2>
+                <select class="opt">
+                    <option ng-repeat="key in day" >
+                        {{ key }}
+                    </option>
+                </select>
+                <select class="opt">
+                    <option ng-repeat="key in month">
+                        {{ key }}
+                    </option>
+                </select>
+                <select class="opt">
+                    <option ng-repeat="key in year">
+                        {{ key }}
+                    </option>
+                </select>
+            </div>
+            
+            <script src = "script.js">  </script>
+            
+        </div>    -->
+        
+        
+ <!--    <div class="capit">
+            <h2 >Country and Capital</h2>
+            <div ng-app="array" ng-controller="arrayName" id="count">
+                <ol >
+                    <li ng-repeat="i in massiv">
+                        {{ i.country + " - " + i.capital }}
+                    </li>
+                </ol>
+            </div>
+            
+            <script src = "script.js">  </script>
+            
+        </div>   -->
+        
+        
+        
+<!--       Filters   -->
+        
+        
+ <!--    <div id="money">
+            <h2 id="mon">Money</h2>
+            <div ng-app="filters" ng-controller="contrFilter">
+                <p>Ruble: {{ ruble | currency:"RUB-" :0}}</p>
+            </div>
+            <script>
+                var rub = angular.module("filters",[]);
+                rub.controller("contrFilter",function($scope){
+                    $scope.ruble = 8000;
+                });
+            </script>
+        </div>         -->
+        
+        
+        
+ <!--   <div id="money">
+            <h2 id="">Numbers and Letters</h2>
+            <div ng-app="numLet" ng-controller="contrNL">
+                <p ng-repeat="i in array | orderBy: 'letter' "> 
+                    {{ i.number + " - " + i.letter }} 
+                </p>
+            </div>
+            <script>
+                var rub = angular.module("numLet",[]);
+                rub.controller("contrNL",function($scope){
+                    $scope.array = [
+                        {number:1 , letter: "t"},
+                        {number:2 , letter: "w"},
+                        {number:3 , letter: "d"},
+                        {number:4 , letter: "a"},
+                        {number:5 , letter: "k"},
+                    ]
+                });
+            </script>
+        </div>            -->
+        
+        
+
+<!--    Tables       -->
+        
+        
+ <!--   <div id = "table1">
+            <div ng-app="table" ng-controller="contrTab"> 
+                <table>
+                  <tr ng-repeat="x in names">
+                    <td>{{ x.Name }}</td>
+                    <td>{{ x.Country }}</td>
+                  </tr>
+                </table>
+            </div>
+
+            <script>
+                var app = angular.module('table', []);
+                app.controller('contrTab', function($scope, $http) {
+                    $http.get("customers.php")
+                    .then(function (response) {$scope.names = response.data.records;});
+                });
+            </script>
+        </div>           -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </body>
+</html>
