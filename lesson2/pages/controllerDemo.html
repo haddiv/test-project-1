@@ -26,7 +26,7 @@
                 <div ng-show = "IsVisible">My DIV</div> <br> <br>
                 <br> <br>
                 <div ng-controller="changeNumber">
-                    <input type="number" ng-model="number" ng-onmouseleave="chNumber()">
+                    <input type="number" ng-model="number" >
                     <p > {{ chNumber }} </p>
                 </div>
 
@@ -48,7 +48,7 @@
             <div></div>
             <div>
                 <p> Go to next page </p>
-                <a href="../index.html"><img  src="../img/next_icon.png" style='float: right';> </a>
+                <a href="../index.html"><img  src="../img/next_icon.png" style="float: right";> </a>
             </div>
         </div>
     </div>
@@ -94,7 +94,8 @@
         app.controller('changeNumber', ['$scope', function ($scope) {
 
             $scope.chNumber = function() {
-                $scope.newValue = $scope.number + 12;
+               $scope.newValue = $scope.number + 12;
+                return newValue;
             }
         }]);
     </script>
