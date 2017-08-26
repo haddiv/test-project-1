@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-controller="datCtrl">
+
+    <p> {{ today | date : "short" }}</p>
+
+</div>
+
+
+
+
+
+<div  ng-controller="costCtrl">
+
+    <input type = "number" ng-model = "number" placeholder = "Enter a number ">
+    <h1>Price: {{ number | currency:"€" }}</h1>
+
+</div>
+
+
+
+
+<div ng-controller="namesCtrl1">
+
+    <ul>
+        <li ng-repeat="x in names1 | filter : '1'">
+            {{ x }}
+        </li>
+    </ul>
+
+</div>
+
+
+
+
+<div ng-controller="jsCtrl">
+
+    <h1>Customer:</h1>
+
+    <pre>{{customer | json}}</pre>
+
+</div>
+
+
+
+
+<div ng-controller="ExampleController">
+    <label>
+        Limit {{numbers}} to:
+        <input type="number" step="1" ng-model="numLimit">
+    </label>
+    <p>Output numbers: {{ numbers | limitTo:numLimit }}</p>
+    <label>
+
+</div>
+
+
+
+
+<div ng-controller="caseCtrl">
+
+    <h1>{{txt | lowercase}}</h1>
+
+</div>
+
+
+
+
+
+<div ng-controller="nCtrl">
+    <h1>{{prize | number}}</h1>
+
+</div>
+
+
+
+
+<div ng-controller="orderByController">
+
+
+    <table class="tabled">
+        <tr>
+            <th>Name</th>
+            <th>No of States</th>
+            <th>GDP(ascending)</th>
+        </tr>
+        <tr ng-repeat="country in countries | orderBy:'gdp'">  <!-- orderBy Ascending (+) -->
+            <td>{{country.name}}</td>
+            <td>{{country.states}}</td>
+            <td>{{country.gdp}}</td>
+        </tr>
+    </table>
+</div>
+
+
+
+<div ng-controller="caseCtrl">
+
+    <h1>{{txt | uppercase}}</h1>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('datCtrl', function($scope) {
+        $scope.today = new Date();
+    });
+
+
+    app.controller('costCtrl', function($scope) {
+        $scope.number = 58;
+    });
+
+
+
+    app.controller('namesCtrl1', function($scope) {
+        $scope.names1 = [12, 14, 15, 45, 180, 154, 481, 45, 7];});
+
+
+
+
+    app.controller('jsCtrl', function($scope) {
+        $scope.customer = {
+            "name" : "Poxos Poxosyan",
+            "city" : "Gyumri",
+            "country" : "Armenia"
+        };
+    });
+
+
+
+
+    app.controller('ExampleController', ['$scope', function($scope) {
+        $scope.numbers = [1,2,3,4,5,6,7,8,9];
+
+        $scope.numLimit = 3;
+
+    }]);
+
+
+
+    app.controller('caseCtrl', function($scope) {
+        $scope.txt = "HELLO WORLD!";
+    });
+
+
+
+    app.controller('nCtrl', function($scope) {
+        $scope.prize = 554572445224;
+    });
+
+   app.controller('orderByController', ['$scope', function($scope) {
+        $scope.countries =
+            [{name:'USA', states:'51', gdp:19},
+                {name:'CHINA', states:'28', gdp:18},
+                {name:'INDIA', states:'30', gdp:9},
+                {name:'GERMANY', states:'16', gdp:5},
+                {name:'JAPAN', states:'14', gdp:4}];
+    }]);
+
+
+
+
+
+    app.controller('caseCtrl', function($scope) {
+        $scope.txt = "hello world!";
+    });
+
+
+</script>
+
+</body>
+</html>
