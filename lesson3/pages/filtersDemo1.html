@@ -71,7 +71,7 @@
                     <h3> "filter" filter </h3> <br>
                     <p> Price list : </p>
                     <select>
-                        <option ng-repeat="good in goods | filter : filterByPrice() "> {{good.name}} </option>
+                        <option ng-repeat="good in goods  "> {{good.name | filterByPrice}} </option>
                     </select>
                 </div>
                 <div ng-controller="flowerListCrtl">
@@ -122,7 +122,9 @@
                 {name:"brandy", price: 7000}
             ];
             $scope.filterByPrice=function () {
-                return $scope.price > 800;
+                for (price in goods){
+
+                }
             }
         });
 

@@ -37,14 +37,19 @@
             <div ng-controller="multiplyNumber">
                 <h3> The $timeout Service </h3>
                 <p> Enter the number : </p>
-                <input type="number" class="form-controller" ng-model="number">
+                <input type="number" class="form-control" ng-model="number"> <br> <br>
+                <input type="button" value="Click me!! " ng-click="showResult()"> <br> <br>
+                <p> Square of number is : {{res}}</p>
 
-                <p> {{res}}</p>
             </div>
             <div>
+                <h3> The $interval Service </h3>
                 <ul ng-controller="printNumbers">
-                    <li> {{num}} </li>
+                    <li ng-repeat="x in arr"> {{x}} </li>
                 </ul>
+            </div>
+            <div>
+
             </div>
         </div>
     </div>
@@ -88,23 +93,23 @@
 
     app.controller("multiplyNumber", function ($scope, $timeout) {
         $timeout(function () {
-            $scope.res *= $scope.number;
+            $scope.showResult = function () {
+                $scope.res = +$scope.number * $scope.number ;
+            }
         }, 2000);
     });
 
 
     app.controller("printNumbers", function ($scope, $interval) {
-        var arr = [0, 1, 2, 3,4, 5, 6, 7, 8, 9, 10];
+        $scope.arr = [0, 1, 2, 3,4, 5, 6, 7, 8, 9, 10];
         $interval(function () {
-            for(var i = 0; i < arr.length; i++){
-                $scope.num = arr[i];
-            }
 
+            for(var i = 0; i < $scope.arr.length; i++){
+                $scope.num = $scope.arr[i];
+
+            }
         }, 1000)
     });
-
-
-
 
 </script>
 

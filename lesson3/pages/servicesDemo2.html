@@ -14,18 +14,24 @@
     <link href="../css/pagesStyle.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div class="container-fluid" id="main"  ng-app="filter2Demo">
+<div class="container-fluid" id="main"  ng-app="servicesDemo">
     <div >
         <h1 id="firstPart">  Service examples 2 </h1>
     </div>
     <div class="row">
-        <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border" >
-            sdfsdf
+        <div class="border" style="width: 100%">
+            <table ng-controller="displayNumberCtrl" class="table table-bordered">
+                <tr>
+                    <th> # </th>
+                    <th> Name </th>
+                    <th> Age </th>
+                    <th> Country</th>
+                </tr>
+                <tr >
+                    <td ng-repeat="el in numbers"> {{el}} </td>
+                </tr>
+            </table>
 
-
-        </div>
-        <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border">
-            sdffsdf
         </div>
     </div>
     <div id="nextPage">
@@ -34,6 +40,17 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script>
+    var app = angular.module("servicesDemo", []);
+
+    app.controller("displayNumberCtrl", function ($scope, $interval) {
+        $scope.numbers = [0, 1, 2, 3,4, 5, 6, 7, 8, 9, 10];
+        $interval(function () {
+            for(var i = 0; i < $scope.numbers.length; i++){
+                $scope.el= $scope.numbers[i];
+            }
+        });
+    });
+
 
 </script>
 
