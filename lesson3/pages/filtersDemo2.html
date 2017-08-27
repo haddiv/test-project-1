@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter examples 2</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="../css/pagesStyle.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="container-fluid" id="main"  ng-app="filter2Demo">
+    <div >
+        <h1 id="firstPart"> Filter examples 2 </h1>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border" >
+            <h3> Custom filter first example </h3>
+            <ul>
+                <li ng-repeat="el in array"> {el | minValue} </li>
+            </ul>
+        </div>
+        <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border">
+            <p>Find product by name: </p> <br>
+            <input type="text" ng-model="nameToFind" class="form-control">
+            <br><br>
+            <table class="table table-bordered" ng-controller="tableCtrl">
+                <tr>
+                    <td > #</td>
+                    <td > Brand name</td>
+                    <td > Price</td>
+                    <td > Size</td>
+                    <td > Description</td>
+                </tr>
+                <tr ng-repeat="product in products | filter : nameToFind">
+                    <td >{{ product.number }}</td>
+                    <td >{{ product.BrandName }}</td>
+                    <td >{{ product.price | currency }}</td>
+                    <td >{{ product.size }}</td>
+                    <td >{{ product.description }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2"> Sum: </td>
+
+                    <td  colspan="3" ng-click="getTotal()"> Price: {{ total }} </td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="nextPage">
+        <a href="servicesDemo1.html"> <img src="../images/NextPage.jpg"> </a>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+    var app = angular.module("filter2Demo", []);
+  /*  var array=[12, 18, 78, 89, 56, 4, 965, 785, 3654, 412];
+    function minNumber(array){
+        var min = array[0];
+        array.sort();
+        console.log(array)
+        for (var i = 0; i < array.length; ++i){
+            if(min >= array[i + 1]){
+                min = array[i];
+            }
+        }
+        console.log(min);
+    }
+    minNumber(array); */
+
+
+    array='[12, 18, 78, 89, 56, 4, 965, 785, 3654, 412]';
+    app.filter("minValue", function () {
+
+        return function (array) {
+            var min = array[0];
+            for (var i = 0; i < array.length; ++i){
+                if(min >= array[i + 1]){
+                    min = array[i];
+                    return min;
+                }
+            }
+            console.log(min);
+        }
+    });
+   /* app.controller("minNumberCtrl", function ($scope) {
+
+    });*/
+    app.controller("tableCtrl", function ($scope) {
+        $scope.products=[
+            {number: 1, BrandName:"BerryGo", price: 20.99, size: 'S', description:"some tex1"},
+            {number: 2, BrandName:"BEFORW", price: 12.99, size: 'M', description:"some tex2"},
+            {number: 3, BrandName:"Belle Poque", price: 25.65, size: 'M', description:"some tex3"},
+            {number: 4, BrandName:"Sisjuly", price: 16.19, size: "L", description:"some tex4"},
+            {number: 5, BrandName:"NB SAMENG", price: 23.08, size: "L", description:"some tex5"},
+            {number: 6, BrandName:"BFUSTYLE", price: 35.19, size: "M", description:"some tex6"},
+            {number: 7, BrandName:"Liva girl", price: 48.05, size: "S", description:"some tex7"},
+            {number: 8, BrandName:"ADYCE", price: 17.99, size: "L", description:"some tex8"}
+        ];
+        $scope.getTotal = function(){
+            $scope.total = 0;
+            for(var i = 0; i < $scope.products.length; i++){
+                console.log($scope.products.length);
+                for(price in $scope.products){
+                    $scope.total += +price;
+
+                }
+
+            }
+            return $scope.total;
+        }
+    });
+
+    var array=[12, 18, 78, 89, 56, 4, 965, 785, 3654, 412];
+    var sum =0;
+    for(var i=0; i< array.length; i++){
+        sum += array[i];
+    }
+    console.log(sum)
+
+</script>
+
+</body>
+</html>

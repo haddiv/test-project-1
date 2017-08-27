@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> Filter examples 1 </title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="../css/pagesStyle.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+    <div class="container-fluid" id="main"  ng-app="filter1Demo">
+        <div >
+            <h1 id="firstPart"> Filter examples 1 </h1>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border" ng-controller="minValueCtrl">
+                <div>
+                    <h4> Return min number </h4>
+                    First number:
+                    <input type="number" class="form-control" ng-model="value1">
+                </div>
+                <div>
+                    Second number:
+                    <input type="number" class="form-control" ng-model="value2">
+                </div>
+                <br>
+                <input type="button" value="compere" ng-click="compere()">
+                <div>
+                    Output: is : {{res}}
+                </div>
+                <br>
+                <div>
+                    <div>
+                        <h4> Using uppercase filter</h4>
+                        Enter the word, please : <br><br>
+                        <input type="text" class="form-control" ng-model="word">
+                        <p> {{word | uppercase}} </p>
+                    </div>
+                    <div>
+                        <h4> Using lowercase filter</h4>
+                        Enter the word with uppercase and click on the button : <br><br>
+                        <input type="text" class="form-control" ng-model="enterWord">
+                        <p> {{enterWord| lowercase}} </p>
+                    </div>
+                </div>
+                <div ng-controller="orderedFilmsController">
+                    <h3> Here films ordered by year of issue </h3>
+                    <ul>
+                        <li ng-repeat="film in films | orderBy: 'issue'">
+                            {{film.name}}  ({{film.issue}})
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border">
+                <div>
+                    <h4> Currency filter </h4> <br>
+                    <p> Enter the amount to convert: </p>
+                    <input type="number" ng-model="numberToConvert" class="form-control">
+                    <p> {{numberToConvert * 450 | currency }} - and - {{numberToConvert * 500 | currency : "€"}}</p>
+                </div>
+
+                <div ng-controller="goodsListCtrl">
+                    <h4> "filter" filter </h4> <br>
+                    <p> Price list : </p>
+                    <select>
+                        <option ng-repeat="good in goods | filter : filterByPrice() "> {{good.name}} </option>
+                    </select>
+                </div>
+                <div ng-controller="flowerListCrtl">
+                    <h4> "filter" filter </h4> <br>
+                    <input type="text" ng-model="entFlower" class="form-control">
+                    <ul>
+                        <li ng-repeat="flower in flowers | filter : entFlower "> {{ flower }} </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="nextPage">
+            <a href="filtersDemo2.html"> <img src="../images/NextPage.jpg"> </a>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+        var app = angular.module("filter1Demo", []);
+        app.controller("minValueCtrl", function ($scope) {
+            $scope.compere = function () {
+                $scope.res=Math.min($scope.value2 , $scope.value1);
+                return $scope.res;
+            }
+        });
+
+        app.controller("orderedFilmsController", function ($scope) {
+            $scope.films = [
+                {name:"Beauty and the Beast", issue: 1991},
+                {name:"Inception", issue: 2010},
+                {name:"listBlack Swan", issue: 2010},
+                {name:"Ice Age", issue: 2011},
+                {name:"Maleficent", issue: 2014},
+                {name:"The Great Dinosaur", issue: 2015},
+                {name:"The Avengers", issue: 1991},
+                {name:"Beauty and the Beast", issue: 2011},
+                {name:"The Piano", issue: 1993}
+            ];
+        });
+
+        app.controller("goodsListCtrl", function ($scope) {
+            $scope.goods = [
+                {name:"milk", price: 300},
+                {name:"bread", price: 250},
+                {name:"butter", price: 700},
+                {name:"cake", price: 1000},
+                {name:"wine", price: 3000},
+                {name:"brandy", price: 7000}
+            ];
+            $scope.filterByPrice=function () {
+                return $scope.price > 800;
+            }
+        });
+
+        app.controller("flowerListCrtl", function ($scope) {
+            $scope.flowers = ["Tulip", "Anemone",  "Rose", "Tiger Lily", "Rain Lily", "Gardenia", "Aster","Gladiolus"];
+        });
+
+
+    </script>
+
+    </body>
+</html>
