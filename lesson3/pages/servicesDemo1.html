@@ -14,18 +14,38 @@
     <link href="../css/pagesStyle.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div class="container-fluid" id="main"  ng-app="filter2Demo">
-    <div >
+<div class="container-fluid" id="main" ng-app="serviceApp">
+    <div>
         <h1 id="firstPart">  Service examples 1 </h1>
     </div>
     <div class="row">
         <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border" >
-          sdfsdf
-
-
+            <div ng-controller="calcSumController">
+                <h3>  Calculate the sum of following array using Custom Service </h3>
+                <p> array=[1, 2, 3, 4, 5, 8, 78, 96, 87, 96, 2] </p>
+                <p> the Sum is : {{res}} </p>
+            </div>
+            <div ng-controller="calcSumOfInputValue">
+                <h3>  Calculate the sum of values using Custom Service </h3>
+                Number 1: <br> <input type="number" class="form-control" ng-model="number1"><br>
+                Number 2:<br>  <input type="number" class="form-control" ng-model="number2"><br>
+                <input type="button" value="calculate" ng-click="calc()"> <br> <br>
+                <p> {{result}} </p>
+            </div>
         </div>
         <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border">
-            sdffsdf
+            <div ng-controller="multiplyNumber">
+                <h3> The $timeout Service </h3>
+                <p> Enter the number : </p>
+                <input type="number" class="form-controller" ng-model="number">
+
+                <p> {{res}}</p>
+            </div>
+            <div>
+                <ul ng-controller="printNumbers">
+                    <li> {{num}} </li>
+                </ul>
+            </div>
         </div>
     </div>
     <div id="nextPage">
@@ -34,6 +54,57 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script>
+    var app=angular.module('serviceApp', []);
+
+    app.service("calcSum", function () {
+        this.calcSumArrElem = function (arr) {
+            sum =0;
+            for (var i = 0; i < arr.length; i++){
+                sum += arr[i];
+
+            }
+            return sum;
+        }
+    });
+    app.controller("calcSumController", function ($scope, calcSum ) {
+        $scope.array=[1, 2, 3, 4, 5, 8, 78, 96, 87, 96, 2];
+        $scope.res = calcSum.calcSumArrElem($scope.array);
+    });
+
+
+    app.service("calcTwoValues", function () {
+        this.calcVal = function (val1, val2) {
+            var sum = val1 + val2;
+            return sum;
+
+        }
+    });
+
+    app.controller("calcSumOfInputValue", function ($scope, calcTwoValues) {
+        $scope.calc=function () {
+            $scope.result = calcTwoValues.calcVal($scope.number1, $scope.number2);
+        }
+    });
+
+    app.controller("multiplyNumber", function ($scope, $timeout) {
+        $timeout(function () {
+            $scope.res *= $scope.number;
+        }, 2000);
+    });
+
+
+    app.controller("printNumbers", function ($scope, $interval) {
+        var arr = [0, 1, 2, 3,4, 5, 6, 7, 8, 9, 10];
+        $interval(function () {
+            for(var i = 0; i < arr.length; i++){
+                $scope.num = arr[i];
+            }
+
+        }, 1000)
+    });
+
+
+
 
 </script>
 

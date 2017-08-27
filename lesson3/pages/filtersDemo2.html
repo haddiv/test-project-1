@@ -26,7 +26,8 @@
             </ul>
         </div>
         <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border">
-            <p>Find product by name: </p> <br>
+            <h3>Find product by name: </h3> <br>
+            <p> Click on "Total price" cell to see to Sum  </p>
             <input type="text" ng-model="nameToFind" class="form-control">
             <br><br>
             <table class="table table-bordered" ng-controller="tableCtrl">
@@ -45,9 +46,9 @@
                     <td >{{ product.description }}</td>
                 </tr>
                 <tr>
-                    <td colspan="2"> Sum: </td>
+                    <td colspan="2" ng-click="getTotal()">Total price:   </td>
 
-                    <td  colspan="3" ng-click="getTotal()"> Price: {{ total }} </td>
+                    <td  colspan="3" > {{ total }} </td>
 
                 </tr>
             </table>

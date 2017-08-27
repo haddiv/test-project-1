@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border" ng-controller="minValueCtrl">
                 <div>
-                    <h4> Return min number </h4>
+                    <h3> Return min number </h3>
                     First number:
                     <input type="number" class="form-control" ng-model="value1">
                 </div>
@@ -37,14 +37,14 @@
                 <br>
                 <div>
                     <div>
-                        <h4> Using uppercase filter</h4>
+                        <h3> Using uppercase filter</h3>
                         Enter the word, please : <br><br>
                         <input type="text" class="form-control" ng-model="word">
                         <p> {{word | uppercase}} </p>
                     </div>
                     <div>
-                        <h4> Using lowercase filter</h4>
-                        Enter the word with uppercase and click on the button : <br><br>
+                        <h3> Using lowercase filter</h3>
+                        Enter the word with uppercase, please : <br><br>
                         <input type="text" class="form-control" ng-model="enterWord">
                         <p> {{enterWord| lowercase}} </p>
                     </div>
@@ -61,21 +61,21 @@
             </div>
             <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border">
                 <div>
-                    <h4> Currency filter </h4> <br>
+                    <h3> Currency filter </h3> <br>
                     <p> Enter the amount to convert: </p>
                     <input type="number" ng-model="numberToConvert" class="form-control">
                     <p> {{numberToConvert * 450 | currency }} - and - {{numberToConvert * 500 | currency : "€"}}</p>
                 </div>
 
                 <div ng-controller="goodsListCtrl">
-                    <h4> "filter" filter </h4> <br>
+                    <h3> "filter" filter </h3> <br>
                     <p> Price list : </p>
                     <select>
                         <option ng-repeat="good in goods | filter : filterByPrice() "> {{good.name}} </option>
                     </select>
                 </div>
                 <div ng-controller="flowerListCrtl">
-                    <h4> "filter" filter </h4> <br>
+                    <h3> "filter" filter </h3> <br>
                     <input type="text" ng-model="entFlower" class="form-control">
                     <ul>
                         <li ng-repeat="flower in flowers | filter : entFlower "> {{ flower }} </li>
