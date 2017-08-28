@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Filter</title>
+</head>
+<body ng-app="mainApp">
+<div ng-include src="'menu.html'"></div>
+<p ng-controller="numbersCtrl">
+    Min is {{numbers | minNum}}
+</p>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="js/angular.js"></script>
+</body>
+</html>

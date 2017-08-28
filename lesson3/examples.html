@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Examples</title>
+    <link rel="stylesheet" href="css/styleM.css">
+</head>
+<body>
+<div ng-app="mainApp">
+    <div ng-include="'menu.html'"></div>
+    <h1>Currency Converter</h1>
+    <p>AMD <input type="text" ng-model="amd"></p>
+    <p>{{amd/560 | currency : "€" : 2}}</p>
+    <p>{{amd/8.10 | currency : "RUB" : 2}}</p>
+    <p>{{amd/478 | currency }}</p>
+
+    <h1>Date formatting</h1>
+    <p>Capture of Shusha - {{"1992-05-09" | date:"MMMM dd,yyyy 'at' hh:mma Z"}}</p>
+
+    <div ng-controller="wordsCtrl">
+    <h1>Translate</h1>
+    <p><input type="text" ng-model="word"></p>
+    <table>
+        <tr><th>English</th><th>Armenian</th></tr>
+        <tr ng-repeat="key in words | filter:word">
+            <td>{{key.eng}}</td>
+            <td>{{key.arm}}</td>
+        </tr>
+    </table>
+    </div>
+
+    <div ng-controller="studentsCtrl">
+        <h1>Obj to JSON</h1>
+        <pre>{{students | json}}</pre>
+    </div>
+
+    <div ng-controller="numsCtrl">
+        <h1>Limits an array</h1>
+        <p ng-repeat="x in nums | limitTo : numLimit : numBegin">{{x}}</p>
+    </div>
+
+    <h1>A string to upper case</h1>
+    <p>Enter your name <input type="text" ng-model="name"></p>
+    <p>Hi {{name | uppercase}}!</p>
+
+    <h1 ng-init = "n = 12345.67899;">Number to string</h1>
+    <p>{{-n | number : 1}}</p>
+
+    <div ng-controller="countriesCtrl">
+        <h1>orderBy Descending</h1>
+        <table>
+            <tr><th>Name</th><th>States</th><th>gdp</th></tr>
+            <tr ng-repeat="key in countries | orderBy:'-name'">
+                <td>{{key.name}}</td>
+                <td>{{key.states}}</td>
+                <td>{{key.gdp}}</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="js/angular.js"></script>
+</body>
+</html>

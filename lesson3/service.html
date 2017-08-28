@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Service</title>
+</head>
+<body ng-app="mainApp" >
+<div ng-include="'menu.html'"></div>
+<p ng-controller="numbersCtrl">
+    Sum is {{numbers | myFormat}}
+</p>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="js/angular.js"></script>
+</body>
+</html>
