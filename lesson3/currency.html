@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+    </head>
+    <body ng-app="currencyExample">
+        <script>
+            angular.module('currencyExample', [])
+                .controller('ExampleController', ['$scope', function($scope) {
+                    $scope.amount = 1234;
+                }]);
+        </script>
+    <div ng-controller="ExampleController">
+        <input type="number" ng-model="amount" aria-label="amount"> <br>
+        <span id="currency-no-fractions">{{amount | currency:"AMD":0}}</span><br>
+        <span id="currency-no-fractions">{{amount | currency:"USD &#36;":0}}</span><br>
+        <span id="currency-no-fractions">{{amount | currency:"EU &euro;":0}}</span>
+
+    </div>
+    </body>
+</html>
