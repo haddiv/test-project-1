@@ -1,0 +1,21 @@
+body{
+    background-image: url(../img/27230051-blackboard-wallpapers.jpg);
+    background-size: 100%;
+}
+nav{
+     margin-top: 4%;
+}
+ul{
+   
+    list-style: none;
+}
+ul a{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+}
+ul a:hover{
+    color: coral;
+    text-decoration: none;
+}

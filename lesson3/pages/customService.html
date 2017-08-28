@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="serviceApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/customService.css">
+</head>
+<body>
+<div class="container">
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/cutomFilter.html">Custom Filter</a></li>
+            <li><a href="../pages/customService.html">Custom Service</a></li>
+        </ul>
+    </nav>
+    <div ng-controller="serviceCtrl" class="col-md-4" id="result">
+        {{arr}}={{result}}
+    </div>
+
+
+</div>
+<script>
+    var app = angular.module("serviceApp", []);
+    var sum = 0;
+    app.service("plus", function () {
+        this.plusFunc = function (x) {
+            for (i = 0; i < x.length; i++) {
+                sum += x[i];
+            }
+            return sum;
+        }
+    });
+    app.controller("serviceCtrl", function ($scope, plus, $interval) {
+        $scope.arr = [2, 9, 8, 7, 2];
+        $scope.k = $interval(function () {
+            $scope.result = plus.plusFunc($scope.arr);
+            if ($scope.result == 28) {
+                $interval.cancel($scope.k)
+            }
+        }, 2000);
+    });
+
+
+</script>
+</body>
+</html>
