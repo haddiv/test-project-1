@@ -1,0 +1,35 @@
+#divNav{
+    margin-top: 50px;
+}
+#divNav2{
+    font-size: 20px;    
+}
+.style{
+    margin-left: 150px;
+}
+#style{
+    margin-left: 80px;
+}
+#array{
+    margin-top: 50px;
+}
+.earth{
+    padding: 10px;
+}
+#hisname{
+    color:#006600;
+    margin-left: 480px;
+}
+.nameFilter{
+    color:#006600;
+    font-size: 26px;
+}
+#press{
+    color: red;
+}
+#prod{
+    color:blue;
+}
+#cust{
+    color: #4d4dff;
+}

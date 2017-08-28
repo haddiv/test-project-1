@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <style>
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body >
+ 
+        
+        <div id="divNav">
+            <nav class="navbar navbar-inverse" >
+              <div class="container-fluid" id="divNav2">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#" id="style">Filter and Service</a>
+                </div>
+                <ul class="nav navbar-nav">
+                  <li><a href="../index.html" class="style">Home</a></li>
+                  <li class="active"><a href="#" class="style">Filter</a></li>
+                  <li><a href="../service/customService.html" class="style">Service</a></li>
+                  <li><a href="../example/w3Examples.html" class="style">Examples</a></li>
+                </ul>
+              </div>
+            </nav>
+        </div>
+        
+        <div ng-app="minNumber" class="well well-lg" id="array">
+            <h1 id="arrNum">Array - numbers</h1>
+            <p id="number">Array - [ 66, 88, 33, 44, 11, 77, 22, 55, 99 ]</p>
+            <p ng-model="h" id="filter">
+                <span id="min">Min number from array -</span> {{ h | newFilter }}
+            </p>
+        </div>
+        
+        <script>
+            var app = angular.module("minNumber",[]);
+            app.filter("newFilter",function(){
+                return function(){
+                    var numbers = [66,88,33,44,11,77,22,55,99];
+                    var h = Math.min.apply(null, numbers);
+                    return h;
+                    }
+            });
+            
+        </script>
+        
+    </body>
+</html>

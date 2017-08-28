@@ -1,0 +1,40 @@
+#divNav{
+    margin-top: 50px;
+}
+#divNav2{
+    font-size: 20px;  
+}
+.style{
+    margin-left: 150px;
+}
+#style{
+    margin-left: 80px;
+}
+#number{
+    text-align: center;
+    font-size: 40px;
+    color:#3366ff;
+    margin-left: 325px;
+    border: thick solid #003399;
+    width: 55%;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+#filter{
+    text-align: center;
+    font-size: 70px;
+    color:#cc0000;
+    margin-top: 100px;
+}
+#min{
+    text-align: 50px;
+    color: #0066cc;
+}
+#array{
+    margin-top: 50px;
+}
+#arrNum{
+    margin-left: 550px;
+    color: #3377ff;
+    font-size: 55px;
+}

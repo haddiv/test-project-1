@@ -1,0 +1,44 @@
+#divNav{
+    margin-top: 50px;
+}
+#divNav2{
+    font-size: 20px;   
+}
+.style{
+    margin-left: 150px;
+}
+#style{
+    margin-left: 80px;
+}
+#number{
+    text-align: center;
+    font-size: 40px;
+    color:#3366ff;
+    margin-left: 325px;
+    border: thick solid #003399;
+    width: 55%;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+#clk{
+    font-size: 30px;
+    margin:75px 0 0 700px;
+    border-radius: 15px;
+}
+#result{
+    text-align: center;
+    font-size: 70px;
+    color: #3366ff;
+    margin-top: 70px;
+}
+#result2{
+    color:#cc0000;
+}
+#array{
+    margin-top: 50px;
+}
+#arrNum{
+    margin-left: 550px;
+    color: #3377ff;
+    font-size: 55px;
+}

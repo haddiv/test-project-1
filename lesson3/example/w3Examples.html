@@ -1,0 +1,248 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <style>
+            
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body >
+        
+        
+        <div id="divNav">
+            <nav class="navbar navbar-inverse" >
+              <div class="container-fluid" id="divNav2">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#" id="style">Filter and Service</a>
+                </div>
+                <ul class="nav navbar-nav">
+                  <li><a href="../index.html" class="style">Home</a></li>
+                  <li><a href="../filter/customFilter.html" class="style">Filter</a></li>
+                  <li><a href="../service/customService.html" class="style">Service</a></li>
+                  <li class="active"><a href="#" class="style">Examples</a></li>
+                </ul>
+              </div>
+            </nav>
+        </div>
+        
+        <div class="well well-lg" id="array">
+            
+            
+            <!--    Filter   -->    
+        
+ <!--       <div class="container">
+                <div ng-app="upperCase" ng-controller="contrCase">
+                    <h1 id="hisName">His name is - {{ name | uppercase  }}</h1>
+                </div>
+                <script>
+                    var app = angular.module("upperCase",[]);
+                    app.controller("contrCase",function($scope){
+                        $scope.name = "Samson";
+                    })
+                </script>
+            </div>          -->
+            
+
+
+<!--     <div id="money" class="container">
+                <h2 id="hisName">Numbers and Letters</h2>
+                <div ng-app="numLet" ng-controller="contrNL" class="container">
+                    <p ng-repeat="i in array | orderBy: 'letter' "> 
+                        {{ i.number + " - " + i.letter }} 
+                    </p>
+                </div>
+                <script>
+                    var rub = angular.module("numLet",[]);
+                    rub.controller("contrNL",function($scope){
+                        $scope.array = [
+                            {number:4 , letter: "t"},
+                            {number:5 , letter: "w"},
+                            {number:2 , letter: "d"},
+                            {number:1 , letter: "a"},
+                            {number:3 , letter: "k"},
+                        ]
+                    });
+                </script> 
+            </div>            -->
+
+
+<!--        <div class="container">
+                <h2 id="hisName">Country and Capital</h2>
+                <div ng-app="array" ng-controller="arrayName">
+                    <ol >
+                        <li ng-repeat="i in massiv">
+                            <span id="cap">{{ i.country + " - " + i.capital }}</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <script>
+                    var name = angular.module("array",[]).controller("arrayName",function($scope){
+                        $scope.massiv = [
+                            {country:'Armenia' , capital:'Erevan'},
+                            {country:'France' , capital:'Paris'},
+                            {country:'USA' , capital:'Washington'},
+                            {country:'China' , capital:'Beijing'},
+                            {country:'Russia' , capital:'Moscow'},
+                            {country:'Spain' , capital:'Madrid'},
+                            {country:'Uk' , capital:'London'},
+                        ]   
+                    })
+                </script>
+
+            </div>    -->
+
+
+
+ <!--        <div class="container">
+                <div ng-app="appGirlName" ng-controller="contrGirlName">
+                    <h2 id="hisName">Write letters</h2>
+                    <input type="text" ng-model="y">
+                    <ul>
+                      <li ng-repeat="x in names | filter:y">
+                          <span id="cap">{{ x }}</span>
+                      </li>
+                    </ul>
+                </div>
+                <script>
+                    angular.module("appGirlName",[]).controller("contrGirlName",function($scope){
+                        $scope.names = [
+                            "Anahit",
+                            "Greta",
+                            "Jenya",
+                            "Sona",
+                            "Hovanush"
+                        ]
+                    })
+                </script>
+            </div>    -->
+
+
+ <!--      <div class="container">
+                <div ng-app="appTable" ng-controller="contrTable">
+                    <h1 id="hisName">Earth</h1>
+                    <table border="3px" width="100%" >
+                        <tr >
+                            <th ng-click ="order('country')" class="earth">Country</th>
+                            <th ng-click ="order('capital')" class="earth">Capital</th>
+                            <th ng-click ="order('city')" class="earth">City</th>
+                        </tr>
+                        <tr ng-repeat="x in massiv | orderBy:newOrder ">
+                            <td class="earth">{{x.country}}</td>
+                            <td class="earth">{{x.capital}}</td>
+                            <td class="earth">{{x.city}}</td>
+                        </tr>
+                    </table>
+                    <h3 id="press">Press on Capital (or City, or Country)</h3>
+                </div>
+                <script>
+                    angular.module("appTable",[]).controller("contrTable",function($scope){
+                        $scope.massiv = [
+                            {country:'Armenia' , capital:'Erevan',city:'Gyumri'},
+                            {country:'France' , capital:'Paris',city:'Lyon'},
+                            {country:'USA' , capital:'Washington',city:'Los-Angeles'},
+                            {country:'China' , capital:'Beijing',city:'Shankhay'},
+                            {country:'Russia' , capital:'Moscow',city:'Sankt-Peterboorg'}
+                        ]
+                        $scope.order = function(x){
+                            $scope.newOrder = x;
+                        }
+                    })
+                </script>
+            </div>   
+          -->
+            
+            
+            
+            
+ <!--      <div class="container">
+            <div ng-app="appFilter" ng-controller="contrFilter as ctrl" class="nameFilter">
+              <div>
+                  <b>All names: </b>
+                <span ng-repeat="names in ctrl.array1"> {{names.name}} , </span>
+              </div>
+              <div>
+                  <b>Names that contain an "e": </b>
+                <span ng-repeat="names in ctrl.array2"> {{names.name}} , </span>
+              </div>
+            </div>
+
+            <script>
+                (function(angular) {
+                   var app = angular.module('appFilter', []);
+                   app.controller('contrFilter', ['filterFilter', function FilterController(filterFilter) {
+                    this.array1 = [
+                        {name: 'Sona'},
+                        {name: 'Gevorg'},
+                        {name: 'Anjela'},
+                        {name: 'Taron'},
+                        {name: 'Meri'},
+                        {name: 'Henrik'},
+                        {name: 'Anna'},
+                        {name: 'Samvel'},
+                        {name: 'Tamara'}
+                    ];
+                    this.array2 = filterFilter(this.array1, 'e');
+                  }]);
+                })(window.angular);
+            </script>
+        </div>   -->        
+             
+            
+            <div class="container" >
+                <h1 id="Cust">With Custom Filter</h1>
+    
+                <div ng-app="appMod" ng-controller="ProductContr">
+                    <input type="number" class="form-control" placeholder="Search here" ng-model="priceterm" >
+                        <br>
+                        <table class="table" id="prod">
+                            <tr ng-repeat="b in products|priceGreaterThan:priceterm">
+                                <td><b>{{b.name}}</b></td>
+                                <td>{{b.price}}</td>
+                            </tr>
+                        </table>
+                </div>
+                
+                <script>
+                    var myApp = angular.module("appMod",[]);
+                    myApp.controller("ProductContr", function ($scope) {
+                        $scope.products = [
+                            { 'name': 'karen', 'price': '200' },
+                            { 'name': 'sergey', 'price': '400' },
+                            { 'name': 'gevorg', 'price': '2400' },
+                            { 'name': 'hamlet', 'price': '400' },
+                            { 'name': 'murat', 'price': '1200' },
+                        ];
+
+                    });
+                    
+                    myApp.filter('priceGreaterThan', function () {
+ 
+                    return function (input, price) {
+                        var output = [];
+                        if (isNaN(price)) {
+                            output = input;
+                        }
+                        else {
+                            angular.forEach(input, function (item) {
+
+                                if (item.price > price) {
+                                    output.push(item)
+                                }
+                            });
+                        }
+                        return output;
+                    }
+                })
+                </script>
+            </div>
+        
+        </div>
+        
+        
+    </body>
+</html>
