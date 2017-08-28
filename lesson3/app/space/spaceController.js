@@ -13,35 +13,7 @@ app.controller("SpaceController",function($scope,data){
 		}
 		})
 		
-app.controller("ShowMessage",function($scope,$interval){
-			$scope.message = "Click on any of planets to know mor about it";
-			$scope.x = Math.floor(Math.random() * 100);
-			$scope.width = screen.width;
-			$scope.width = screen.height;
-			alert($scope.width);
-			
-		//pageY = clientY + height of the scrolled-out vertical part of the document.
-		//pageX = clientX + width of the scrolled-out horizontal part of the document.
-		
-		})
 
-	app.controller("filterController",function(){
-	$scope.filterTheWord = function(word) {
-  $scope.word = $filter('fil')(fitering);
-  }
-	})	
-		
- 
-
-
-
-app.filter("fil",function(){
-return function(x){
-	var newX = x.toLowerCase;
-
-}
-
-return newX})
 		
 app.service('data', function() {
    return planets = [
