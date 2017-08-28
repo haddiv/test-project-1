@@ -1,0 +1,57 @@
+
+<html>
+<head>
+<script src="https://ajax.googleapis.com/…/angularjs/1.6.4/angular.min.js"></script>
+<title> Custom Filter 2</title>
+
+
+</head>
+<body ng-app="filter2module" ng-controller="myFilter" >
+
+  <div class="table" >
+  <table>
+  <thead class="head">
+  <tr>
+  <th>Name</th>
+  <th>City</th> 
+  <th>Company</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="employee in employees |filter:filt">
+   
+  <td>{{employee.name}}</td>
+   <td>{{employee.city}}</td> 
+  <td>{{employee.company}}</td>
+ 
+  </tr>
+  </tbody>
+  </table>
+  <hr>
+    <table>
+        <tr>
+            <td align="center">Search :</td>
+            <td><input ng-model="filt[filterBy]" /></td>
+        </tr>           
+        <tr>
+            <td align="center">Search By :</td>
+            <td>
+                <select ng-model="filterBy">
+                    <option value="name">Name</option>
+                    <option value="city">City</option>
+                    <option value="company">Company</option>
+                </select>   
+            </td>
+        </tr>
+    </table> 
+
+	
+ </body>
+</html>
+            
+                   
+    
+               
+
+
+ 
