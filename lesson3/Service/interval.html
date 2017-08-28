@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        AngularJs $interval Service
+    </title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style>
+        h1{
+            text-align: center;
+            color:forestgreen;
+
+        }
+        div{
+            border:1px solid green;
+            width: 20%;
+            margin: 300px  500px;
+        }
+        body{
+            background-color: #0D0A0A;
+        }
+    </style>
+</head>
+<body ng-app="intervalApp">
+<div  ng-controller="intervalCtrl">
+
+    <h1>  Time: {{ptime}}</h1>
+</div>
+<script>
+    var app = angular.module('intervalApp', []);
+    app.controller('intervalCtrl', function ($scope, $interval) {
+        $scope.ptime = new Date().toLocaleTimeString();
+        $interval(function () {
+            $scope.ptime = new Date().toLocaleTimeString();
+        }, 1000);
+    });
+</script>
+</body>
+</html>

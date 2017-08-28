@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-app="minimum">
+
+<div ng-controller="minCtrl">
+        <h1> Array:  [30,4,45,84,5,112,6,45,35,3,14,58,18.21]</h1>
+        <h1>To minimum: {{ names | orderBy:"-"}}</h1>
+        <h1>To maximum: {{ names | orderBy}}</h1>
+
+</div>
+
+<script>
+    angular.module('minimum', [])
+        .controller('minCtrl', function($scope) {
+        $scope.names = [
+          30,4,45,84,5,112,6,45,35,3,14,58,18.21
+
+        ];
+
+
+    });
+
+
+</script>
+
+</body>
+</html>

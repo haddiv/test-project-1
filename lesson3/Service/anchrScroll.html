@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AnchrScroll</title>
+    <style>
+        #scrollArea {
+            height: 500px;
+            overflow: auto;
+        }
+
+        #bottom {
+            display: block;
+            margin-top: 1000px;
+        }
+    </style>
+</head>
+<body>
+<div id="scrollArea" ng-controller="ScrollController">
+    <a ng-click="gotoBottom()">Scroll</a>
+    <a id="bottom">The end</a>
+</div>
+<script>
+    angular.module('anchorScrollExample', [])
+        .controller('ScrollController', ['$scope', '$location', '$anchorScroll',
+            function($scope, $location, $anchorScroll) {
+                $scope.gotoBottom = function() {
+
+                    $location.hash('bottom');
+
+                    $anchorScroll();
+                };
+            }]);
+</script>
+</body>
+</html>

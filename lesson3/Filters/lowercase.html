@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        AngularJs lowercase
+    </title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+</head>
+<body ng-app="lowercaseApp" ng-controller="lowercasectrl">
+INSERT UPER CASE TEXT:<input type="text" ng-model="lower"><br>
+<h4> LOWERCASE TEXT:{{lower | lowercase}}</h4>
+<script>
+    var app = angular.module("lowercaseApp", []);
+    app.controller("lowercasectrl", function ($scope) {
+        $scope.tutorialName = "AngularJS to lowercase"
+
+
+    });
+</script>
+</body>
+</html>

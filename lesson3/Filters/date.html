@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <title>Date </title>
+</head>
+<body ng-app="dateApp">
+<div  ng-controller="dateController">
+
+
+    <p>
+        <label>Insert date</label>
+        <input type="date" id="date" ng-model="date"/>
+    </p>
+
+    <p> {{ date | date : 'shortDate'}} </p>
+
+</div>
+
+<script>
+
+    var dtApp = angular.module('dateApp', []);
+
+    dtApp.controller('dateController', function ($scope, $filter) {
+
+            $scope.result = $filter('date')(new Date(), 'fullDate');
+        }
+    );
+
+</script>
+
+
+</body>
+</html>

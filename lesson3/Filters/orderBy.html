@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <title>
+        OrderBy
+    </title>
+</head>
+<body>
+
+<div ng-app="order">
+    <div ng-controller="orderCtrl">
+        <ul ng-repeat="item in items | orderBy:'num':true">
+            <li>{{item.num}} :: {{item.desc}}</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+
+    var app = angular.module('order', []);
+    app.controller('orderCtrl', function ($scope) {
+        $scope.items = [
+            {desc: 'a', num: 1},
+            {desc: 'b', num: 2},
+            {desc: 'c', num: 3},
+            {desc: 'd', num: 4},
+            {desc: 'e', num: 5},
+            {desc: 'f', num: 6},
+            {desc: 'g', num: 7},
+        ]
+    });
+
+
+</script>
+
+
+</body>
+</html>
