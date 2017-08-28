@@ -2,9 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Filter Example 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
 </head>
 <body>
-
+<div ng-app="app" ng-controller="cont">
+    <label>
+        {{numbers}}
+        <input type="number"  ng-model="numLimit">
+    </label>
+    <p>{{numbers | limitTo:numLimit}}</p>
+    <label>
+        {{letters}}
+        <input type="number" ng-model="letterLimit">
+    </label>
+    <p> {{letters | limitTo:letterLimit}}</p>
+    <label>
+         {{longNumber}}
+        <input type="number"  ng-model="longNumberLimit">
+    </label>
+    <p> {{longNumber | limitTo:longNumberLimit}}</p>
+    <script>
+        angular.module('app', [])
+            .controller('cont', ['$scope', function($scope) {
+                $scope.numbers = [0,1,2,3,4,5,6,7,8,9];
+                $scope.letters = "qwertyuiopasdfghjklzxcvbnm";
+                $scope.longNumber = 2345432342234523452345432543;
+                $scope.numLimit = 0;
+                $scope.letterLimit = 0;
+                $scope.longNumberLimit = 0;
+            }]);
+    </script>
+</div>
 </body>
 </html>
