@@ -35,50 +35,45 @@ app.controller("NumberOfPageVIsits",function($scope,articleDates,sumOfVisites){
 				}
 		})	
 		
-
-		
-		
-app.controller("ArticleSection",function($scope,articleDates){
+//ARTICLES AND LAST NEWS DISPLAY
+app.controller("ArticleSection",function($scope,$filter,articleDates){
 				$scope.articleDatas = articleDates;
 				console.log($scope.articleDatas);
 				
-						
-		});
-	
-
-	
-	
-app.controller("LastNews",function($scope,$filter,articleDates){
-				$scope.articleDatas = articleDates;
-				console.log($scope.articleDatas);
-				
-				/*for(var i = 0; i<$scope.articleDatas.length;i++){
+				for(var i = 0; i<$scope.articleDatas.length;i++){
 				var arr = [];
 						arr.push(($scope.articleDatas[i].publicDate).getTime());
 						console.log($scope.articleDatas[i].publicDate);
 						
 						}
-				
-				
 				$filter('filter')(arr,function(){
 											arr.reverse();
-											return arr[0]})
-											console.log(arr[0])*/
+											var lastArticleIndex = arr[0];
+											for(var i = 0; i<$scope.articleDatas.length;i++){
+				if(($scope.articleDatas[i].publicDate).getTime()==lastArticleIndex){
+				var lastNews = $scope.articleDatas[i];
+				console.log(lastNews);
+				}
+				
+				
+				return lastNews
+				}
+		})
+		})
 		
-		});	
 	
 	
  //LAST NEWS  
- app.controller("LastNews",function($scope,customFilter,articleDates){
+ /* app.controller("LastNews",function($scope,customFilter,articleDates){
         
 		//$scope.lastNews = customFilter(articleDates,articleDatas);
 		console.log($scope.articleDatas[0].publicDate);
 		})  
+  */
  
  
- 
- // FILTER OF LATES NEWS 
-   app.filter("customFilter", function(data){
+ // FILTER OF LAST NEWS 
+  /* app.filter("customFilter", function(data){
 
 		return function(time){
 		    
@@ -100,7 +95,7 @@ app.controller("LastNews",function($scope,$filter,articleDates){
 			console.log(displayLastNews);
 		return displayLastNews;
 		}
-		})	
+		})	*/
 	
 
 

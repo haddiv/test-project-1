@@ -32,13 +32,16 @@
 </div>
 	
 	<div class = "search" >
-		<input type= "text" class="searchInput" ng-model="planetName"placeholder = "enter a planet name">
+		<input type= "text" class="searchInput"  ng-model="planetName | lawecase" placeholder = "enter a planet name">
 		<input type= "button" class="btn searchBtn" ng-click = "showPlanetInfo()" value = "go" >
 	</div>
-   <search-div searchDiv class="searchDiv" ng-model="planetInfo">  
+   <search-div  class="searchDiv" ng-model="planetInfo">  
 	   <p>{{planetName | uppercase}}</p>
 	   <p>{{planetInfo}}</p>
     </search-div>
+	
+	<div ng-controller="ShowMessage">
+	</div>
    
    </div>
 </div>
