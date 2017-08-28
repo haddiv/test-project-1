@@ -16,19 +16,27 @@
 <body>
 <div class="container-fluid" id="main"  ng-app="servicesDemo">
     <div >
-        <h1 id="firstPart">  Service examples 2 </h1>
+        <h1 id="firstPart">  Table  </h1>
     </div>
     <div class="row">
         <div class="border" style="width: 100%">
-            <table ng-controller="displayNumberCtrl" class="table table-bordered">
+            <h3> Click the table headers to change the sort order: </h3> <br>
+            <table ng-controller="objectCtrl" class="table table-bordered">
                 <tr>
-                    <th> # </th>
-                    <th> Name </th>
-                    <th> Age </th>
-                    <th> Country</th>
+                    <th ng-click="orderElBy(number)"> # </th>
+                    <th ng-click="orderElBy('brandName')"> Brand name </th>
+                    <th ng-click="orderElBy('color')"> Color </th>
+                    <th ng-click="orderElBy('price')"> Price </th>
                 </tr>
-                <tr >
-                    <td ng-repeat="el in numbers"> {{el}} </td>
+                <tr ng-repeat="car in cars | orderBy: orderElByCustomProp">
+                    <td> {{car.number}}</td>
+                    <td> {{car.brandName }}</td>
+                    <td> {{car.color}}</td>
+                    <td> {{car.price | currency }}</td>
+                </tr>
+                <tr>
+                    <td colspan="3"  ng-click="totalPrice()"> Total Price : </td>
+                    <td colspan="1"> {{sum}}</td>
                 </tr>
             </table>
 
@@ -41,14 +49,31 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script>
     var app = angular.module("servicesDemo", []);
+    app.controller("objectCtrl", function ($scope) {
+        $scope.cars=[
+            {number : 1, brandName: "Ford", color: "red", price: 21900},
+            {number : 2, brandName: "Jeep", color: "black", price: 70000},
+            {number : 3, brandName: "Hummer", color: "white", price: 50000},
+            {number : 4, brandName: "Audi", color: "grey", price: 18000},
+            {number : 5, brandName: "Volkswagen", color: "black", price: 20000},
+            {number : 6, brandName: "Mercedes-Benz", color: "yellow", price: 18500}
+        ];
+        $scope.orderElBy=function(el){
+            $scope.orderElByCustomProp=el;
+        }
 
-    app.controller("displayNumberCtrl", function ($scope, $interval) {
-        $scope.numbers = [0, 1, 2, 3,4, 5, 6, 7, 8, 9, 10];
-        $interval(function () {
-            for(var i = 0; i < $scope.numbers.length; i++){
-                $scope.el= $scope.numbers[i];
+        $scope.totalPrice = function(){
+            $scope.sum = 0;
+            for(var i = 0; i < $scope.cars.length; i++){
+
+                for(price in $scope.cars){
+                    $scope.sum += +price;
+                    console.log($scope.sum);
+                }
+
             }
-        });
+            return $scope.sum;
+        }
     });
 
 

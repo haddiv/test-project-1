@@ -22,16 +22,16 @@
             <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border" ng-controller="minValueCtrl">
                 <div>
                     <h3> Return min number </h3>
-                    First number:
+                    First number: <br>
                     <input type="number" class="form-control" ng-model="value1">
                 </div>
-                <div>
-                    Second number:
+                <div> <br>
+                    Second number: <br>
                     <input type="number" class="form-control" ng-model="value2">
                 </div>
                 <br>
                 <input type="button" value="compere" ng-click="compere()">
-                <div>
+                <div> <br>
                     Output: is : {{res}}
                 </div>
                 <br>
@@ -66,17 +66,16 @@
                     <input type="number" ng-model="numberToConvert" class="form-control">
                     <p> {{numberToConvert * 450 | currency }} - and - {{numberToConvert * 500 | currency : "€"}}</p>
                 </div>
-
                 <div ng-controller="goodsListCtrl">
                     <h3> "filter" filter </h3> <br>
                     <p> Price list : </p>
                     <select>
-                        <option ng-repeat="good in goods  "> {{good.name | filterByPrice}} </option>
+                        <option ng-repeat="good in goods | orderBy : good.price"> {{good.name}} </option>
                     </select>
                 </div>
                 <div ng-controller="flowerListCrtl">
                     <h3> "filter" filter </h3> <br>
-                    <input type="text" ng-model="entFlower" class="form-control">
+                    <input type="text" ng-model="entFlower" class="form-control">  <br>
                     <ul>
                         <li ng-repeat="flower in flowers | filter : entFlower "> {{ flower }} </li>
                     </ul>
@@ -87,7 +86,6 @@
             <a href="filtersDemo2.html"> <img src="../images/NextPage.jpg"> </a>
         </div>
     </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script>
         var app = angular.module("filter1Demo", []);
@@ -97,7 +95,6 @@
                 return $scope.res;
             }
         });
-
         app.controller("orderedFilmsController", function ($scope) {
             $scope.films = [
                 {name:"Beauty and the Beast", issue: 1991},
@@ -111,7 +108,6 @@
                 {name:"The Piano", issue: 1993}
             ];
         });
-
         app.controller("goodsListCtrl", function ($scope) {
             $scope.goods = [
                 {name:"milk", price: 300},
@@ -121,11 +117,7 @@
                 {name:"wine", price: 3000},
                 {name:"brandy", price: 7000}
             ];
-            $scope.filterByPrice=function () {
-                for (price in goods){
 
-                }
-            }
         });
 
         app.controller("flowerListCrtl", function ($scope) {

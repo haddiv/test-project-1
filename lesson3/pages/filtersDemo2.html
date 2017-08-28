@@ -20,10 +20,14 @@
     </div>
     <div class="row">
         <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border" >
-            <h3> Custom filter </h3>
-            <ul ng-controller="minNumberCtrl">
-                <li ng-repeat="x in array"> {{x}} </li>
-            </ul>
+            <div ng-controller="minNumberCtrl">
+                <h3> Custom filter </h3>
+                <ul >
+                    <li ng-repeat="x in array"> {{x}} </li>
+                </ul>
+                <br>
+                <p> Min value of array : {{ minValue }} </p>
+          </div>
         </div>
         <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border">
             <h3>Find product by name: </h3> <br>
@@ -63,31 +67,27 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script>
     var app = angular.module("filter2Demo", []);
-   var array=[12, 18, 78, 89, 56, 4, 965, 785, 3654, 412, 1];
-    function minNumber(array){
-        var min = array[0];
-        array.sort();
-        console.log(array)
-        for (var i = 0; i < array.length; ++i){
-            if(min >= array[i + 1]){
-                min = array[i];
+
+    app.service('mnValueSer', function() {
+        this.myFunc = function (array){
+
+            function compareNumeric(a, b) {
+                if (a > b) return 1;
+                if (a < b) return -1;
             }
-        }
-        console.log(min);
-    }
-    minNumber(array);
-
-
-    app.filter("minValue", function () {
-
-        return function (array){
-            Math.min.apply(null, array)
-
+            array.sort(compareNumeric);
+            console.log(array)
+            var min = array[0];
+            return min;
         }
     });
-    app.controller("minNumberCtrl", function ($scope) {
+    app.controller("minNumberCtrl", function ($scope, mnValueSer) {
         $scope.array=[12, 18, 78, 89, 56, 4, 965, 785, 3654, 412, 1];
+         $scope.minValue = mnValueSer.myFunc($scope.array);
+
     });
+
+
     app.controller("tableCtrl", function ($scope) {
         $scope.products=[
             {number: 1, BrandName:"BerryGo", price: 20.99, size: 'S', description:"some tex1"},
@@ -112,15 +112,7 @@
             return $scope.total;
         }
     });
-
-    var array=[12, 18, 78, 89, 56, 4, 965, 785, 3654, 412];
-    var sum =0;
-    for(var i=0; i < array.length; i++){
-        sum += array[i];
-    }
-
-
-</script>
+    </script>
 
 </body>
 </html>
