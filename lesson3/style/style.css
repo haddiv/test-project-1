@@ -7,7 +7,7 @@
 		}
 
 .nav{
-	width: 500px;
+	width: 660px;
     height: 100px;
     position: relative;
     top: 150px;
@@ -19,9 +19,9 @@
 		}
 ul li{
 	display:inline;
-	font-size:20px;
+	font-size:50px;
 	list-style-type:none;
-	padding-left:10px;
+	padding-left:53px;
 	}
 
 ul li a{
@@ -34,13 +34,13 @@ ul li a:hover,ul li a:active, ul li a:visited{
 	}
 	
 .slogan{
-   width: 499px;
+    width: 1037px;
     height: 150px;
     color: #fff;
     position: relative;
-    top: 100%;
-    left: 5%;
-    font-size: 27px;
+    top: 600px;
+    right: 42%;
+    font-size: 60px;
     font-style: italic;
     margin: 0;
 }
