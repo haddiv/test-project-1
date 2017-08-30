@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+
+<html>
+<head>
+		<title>Menu</title> 
+		 <style type="text/css">
+		 ul { list-style-type:none; margin:1; padding:1; padding-top:7px; padding-bottom:5px; } 
+		 li { display:inline; } 
+		 a:link,a:visited { font-weight:bold; color:#CC3DD; background-color:#90EE90; text-align:center; padding:6px; text-decoration:italic; text-transform:uppercase; } 
+		 a:hover,a:active { background-color:#FF1493; } 
+	 </style>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	 </head> 
+<body>
+ <ul> 
+		 <li>
+		 <a href="dit1.html">date</a>
+		 </li>
+		 
+		 <li><a href="serviz.html">service</a></li>
+		 <li><a href="min.html">filter</a></li>
+		 <li><a href="filtr.html">jam </a></li>
+		 <li><a href="meniu.html">hom</a></li> 
+		 </ul> 
+		 <ul>
+    </ul>
+
+
+
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<h1>{{hex}}</h1>
+
+</div>
+<script>
+var s=[1,2,41,2,4,55,3]
+var app = angular.module('myApp', []);
+
+
+
+app.service('he', function() {
+    this.myFunc = function (x) {
+	return x.reduce(function(pv, cv) { return pv + cv; }, 0);
+    }
+});
+
+
+app.controller('myCtrl', function($scope, he) {
+  $scope.hex = he.myFunc(s);
+});
+</script>
+
+</body>
+</html>
