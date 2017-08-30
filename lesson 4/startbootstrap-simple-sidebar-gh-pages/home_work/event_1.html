@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body ng-app="">
+
+<input ng-focus="count = count + 1" ng-init="count=0" />
+
+<h1>{{count}}</h1>
+
+
+
+<input ng-blur="counte = counte + 1" ng-init="counte=0" />
+
+<h1>{{counte}}</h1>
+
+
+
+
+<button ng-click="countq = countq + 1" ng-init="countq=0">OK</button>
+
+<p>The button has been clicked {{countq}} times.</p>
+
+
+
+
+
+<input ng-copy="countz = countz + 1" ng-init="countz=0" value="Copy this text" />
+
+<p>The text has been copied {{countz}} times.</p>
+
+
+
+
+<input ng-paste="count5 = count5 + 1" ng-init="count5=0" value="Paste text here!" />
+
+<p>Text has been pasted {{count5}} times.</p>
+
+
+
+
+
+
+
+<h1 ng-dblclick="countw = countw + 1" ng-init="countw=0">Welcome</h1>
+
+<p>The header has been double-clicked {{countw}} times.</p>
+
+
+
+<input ng-keydown="counti = counti + 1" ng-init="counti=0" />
+
+<h1>{{counti}}</h1>
+
+
+
+
+
+
+<input ng-keydown="counts = counts + 1" ng-init="counts=0" />
+
+<h1>{{counts}}</h1>
+
+
+
+
+<input ng-keyup="coun = coun + 1" ng-init="coun=0" />
+
+<h1>{{coun}}</h1>
+
+
+
+
+
+
+<div ng-mousedown="cunt = cunt + 1" ng-init="cunt=0">Click me!</div>
+
+<h1>{{cunt}}</h1>
+
+
+
+
+
+<div ng-mouseenter="cont = cont + 1" ng-init="cont=0">Mouse over me!</div>
+
+<h1>{{cont}}</h1>
+
+
+
+
+<div ng-mouseleave="countf = countf + 1" ng-init="countf=0">Mouse over me! (and mouse away from me...)</div>
+
+<h1>{{countf}}</h1
+
+
+
+
+<div ng-mousemove="countt = countt + 1" ng-init="countt=0">Mouse over me!</div>
+
+<h1>{{countt}}</h1>
+
+
+
+
+
+<div ng-mouseover="countv = countv+ 1" ng-init="countv=0">Mouse over me!</div>
+
+<h1>{{countv}}</h1>
+
+
+
+
+
+
+<div ng-mouseup="ccount = ccount + 1" ng-init="ccount=0">Click me!</div>
+
+<h1>{{ccount}}</h1>
+
+
+</body>
+</html>
