@@ -1,0 +1,69 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link href = "../../style/bootstrap/css/bootstrap.css" type = "text/css" rel="stylesheet">
+	<link href="discovery.css" type="text/css" rel="stylesheet"/>
+</head>	
+<body ng-app="myApp" >		 
+	   <div class="container-fluid">
+			<div class = "row">				
+			   <div ng-controller = "SliderSection" class = "sliderDiv">
+						<img ng-src = "{{img}}" class = "slider"/>
+				</div>
+			<div class = "content" >
+				<div class = "asideBar">
+			<div class = "nav">
+				<ul>	
+					<li><a href = "../../index.html" target="_blank">Home</a></li>
+					<li><a href = "../space/spaceView.html" target="_blank">Space</a></li>
+					<li><a href = "#" target="_blank">Discovery</a></li>
+				</ul>
+			</div>
+			</div>
+			<div class = "articlSection" >
+				<div  ng-controller = "ArticleSection" >
+				 <button type = "button" class = "btn filterBtn" ng-click="show = !show">Last News</button><br>
+				 <last-news class = "lastNews"  ng-show="show" ng-repeat="y in articleDatas | filter:filter">
+						<h3 class="articleTitle">{{y.title | uppercase}}</h3>
+						<div class = "textPart">{{y.article | limitTo : 500}}<a href = "">...Read More</a></div>
+						<span class="showDate">{{y.publicDate | date}}</span>
+						<span class="showDate">Visit:{{y.visited}}</span>
+				 </last-news>
+				 
+				 <!-- All Articles-->
+				 <!-- ng-controller="ArticleSection">-->
+					<div class = "articles" ng-show = "!show" ng-repeat="x in articleDatas | orderBy:'publicDate'">
+						<h3 class="articleTitle">{{x.title | uppercase}}</h3>
+						<div class = "textPart">{{x.article |limitTo : 120}}<a href = "">...Read More</a></div>
+						<span class="showDate">{{x.publicDate | date }}</span>
+						<span class="showDate">Visit:{{x.visited}}</span>
+					</div><br>
+		   
+		   </div> 
+		   </div> <!--end of article setion-->
+		   <div class ="searchSection" >
+			   <div ng-controller="ArticleNum">
+				   <button type = "button" class = "btn filterBtn" ng-click="numOfArticle = !numOfArticle">Number of Articles</button>
+					  <div ng-show="numOfArticle" class="articlesNumberDiv" >{{numOfArticles}}</div>
+				   </div>
+			   
+			   
+			   <div ng-controller="NumberOfPageVIsits">
+				   <button type = "button" class = "btn filterBtn" ng-click="pageVisite = !pageVisite">Page visites</button>
+					  <div ng-show="pageVisite" class="articlesNumberDiv" >{{numOfVisites}}</div>
+				   </div>
+		 </div> <!--end of serch sect-->
+		</div> <!--end of content-->
+	  </div> <!--end of row-->
+ </div> <!--end of cont-Fluid-->
+	
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+<script src = "../app.module.js"></script>
+<script src = "discoveryDirective.js"></script>
+<script src = "discoveryController.js"></script>
+<script src = "../../libs/jquery-3.2.1.js"></script>
+<script src = "../../style/bootstrap/js/bootstrap.js"></script>
+<script src = "../../style/bootstrap/js/bootstrap.min.js"></script>
+		
+</body>
+</html>
