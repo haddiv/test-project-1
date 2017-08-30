@@ -15,7 +15,7 @@ body {
     margin-top: 70px;
     padding: 20px;
     background-color: #f6fcff;
-    height: 900px;
+    height: 800px;
 }
 #nextPage{
     float: right;
@@ -23,4 +23,8 @@ body {
 }
 h3{
     color: #0094f0;
+}
+#colorDiv{
+    width : 250px;
+    height : 250px;
 }

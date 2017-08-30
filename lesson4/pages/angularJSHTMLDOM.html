@@ -53,18 +53,39 @@
 
             </div>
             <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border">
+                <div ng-controller="nameAndPass">
+                    Login: <input type="text" class="form-control" ng-model="login"> <br>
+                    Password: <input type="password" class="form-control" ng-model="password"> <br>
+                    <label><input type="checkbox" ng-init="openLogBt=true" ng-model="openLogBt"> Check !!! </label> <br>
+                    <p> Click on Log in button to see Your login and password </p>
+                    <input type="button" value="Log in" ng-disabled="openLogBt" class="btn btn-primary btn-md" ng-click="displayLogAndPass()">
+                    <br> <br>
 
+                    <div ng-show="showLogAndPAss">
+                        Login is : {{login}} <br>
+                        Password is : {{password}}
+                    </div>
+                </div>
 
             </div>
         </div>
         <div id="nextPage">
-            <a href="AngularJSEvents.html"> <img src="../images/NextPage.jpg"> </a>
+            <a href="angularJSEvents.html"> <img src="../images/NextPage.jpg"> </a>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script>
         var app = angular.module("HTMLDom", []);
+        app.controller("nameAndPass", function ($scope) {
+            $scope.login = "Astghik";
+            $scope.password="aaa111"
+            $scope.showLogAndPAss = false;
+            $scope.displayLogAndPass = function () {
+                $scope.showLogAndPAss = !$scope.showLogAndPAss;
+            }
+        });
+
 
     </script>
 

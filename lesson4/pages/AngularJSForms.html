@@ -19,22 +19,75 @@
         <h1 id="firstPart"> AngularJS Forms </h1>
     </div>
     <div class="row">
-        <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border" >
-
+        <div class="col-xs-6 col-sm-12 col-md-6 col-lg-6 border" >
+            <form action="#" method="post">
+                <div ng-controller="addNewHobbyCtrl">
+                    <h3> How you spend Your free time </h3>
+                    <label><input type="checkbox" name="leisure[]" value="walk"> I'd walk with my friends </label>  <br>
+                    <label><input type="checkbox" name="leisure[]" value="read"> I'd read books </label> <br>
+                    <label><input type="checkbox" name="leisure[]" value="listen"> I'd listen music </label> <br>
+                    <label><input type="checkbox" name="leisure[]" value="watch"> I'd watch TV </label> <br>
+                    <label><input type="checkbox" name="leisure[]" value="other" ng-model="writeHobby" ><span ng-hide="yourHobby">  other  </span>  <span ng-show="yourHobby"> {{other}} </span></label> <br>
+                    <input ng-show="writeHobby" class="form-control" ng-model="yourHobby"> <br>
+                    <input ng-show="writeHobby" type="button" value="Enter" ng-click="addNewHobby()">
+                </div>
+                <div>
+                    <h3> Emotions </h3>
+                    <label><input type="radio" name="emotions" value="happy" ng-model="changeEmotion"> Happy </label> <br>
+                    <label><input type="radio" name="emotions" value="sad" ng-model="changeEmotion"> Sad </label>
+                    <div ng-switch="changeEmotion">
+                        <div ng-switch-when="happy">
+                            <img src="../images/happy.png" alt="happy" width="100px" height="100px">
+                        </div>
+                        <div ng-switch-when="sad">
+                            <img src="../images/sad.png" alt="sad" width="100px" height="100px">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3> Colors </h3>
+                    <select ng-model="color">
+                        <option value="pink"> Pink </option>
+                        <option value="yellow"> Yellow </option>
+                        <option value="green"> Green </option>
+                        <option value="grey"> Grey </option>
+                        <option value="red"> Red </option>
+                        <option value="black"> Black </option>
+                    </select>
+                    <br><br>
+                    <div ng-switch="color" id="colorDiv" >
+                        <div ng-switch-when="pink" style="background-color: pink"> text
+                        </div>
+                        <div ng-switch-when="yellow" style="background-color: yellow">text
+                        </div>
+                        <div ng-switch-when="green" style="background-color: green">text
+                        </div>
+                        <div ng-switch-when="grey" style="background-color: grey">text
+                        </div>
+                        <div ng-switch-when="red" style="background-color: red">text
+                        </div>
+                        <div ng-switch-when="black" style="background-color: black">text
+                        </div>
+                    </div>
+                </div>
+            </form>
 
         </div>
-        <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border">
-
-
+        <div class="col-xs-6 col-sm-12 col-md-6 col-lg-6 border" >
         </div>
     </div>
     <div id="nextPage">
-        <a href="servicesDemo2.html"> <img src="../images/NextPage.jpg"> </a>
+        <a href="../index.html"> <img src="../images/NextPage.jpg"> </a>
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script>
     var app=angular.module('formsApp', []);
+    app.controller("addNewHobbyCtrl", function ($scope) {
+        $scope.addNewHobby = function () {
+            $scope.other = $scope.yourHobby;
+        }
+    });
 
 
 
