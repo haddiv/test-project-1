@@ -1,0 +1,26 @@
+body {
+    background:#fff url(../images/bgback.jpg) 0 0 repeat-x;
+    margin:0;
+    padding:0;
+}
+#firstPart{
+    width: 500px;
+    margin: 0 auto;
+    color: #d0ebfa;
+    font-size: 40px;
+    padding-top: 30px;
+}
+.border{
+    border: 2px dashed #004356;
+    margin-top: 70px;
+    padding: 20px;
+    background-color: #f6fcff;
+    height: 900px;
+}
+#nextPage{
+    float: right;
+    padding: 12px 15px;
+}
+h3{
+    color: #0094f0;
+}

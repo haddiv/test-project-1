@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> AngularJS HTML DOM  </title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="../css/pagesStyle.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+    <div class="container-fluid" id="main"  ng-app="HTMLDom">
+        <div >
+            <h1 id="firstPart"> AngularJS HTML DOM </h1>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border">
+                <div>
+                    <h3> The ng-disabled Directive </h3>
+
+                    <label><input type="checkbox" ng-model="disableCh"> Check !!! </label><br><br>
+                    <input type="button" value="Enable" ng-disabled="disableCh">
+                </div>
+                <div>
+                    <h3> The ng-show Directive </h3>
+                    <br>
+                    <p> Enter the hour : </p>
+                    <input type="number"  ng-model="hour" class="form-control"> <br>
+                    <p ng-show="hour < 8 || hour > 18"> Closed </p>
+                    <p ng-show="hour >= 8 && hour <= 18"> Opened </p>
+                </div>
+                <div>
+                    <p> Enter Your age. If you are under 18 you can not watch this movie: </p>
+                    <input type="number"  ng-model="age" class="form-control"> <br>
+                    <p ng-show="age >= 18">Please follow the link <a href=""> Movie :) </a></p>
+                    <p ng-show="age < 18"> You cannot watch this film </p>
+                </div>
+                <div>
+                    <h3> The ng-hide Directive </h3>
+                    <p> To appear the "login" button you need to enter correct login and password </p>
+                    <input type="text"  ng-model="login" class="form-control" placeholder="login"> <br>
+                    <input type="password"  ng-model="password" class="form-control" placeholder="pasword"> <br>
+                    <p ng-show="login=='Astghik'"> Right Login</p>
+                    <p ng-show="login!='Astghik'"> Wrong Login</p>
+                    <p ng-hide="password != 1991"> <input type="button"  value="log in" nd-model="loginButton">  </p>
+                    <br>
+                </div>
+
+            </div>
+            <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border">
+
+
+            </div>
+        </div>
+        <div id="nextPage">
+            <a href="AngularJSEvents.html"> <img src="../images/NextPage.jpg"> </a>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+        var app = angular.module("HTMLDom", []);
+
+    </script>
+
+    </body>
+</html>

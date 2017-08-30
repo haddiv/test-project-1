@@ -1,0 +1,27 @@
+
+#h3My{
+    padding: 6px 0 14px 0;
+    margin: 15px 5px;
+    color:#0094f0;
+    border-bottom: 2px dashed #8dc9ee;
+    text-align:center;
+}
+#wrapper{
+
+    width: 602px;
+}
+#form{
+    background-color: #ffffff;
+    border: 1px solid #D3D3D3;
+    box-shadow: -1px 1px 12px  #9b9bb7;
+    padding: 15px 35px;
+}
+#myp{
+    padding-top: 15px;
+    text-align:center;
+}
+#btn{
+    padding: 6px 20px;
+    margin: 20px 0;
+    float: right;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Events</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="../css/pagesStyle.css" rel="stylesheet" type="text/css" />
+    <link href="../css/formStyle.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="container-fluid" id="main"  ng-app="eventsDemo">
+    <div >
+        <h1 id="firstPart"> AngularJS Events </h1>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border" >
+            <div ng-controller="lengthOfNameCtrl">
+                <h3> AngularJS ng-blur Directive </h3> <br>
+                <p> Enter Your name:  </p>  <br>
+                <input type="text" placeholder="name" ng-blur="lengthOfName()" ng-model="name" class="form-control"> <br>
+                <p ng-hide="true"> The length of Your name is : {{ lengthVal }} </p>
+            </div>
+            <div ng-controller="changeToUppercaseCtrl">
+                <h3> AngularJS ng-change Directive </h3> <br>
+                <p> Enter any word:  </p>  <br>
+                <input type="text" placeholder="word" ng-change="changeToUppercase()" ng-model="word" class="form-control"> <br>
+                <p> Word is : {{ uperWord | uppercase }} </p>
+            </div>
+            <div>
+                <h3> AngularJS ng-dblclick Directive </h3> <br>
+                <p> Double-click the button for show input : </p>
+                <input type="button" value="double Click on button"  ng-dblclick="showMe=true"> <br> <br>
+                <input type="text" ng-show="showMe" ng-model="word" placeholder="name" class="form-control"> <br>
+
+            </div>
+            <div ng-controller="changeColorCtrl">
+                <h3> AngularJS ng-focus Directive </h3> <br>
+                <p> Enter Your name: </p>
+                <input type="text" ng-style="nameObj" ng-model="name" ng-focus="changeColor()" placeholder="name" class="form-control"> <br>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-12 col-md-6	col-lg-6 border">
+            <h3> <center> Generalized example </center> </h3>
+            <div id = "form">
+                <h3 id="h3My"> Feedback  </h3>
+                <form action="#" method="post" class="form-group" name="myForm">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group" ng-controller="showNameCtrl">
+                                <label for="name"> Name: </label><br>
+                                <input type="text" id = "name" name="name" class="form-control" ng-blur="showName()" ng-model="name">
+                                <p> {{nameVal}} </p>
+                            </div>
+                            <div class="form-group" ng-controller="showMessageCtrl">
+                                <label for="email"> Email: </label><br>
+                                <input type="email" id = "email" name="email" class="form-control" ng-mouseleave="showEmailMessage = true">
+                                <div ng-show="showEmailMessage" ng-style="messageStyle"> We respond to your email within two days, so please note and check your email address </div>
+                            </div>
+                            <div class="form-group" ng-controller="showPlaceholderCtrl">
+                                <label for="number"> Phone number: <small> not required </small>  </label><br>
+                                <input type="text" id ="number" name="number" class="form-control" ng-focus="showPlaceholder()" ng-style="placeHold">
+                            </div>
+                        </div>
+                        <div class="col-sm-6" ng-controller="keyPressCtrl" ng-init="ready=true" >
+                            <label for="msg"> Message: </label><br>
+                            <textarea class="form-control" rows="7" id = "msg" ng-keydown="alertMessage()" ng-model="message"> </textarea>
+                            <label><input type="checkbox" ng-model="ready"> ready </label>
+                            <input type="submit" value="Submit" ng-disabled="ready" class="btn btn-primary active" id="btn" >
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div id="nextPage">
+        <a href="AngularJSForms.html"> <img src="../images/NextPage.jpg"> </a>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+    var app = angular.module("eventsDemo", []);
+    app.controller("lengthOfNameCtrl", function ($scope) {
+        $scope.lengthOfName = function (name) {
+            $scope.lengthVal = $scope.name.length;
+        }
+    });
+    app.controller("changeToUppercaseCtrl", function ($scope) {
+        $scope.changeToUppercase = function () {
+            $scope.uperWord=$scope.word;
+        }
+
+    });
+    app.controller('changeColorCtrl', function ($scope) {
+        $scope.changeColor = function () {
+            $scope.nameObj={
+                "background-color" : '#d6eefa',
+                "color" : '#3200f6',
+                "border": "2px solid blue"
+            }
+        }
+    });
+    app.controller("showNameCtrl", function ($scope) {
+        $scope.showName=function(name) {
+            $scope.nameVal = "Hello Dear  " + $scope.name;
+        }
+    });
+    app.controller("showPlaceholderCtrl", function ($scope) {
+        $scope.showPlaceholder=function() {
+            $scope.placeHold={
+                "background-color" : '#d6eefa'
+            }
+        }
+    });
+    app.controller("showMessageCtrl", function ($scope) {
+        $scope.messageStyle={
+                "color" : 'red'
+            }
+    });
+    app.controller("keyPressCtrl", function ($scope) {
+
+        $scope.alertMessage = function () {
+            if($scope.message.length > 200){
+                alert("Your message can contain no more than 200 characters");
+            }
+        };
+    });
+</script>
+
+</body>
+</html>
