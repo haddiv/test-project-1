@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="myCtrl">
+            <button ng-dblclick="myFunc()" ng-focus="count = count + 1" ng-init="count=0">Auto</button>
+            Text: <input ng-keyup="sum = sum + 1" ng-init="sum=0" type="text" ng-model="text">
+            <h1>{{sum}}</h1> <h1>{{count}}</h1> <h2>{{text}}</h2>
+            <div ng-show="showMe">
+                    <div>BMW</div>
+                    <img src="bmw.jpg">
+                    <div>Audi</div>
+                    <div>Opel</div>
+                    <div>Mercedes-benz</div>
+                    <div>Lamborghini</div>
+            </div>
+        </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.showMe = false;
+            $scope.myFunc = function() {
+                $scope.showMe = !$scope.showMe;
+            }
+        });
+    </script>
+    </body>
+</html>
