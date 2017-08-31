@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Events</title>
+    <style>
+
+        body {
+            background-color: lemonchiffon;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style>
+        .demoFocus {
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+
+<body ng-app="eventApp">
+-------------------------------------------------------<br>
+<h2>Event ng-blur</h2>
+<div>
+    <input ng-blur="num = num + 1" ng-init="num=0"/>
+    <h4> {{num}}</h4>
+</div>
+-------------------------------------------------------<br>
+<h2>Event ng-change</h2>
+<div ng-controller="myCtrl">
+    <input type="text" ng-change="getdetails()" ng-model="txtval"/><br/><br/>
+    <span style="color:Red">No. of Times Input Changes: {{counter}}</span>
+</div>
+
+-------------------------------------------------------<br>
+<h2>Event ng-click</h2>
+<div ng-controller="myCtrl1">
+    Enter Password:<br/> <input type="password" ng-model="password"/> <br/>
+    <button ng-click="DisplayMessage(password)">Show Password</button>
+</div>
+
+
+-------------------------------------------------------<br>
+
+<h2>Event ng-copy and ng-cut and ng-paste</h2>
+<div ng-controller="myCtrl2">
+
+    Copy the Text: <input type="text" ng-copy="copytext=true" value="AngularJS-JS-framework"/> <br/>
+    <span>Text Copied:<b>{{copytext}}</b></span><br/>
+    Cut the Text: <input type="text" ng-cut="cuttext=true" value="AngularJS-JS-framework"/> <br/>
+    <span>Text Cut:<b>{{cuttext}}</b></span><br/>
+    Paste the Text: <input type="text" ng-paste="pasttext=true"/> <br/>
+    <span>Text Pasted:<b>{{pasttext}}</b></span>
+</div>
+
+-------------------------------------------------------<br>
+<h2>Event ng-dblclick</h2>
+
+<div ng-controller="myCtrl3">
+    <input type="button" style="cursor:pointer" value="Double Click Here" ng-dblclick="getdetails()"/><br/><br/>
+    <span style="color:Red">Number dblclick: {{clkcount}}</span>
+</div>
+
+
+-------------------------------------------------------<br>
+<h2>Event ng-focus</h2>
+<div ng-controller="myCtrl4">
+    <input type="text" ng-class="{ demoFocus: focus}" ng-focus="focusfn()" ng-blur="blurfn()" ng-model="focusTxt">
+</div>
+
+            -------------------------------------------------------<br>
+<h2>Event ng-keydown and ng-keypress and ng-keyup</h2>
+
+<div  ng-controller="myCtrl5">
+    <input type="text" ng-keydown="keydownevt()" ng-keyup="keyupevt()" ng-keypress="keypressevt()" />
+    <br />
+    Keydown KeyCode : <strong> {{keydownkeycode}} </strong><br />
+    Keyup KeyCode : <strong> {{keyupkeycode}} </strong><br />
+    Keypress KeyCode : <strong> {{keypresskeycode}} </strong><br />
+</div>
+
+
+                   -------------------------------------------------------<br>
+                   <h2>Event ng-mousedown , ng-mouseenter , ng-mouseleave ,ng-mousemove , ng-mouseover and ng-mouseup</h2>
+                   <div ng-controller="myCtrl6">
+                       <div
+                               ng-mousedown="count = count + 1"
+                               ng-mouseenter="count1 = count1 + 1"
+                               ng-mouseleave="counti = counti + 1"
+                               ng-mousemove="countj = countj + 1"
+                               ng-mouseover="countk = countk + 1"
+                               ng-mouseup="countl = countl + 1"
+                               style="background-color:#ededed;padding:10px;">
+
+
+                                                      <h4>Test site</h4>
+                                                  </div>
+
+                                                  <hr/>
+                                                  <p>Mouse Down {{ count }}</p>
+                                                  <p>Mouse Enter {{ count1 }}</p>
+                                                  <p>Mouse Leave {{ counti }}</p>
+                                                  <p>Mouse Move {{ countj }}</p>
+                                                  <p>Mouse Over {{ countk }}</p>
+                                                  <p>Mouse Up{{ countl }}</p>
+                                              </div>
+                                          </div>
+<script>
+    var app = angular.module('eventApp', []);
+    app.controller('myCtrl', function ($scope) {
+        $scope.counter = 0;
+        $scope.getdetails = function () {
+            $scope.counter = $scope.counter + 1;
+        }
+    });
+    app.controller("myCtrl1", function ($scope, $window) {
+        $scope.DisplayMessage = function (value) {
+            $window.alert(value)
+        }
+    })
+    app.controller('myCtrl2', function ($scope) {
+        $scope.cuttext = false;
+        $scope.copytext = false;
+        $scope.pasttext = false;
+    });
+    app.controller('myCtrl3', function ($scope) {
+        $scope.clkcount = 0;
+        $scope.getdetails = function () {
+            $scope.clkcount = $scope.clkcount + 1;
+        }
+    });
+    app.controller('myCtrl4', function ($scope) {
+        $scope.focusfn = function () {
+            $scope.focus = true;
+            $scope.focusTxt = 'Focus'
+        }
+        $scope.blurfn = function () {
+            $scope.focus = false;
+            $scope.focusTxt = 'Enter Text'
+        }
+    });
+    app.controller("myCtrl5", function ($scope) {
+        $scope.keydownevt = function () {
+            $scope.keydownkeycode = event.keyCode;
+            $scope.keyupkeycode = "";
+            $scope.keypresskeycode = "";
+        };
+        $scope.keyupevt = function () {
+            $scope.keyupkeycode = event.keyCode;
+        };
+        $scope.keypressevt = function () {
+            $scope.keypresskeycode = event.keyCode;
+        };
+    });
+
+
+
+
+               app.controller('myCtrl6', function ($scope) {
+                   $scope.count = 0;
+                   $scope.count1 = 0;
+                   $scope.counti = 0;
+                   $scope.countj = 0;
+                   $scope.countk = 0;
+                   $scope.countl = 0;
+               });
+</script>
+
+</body>
+</html>

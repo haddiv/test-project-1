@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>AngularJS HTML DOM</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+    <style>
+        table{
+            background-color:#e0e2e5 ;
+            height: 300px;
+            width: 30%;
+        }
+    </style>
+</head>
+
+<body ng-app="">
+
+<div>
+
+    <table border="1">
+        <tr>
+            <td><input type="checkbox" ng-model="disButton">Disable Button</td>
+            <td>
+                <button ng-disabled="disButton">Click Me!</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><input type="checkbox" ng-model="showHide">Show Button</td>
+            <td>
+                <button ng-show="showHide">Click Me!</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><input type="checkbox" ng-model="hideShow">Hide Button</td>
+            <td>
+                <button ng-hide="hideShow">Click Me!</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><p>Number: {{ clickCounter }}</p></td>
+            <td>
+                <button ng-click="clickCounter = clickCounter + 1">Click Me!</button>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular JS Forms</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+    <style>
+        body{
+            background-color: lemonchiffon;
+        }
+        table, th , td {
+            margin: 100px 400px;
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+            background-color: ghostwhite;
+
+        }
+
+        table tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+    </style>
+
+</head>
+<body ng-app = "formApp">
+<div  ng-controller = "myCtrl">
+
+    <form name = "studentForm" novalidate>
+        <table border = "0">
+            <tr>
+                <td>Enter first name:</td>
+                <td><input name = "firstname" type = "text" ng-model = "firstName" required>
+                    <span style = "color:red" ng-show = "studentForm.firstname.$dirty && studentForm.firstname.$invalid">
+                        <span ng-show = "studentForm.firstname.$error.required">First Name is required.</span>
+                     </span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Enter last name: </td>
+                <td><input name = "lastname"  type = "text" ng-model = "lastName" required>
+                    <span style = "color:red" ng-show = "studentForm.lastname.$dirty && studentForm.lastname.$invalid">
+                        <span ng-show = "studentForm.lastname.$error.required">Last Name is required.</span>
+                     </span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email: </td>
+                <td><input name = "email" type = "email" ng-model = "email" length = "100" required>
+                <span style = "color:red" ng-show = "studentForm.email.$dirty && studentForm.email.$invalid">
+                        <span ng-show = "studentForm.email.$error.required">Email is required.</span>
+                        <span ng-show = "studentForm.email.$error.email">Invalid email address.</span>
+                     </span>
+            </td>
+            </tr>
+            <tr>
+                <td>Number phone:</td>
+                <td><input type="number" name="phone" ng-model="phone" length = "10" required>
+                    <span style = "color:red" ng-show = "studentForm.phone.$dirty && studentForm.phone.$invalid">
+                    <span ng-show = "studentForm.phone.$error.required">Number phone is required.</span>
+                      <span ng-show = "studentForm.phone.$error.email">Invalid Number phone address.</span>
+                </span></td>
+            </tr>
+            <tr>
+                <td> <label for="gender" >Gender:</label> </td>
+            <td>    <select id="gender" ng-model="student.gender">
+                <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select><br /> <br /></td>
+            </tr>
+
+            <tr>
+            <td><span> Information about yourself:</span></td>
+            <td><textarea ng-model="myTextarea" length = "1000" required></textarea></td>
+                                 </tr>
+                <td>
+                    <button ng-click = "reset()">Reset</button>
+                </td>
+                <td>
+                    <button ng-disabled = "studentForm.firstname.$dirty &&
+                        studentForm.firstname.$invalid || studentForm.phone.$dirty &&
+                        studentForm.phone.$invalid || studentForm.lastname.$dirty &&
+                        studentForm.lastname.$invalid || studentForm.email.$dirty &&
+                        studentForm.email.$invalid" ng-click="submit()">Submit</button>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+
+<script>
+    var mainApp = angular.module("formApp", []);
+
+    mainApp.controller('myCtrl', function($scope) {
+        $scope.reset = function(){
+            $scope.firstName = "Aram";
+            $scope.lastName = "Manukyan";
+            $scope.email = "arammanukyan@mail.ru";
+
+        }
+        $scope.reset();
+    });
+</script>
+
+</body>
+</html>
