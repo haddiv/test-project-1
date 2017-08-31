@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel="stylesheet" href="../css/animals.css">
+</head>
+<body ng-app="animalApp" ng-controller="ctrl1">
+<form novalidate>
+    <label>Choose your favorit animal</label><select ng-model="animal">
+    <option></option>
+    <option>Cat</option>
+    <option>Dog</option>
+</select>
+    <div ng-switch="animal">
+        <div ng-switch-when="Cat">
+            <select ng-model="catType" ng-change="info(catType)">
+                <option ng-repeat="x in animaltype.Cat">{{x}}</option>
+            </select>
+        </div>
+        <div ng-switch-when="Dog">
+            <select>
+                <option ng-repeat="y in animaltype.Dog">{{y}}</option>
+            </select>
+        </div>
+        <div ng-switch-default>
+        </div>
+    </div>
+</form>
+<script>
+    var app = angular.module("animalApp", []);
+    app.controller("ctrl1", function ($scope) {
+        $scope.animaltype = {
+            "Cat": ['Bobtail', 'Curl', 'Shorthair'],
+            "Dog": ['Doberman', 'Rottweiler', 'Shepherd']
+        };
+        $scope.vikData = {
+            "Bobtail": "The American Bobtail is an uncommon breed of domestic cat " +
+                        "which was developed in the late 1960s.[1] It is most notable for its " +
+                        "stubby bobbed tail about one-third to one-half the length of a normal" +
+                        " cat's tail. This is the result of a cat body type genetic mutation affecting" +
+                        " the tail development, similar to that of a Manx cat.",
+            "Crul": "The American Curl is a breed of cat characterized by its unusual ears, which curl " +
+                    "back from the face toward the center of the back of the skull. An American Curl's " +
+                    "ears should be handled carefully because rough handling may damage the cartilage in " +
+                    "the ear. The breed originated in Lakewood, California, as the result of a spontaneous " +
+                    "mutation",
+            "Shorthair": "According to Isle of Man records,[weasel words] the taillessness trait of the" +
+                        " Manx (and ultimately the Cymric) began as a mutation among the island's domestic cat " +
+                        "population. Given the island's closed environment and small gene pool, the dominant gene " +
+                        "that decided the cats' taillessness" +
+                        " was easily passed from one generation to the next, along with the gene for long hair.",
+            "Doberman": "Doberman Pinschers are well known as intelligent, alert, and tenaciously loyal " +
+                        "companions and guard dogs. Personality varies a great deal between each individual" +
+                        ", but if taken care of and trained properly they tend to be loving and devoted companions. ",
+            "Rottweiler": "The Rottweiler is one of the oldest of herding breeds.[8] With a history" +
+                            " possibly dating back to the Roman Empire,[9] the Rottweiler may be a descendant of ancient " +
+                             "Roman drover dogs; a mastiff-type dog that was a dependable, rugged dog with great " +
+                            "intelligence and guarding instincts. During " +
+                            "their quest to conquer Europe, the Roman legions traveled in large numbers across the continent. ",
+            "Shepherd": "Shepherding is among the oldest occupations, beginning some 5,000 years ago in " +
+                         "Asia Minor. Sheep were kept for their milk, meat and especially" +
+                        " their wool. Over the next thousand years, sheep and shepherding spread throughout Eurasia. "
+        };
+        $scope.catType;
+        $scope.text;
+        $scope.info= function (x) {
+         $scope.text = $scope.vikData.x;
+         console.log($scope.text)
+        };
+    });
+</script>
+</body>
+</html>

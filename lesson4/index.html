@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="eventApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Event angularjs</title>
+    <link rel="stylesheet" href="css/style1.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="ctrl">
+<form ng-hide="access" action="{{path}}">
+    <label>please enter "user"</label> <input type="text" placeholder="login" ng-model="valLogin">
+    <br>
+    <br>
+    <label>please enter "123"</label> <input ng-model="valPass" type="password" placeholder="password"
+                                             class="pass">
+    <br>
+    <br>
+    <button ng-click="support()">sign in</button>
+</form>
+<script>
+    var app = angular.module("eventApp", []);
+    app.controller("ctrl", function ($scope) {
+        $scope.login = "user";
+        $scope.password = 123;
+        $scope.valLogin;
+        $scope.valPass;
+        $scope.access = false;
+        $scope.support = function () {
+            if ($scope.valLogin == $scope.login && $scope.valPass == $scope.password) {
+                $scope.access = true;
+                $scope.path = "pages/animals.html";
+            }
+
+        }
+    });
+
+</script>
+</body>
+</html>
