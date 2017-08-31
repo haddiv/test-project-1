@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+focuz
+</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript">
+var app = angular.module('f', []);
+app.controller('focus', function ($scope) {
+$scope.focusfn = function () {
+$scope.focus = true;
+$scope.ftxt='texst'
+}
+$scope.blurfn = function () {
+$scope.focus = false;
+$scope.ftxt = 'sharunalel'
+}
+});
+</script>
+<style>
+.css
+{
+background-color: yellow;
+}
+</style>
+</head>
+<body>
+<div ng-app="f" ng-controller="focus">
+
+<input type="text" ng-class="{css:focus }" ng-focus="focusfn()" ng-blur="blurfn()" ng-model="ftxt">
+</div>
+</body>
+</html>
