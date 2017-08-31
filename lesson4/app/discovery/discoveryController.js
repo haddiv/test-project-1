@@ -31,7 +31,7 @@ app.controller("NumberOfPageVIsits",function($scope,articleDates,sumOfVisites){
 				$scope.numOfArticles=0;
 				for(var key in $scope.articleDates){
 				$scope.numOfArticles++;
-				console.log($scope.numOfArticles);
+				//console.log($scope.numOfArticles);
 				}
 		})	
 		
@@ -40,25 +40,24 @@ app.controller("ArticleSection",function($scope,$filter,articleDates){
 				$scope.articleDatas = articleDates;
 				console.log($scope.articleDatas);
 				
-				for(var i = 0; i<$scope.articleDatas.length;i++){
-				var arr = [];
-						arr.push(($scope.articleDatas[i].publicDate).getTime());
-						console.log($scope.articleDatas[i].publicDate);
-						
-						}
-				$filter('filter')(arr,function(){
-											arr.reverse();
-											var lastArticleIndex = arr[0];
-											for(var i = 0; i<$scope.articleDatas.length;i++){
-				if(($scope.articleDatas[i].publicDate).getTime()==lastArticleIndex){
-				var lastNews = $scope.articleDatas[i];
-				console.log(lastNews);
-				}
-				
-				
-				return lastNews
-				}
-		})
+					
+			
+				$scope.arrayOfDate=[];
+	for(var i=0;i<$scope.articleDatas.length;i++){
+	$scope.dateInMiliseconds = ($scope.articleDatas[i].publicDate).getTime();
+	$scope.arrayOfDate.push($scope.dateInMiliseconds);
+	    }
+	$scope.arrayOfDate.reverse();
+	$scope.lastDate = $scope.arrayOfDate[0];
+	
+	for(var i=0;i<$scope.articleDatas.length;i++){
+	if((($scope.articleDatas[i].publicDate).getTime())==$scope.lastDate){
+			$scope.displayLastNews = $scope.articleDatas[i];
+			
+			}
+			
+					
+			}
 		})
 		
 	
@@ -73,31 +72,32 @@ app.controller("ArticleSection",function($scope,$filter,articleDates){
  
  
  // FILTER OF LAST NEWS 
-  /* app.filter("customFilter", function(data){
+ /* app.filter("customFilter", function(){
 
-		return function(time){
+		return function(data,time){
 		    
 			var arr=[];
 			for(var i=0;i<data.length;i++){
-			var sec = (data[i].time).getTime();
+			var sec = time.getTime();
 			
 	    }
 		arr.reverse();
 		var lastDate = arr[0];
 	
 		for(var i=0;i<data.length;i++){
-		if(((data[i].time).getTime())==lastDate){
+		if(time.getTime()==lastDate){
 			var displayLastNews = arr[i];
 					
 			}
 			
 			}
 			console.log(displayLastNews);
-		return displayLastNews;
+		
 		}
-		})	*/
+		return displayLastNews;
+		})	
 	
-
+*/
 
 
 
@@ -143,20 +143,6 @@ app.service('sumOfVisites', function() {
 });
 	
 	
-//LAST NEWS WITHOUT FILTERING
+
 	
-	/*$scope.arrayOfDate=[];
-	for(var i=0;i<$scope.articleDates.length;i++){
-	//console.log($scope.articleDates[i]);
-	$scope.dateInMiliseconds = ($scope.articleDates[i].publicDate).getTime();
-	$scope.arrayOfDate.push($scope.dateInMiliseconds);
-	    }
-	$scope.arrayOfDate.reverse();
-	$scope.lastDate = $scope.arrayOfDate[0];
 	
-	for(var i=0;i<$scope.articleDates.length;i++){
-	if((($scope.articleDates[i].publicDate).getTime())==$scope.lastDate){
-			$scope.displayLastNews = $scope.articleDates[i];
-					
-			}
-			}*/

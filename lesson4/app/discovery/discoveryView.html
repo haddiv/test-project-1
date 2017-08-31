@@ -23,15 +23,15 @@
 			<div class = "articlSection" >
 				<div  ng-controller = "ArticleSection" >
 				 <button type = "button" class = "btn filterBtn" ng-click="show = !show">Last News</button><br>
-				 <last-news class = "lastNews"  ng-show="show" ng-repeat="y in articleDatas | filter:filter">
-						<h3 class="articleTitle">{{y.title | uppercase}}</h3>
-						<div class = "textPart">{{y.article | limitTo : 500}}<a href = "">...Read More</a></div>
-						<span class="showDate">{{y.publicDate | date}}</span>
-						<span class="showDate">Visit:{{y.visited}}</span>
+				 <last-news class = "lastNews"  ng-show="show" >
+						<h3 class="articleTitle">{{displayLastNews.title | uppercase}}</h3>
+						<div class = "textPart">{{displayLastNews.article | limitTo : 500}}<a href = "">...Read More</a></div>
+						<span class="showDate">{{displayLastNews.publicDate | date}}</span>
+						<span class="showDate">Visit:{{displayLastNews.visited}}</span>
 				 </last-news>
 				 
 				 <!-- All Articles-->
-				 <!-- ng-controller="ArticleSection">-->
+				
 					<div class = "articles" ng-show = "!show" ng-repeat="x in articleDatas | orderBy:'publicDate'">
 						<h3 class="articleTitle">{{x.title | uppercase}}</h3>
 						<div class = "textPart">{{x.article |limitTo : 120}}<a href = "">...Read More</a></div>
