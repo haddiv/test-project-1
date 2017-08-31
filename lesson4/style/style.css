@@ -7,7 +7,7 @@
 		}
 
 .nav{
-	width: 660px;
+	width: 1200;
     height: 100px;
     position: relative;
     top: 150px;
@@ -39,7 +39,7 @@ ul li a:hover,ul li a:active, ul li a:visited{
     color: #fff;
     position: relative;
     top: 600px;
-    right: 42%;
+    left: 10%;
     font-size: 60px;
     font-style: italic;
     margin: 0;
