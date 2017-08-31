@@ -1,0 +1,45 @@
+body{
+    background-color: #E7E7E7;
+    font-size: 22px;
+    height: 1200px;
+}
+.home{
+    text-align:center;
+    color: #2046AF;
+    font-size: 60px;
+}
+#click{
+    width: 200px;
+}
+    #click:disabled{
+    color:#828282;
+}
+.h1{
+    text-align:center;
+    color:#840000;
+    margin-top: 30px;
+}
+#ngDisab{
+    margin: 30px 0 0 150px;
+}
+#div2{
+    margin-top: 50px;
+}
+.div2_1:disabled{
+    color:#828282;
+}
+.showText{
+    color:#1B44A3;
+}
+#divNav{
+    margin-top: 30px;
+}
+#divNav2{
+    font-size: 20px;
+}
+.style{
+    margin-left: 150px;
+}
+#style{
+    margin-left: 80px;
+}

@@ -1,0 +1,114 @@
+<html >
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet"  href="style.css">
+    </head>
+    <body ng-app="">
+        
+        
+        <div id="divNav" >
+            <nav class="navbar navbar-default" >
+                <div class="container-fluid" id="divNav2">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#" id="style">Homework</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="../index.html" class="style">Home</a></li>
+                        <li><a href="../dom/dom.html" class="style">DOM</a></li>
+                        <li><a href="../event/event.html" class="style">Events</a></li>
+                        <li class="active"><a href="#" class="style">Forms</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+        <div>
+            <h1 class="h1"> FORM </h1>
+            <div class="form">
+                <form>
+                    <h2 style="color:#2B43BB">1)  Students</h2>
+                    Number 1 : <input type="radio" ng-model="student" value="nmb1"><br>
+                    Number 2 : <input type="radio" ng-model="student" value="nmb2"><br>
+                    Number 3 : <input type="radio" ng-model="student" value="nmb3"><br>
+                    Number 4 : <input type="radio" ng-model="student" value="nmb4"><br>
+                    Number 5 : <input type="radio" ng-model="student" value="nmb5">
+                </form>
+                <div ng-switch="student">
+                    <div ng-switch-when="nmb1" >
+                        <p style="color:#F30000">Number-1 student is Simonyan Anna .</p>
+                    </div>
+                    <div ng-switch-when="nmb2">
+                        <p  style="color:#F30000">Number-2 student is Avagyan Gevorg .</p>
+                    </div>
+                    <div ng-switch-when="nmb3">
+                        <p  style="color:#F30000">Number-3 student is Sargsyan Karlen .</p>
+                    </div>
+                    <div ng-switch-when="nmb4" >
+                        <p style="color:#F30000">Number-4 student is Zadoyan Sona .</p>
+                    </div>
+                    <div ng-switch-when="nmb5">
+                        <p  style="color:#F30000">Number-5 student is Grigoryan Lilit .</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h2 style="color:#2B43BB; margin-left:30%"> 2) Click in city:</h2>
+                <form class="form">
+                  <select ng-model="city">
+                    <option value="">
+                      <option value="USA" >Vashington
+                    <option value="Russia" >Moscow
+                    <option value="Germani" >Berlin
+                      <option value="Japan" >Tokio
+                  </select>
+                </form>
+
+                <div ng-switch="city">
+                  <div ng-switch-when="USA">
+                     <h1 class="form2">Usa</h1>
+                  </div>
+                  <div ng-switch-when="Russia">
+                     <h1 class="form2">Russia</h1>
+                  </div>
+                  <div ng-switch-when="Germani">
+                     <h1 class="form2">Germani</h1>
+                  </div>
+                  <div ng-switch-when="Japan">
+                     <h1 class="form2">Japan</h1>
+                  </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </body>
+</html>

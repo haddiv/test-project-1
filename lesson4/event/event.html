@@ -1,0 +1,138 @@
+<html>
+    <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet"  href="style.css">
+        
+    <link rel="stylesheet"  href="style.css">
+            
+    </head>
+    <body ng-app="eventsApp">
+        
+        <div id="divNav" >
+            <nav class="navbar navbar-default" >
+                <div class="container-fluid" id="divNav2">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#" id="style">Homework</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="../index.html" class="style">Home</a></li>
+                        <li><a href="../dom/dom.html" class="style">DOM</a></li>
+                        <li class="active"><a href="#" class="style">Events</a></li>
+                        <li><a href="../form/form.html" class="style">Forms</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+        <div>
+            <h1 class="h1"> EVENT</h1>
+            <div ng-controller="contrMmove" class="event">
+                <h2 class="h2">1) Ng-mousemove </h2>
+                <div class="mouse" ng-mousemove="numberCount1()">
+                    Move Mouse Cursor Here
+                </div><br>
+                <span style="color:red">No. of Times MouseMove Event Fired: {{count}}</span>
+            </div><br>
+            
+            <div ng-controller="contrMdown" class="event">
+               <h2 class="h2">2) Ng-mousedown </h2>
+                <input type="button" value="Hover and Click Me" ng-mousedown="numberCount2()" id="count2"><br><br>
+                <span style="color:red">No. of Times MouseDown Event Fired: {{count2}}</span>
+            </div><br>
+            
+            <div ng-controller="contrCopy" class="event">
+                <h2 class="h2">3) Ng-copy, ng-paste and ng-cut</h2>
+                Copy the text: <input type="text" ng-copy="copyText=true" value="Hello world" class="copy"><br>
+                <span>Text Copied:<b style="color:red">{{copyText}}</b></span><br>
+                Paste the text: <input type="text" ng-paste="pasteText=true" value="Hello world" class="copy"><br>
+                <span>Text Pasted:<b style="color:red">{{pasteText}}</b></span><br>
+                Cut the text: <input type="text" ng-cut="cutText=true" value="Hello world" class="copy"><br>
+                <span>Text Cuted:<b style="color:red">{{cutText}}</b></span>
+            </div><br>
+            
+            <div ng-controller="contrChange" class="event">
+                <h2 class="h2">4) Ng-change</h2>
+                Click: <input type="checkbox" ng-model="change" ng-change="funcChange()">
+                <div ng-show="result">
+                    <h3 >Welcome !</h3>
+                    <p>This is my text .</p>
+                </div>
+            </div><br>
+            
+            <div  ng-controller="eventsCtrl1" class="event">
+                <h2 class="h2">5) $event Object</h2>
+                <div class="divstyle" ng-click="getdetails($event)">
+                Click on this Div We will show Coordinates Where you clicked
+                </div><br />
+                <span style="color:Red">{{result}}</span>
+            </div>
+            <div ng-controller="eventsCtrl2" class="event">
+                <ul>
+                    <li ng-repeat="user in arrlist" ng-click="func($event,user)">
+                        {{ user.name }}
+                    </li>
+                </ul>
+                <span style="color:Red">{{result}}</span>
+            </div><br>
+            
+            <script type="text/javascript">
+                var app = angular.module('eventsApp', []);
+
+                app.controller("contrMmove",function($scope){
+                    $scope.count = 0;
+                    $scope.numberCount1 = function(){
+                        $scope.count = $scope.count + 1;
+                    }
+                });
+
+                app.controller("contrMdown",function($scope){
+                    $scope.count2 = 0;
+                    $scope.numberCount2 = function(){
+                        $scope.count2 = $scope.count2 + 1;
+                    }
+                });
+
+                app.controller("contrCopy",function($scope){
+                    $scope.copyText = false;
+                    $scope.pasteText = false;
+                    $scope.cutText = false;
+                });
+
+                app.controller("contrChange", function($scope){
+                    $scope.funcChange = function(){
+                        if($scope.change == true){
+                            $scope.result = true;
+                        }else{
+                            $scope.result = false;
+                        }
+                    }
+                })
+
+                app.controller('eventsCtrl1', function ($scope) {
+                    $scope.getdetails = function (eveparam) {
+                    $scope.result = "Your Clicked on Coordinates X: " + eveparam.clientX + " and Y: " + eveparam.clientY;
+                    }
+                });
+
+                app.controller('eventsCtrl2', function ($scope) {
+                $scope.arrlist = [
+                    {"userid": 1,"name": "Gohar"}, 
+                    {"userid": 2,"name": "Anjela"},
+                    {"userid": 3,"name": "Sona"},
+                    {"userid": 4,"name": "Armine"},
+                    {"userid": 5,"name": "Xanum"}
+                ];
+                $scope.func = function (event,item) {
+                    $scope.result = "Your Clicked on "+item.name+" . Her user.id = " + item.userid;
+                }
+                });
+                
+            </script>
+        </div>
+        
+    </body>
+</html>

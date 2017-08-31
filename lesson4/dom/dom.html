@@ -1,0 +1,116 @@
+<html >
+    <head>
+        <title>DOM-examples</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet"  href="style.css">
+        
+    </head>
+    <body ng-app="appA">
+        
+        
+        <div id="divNav" >
+            <nav class="navbar navbar-default" >
+                <div class="container-fluid" id="divNav2">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#" id="style">Homework</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="../index.html" class="style">Home</a></li>
+                        <li class="active"><a href="3" class="style">DOM</a></li>
+                        <li><a href="../event/event.html" class="style">Events</a></li>
+                        <li><a href="../form/form.html" class="style">Forms</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+        <div>
+            <h1 class="home"> DOM</h1>
+            <div ng-init="disab = true"  class="container">
+                <div>
+                    <h1 class="h1">The ng-disabled Directive</h1>
+                    <p>
+                       1) The ng-disabled directive binds the application data mySwitch to the HTML button's disabled attribute.
+                        The ng-model directive binds the value of the HTML checkbox element to the value of mySwitch.
+                        If the value of mySwitch evaluates to true, the button will be disabled.
+                    </p>
+                    <div id="ngDisab">
+                        <button ng-disabled="disab"  id="click"> Click</button>
+                        <input type="checkbox" ng-model="disab">
+                        <label>
+                            Ng-disabled = {{ disab }}
+                        </label>
+                    </div>
+                </div>
+                <div id="div2">
+                    <p>
+                       2) Click here to disable all the form fields:<input type="checkbox" ng-model="onOff">
+                    </p>
+                    <div >
+                        <input type="text" ng-disabled="onOff" >
+                        <input type="submit" ng-disabled="onOff" value="Click" class="div2_1">
+                        <input type="radio" ng-disabled="onOff">
+                        <select ng-disabled="onOff" class="div2_1">
+                           <option>Female</option>
+                           <option>Male</option>  
+                        </select>
+                         <label>
+                            Ng-disabled = {{ onOff }}
+                        </label>
+                    </div>
+                </div>
+
+                <h1 class="h1">The ng-show Directive</h1>
+                <div>
+                    <p>1) Find text : <input type="checkbox" ng-model="text"></p> 
+                    <div ng-show="text" class="showText">
+                        <h3 >Welcome !</h3>
+                        <p>This is my text .</p>
+                    </div>
+                </div>
+                <div ng-controller="contrName">
+                    2) <button ng-click="openClose()"> Click</button>
+                    <label>
+                        Ng-disabled = {{ bool }}
+                    </label>
+                    <p ng-show="bool">
+                        Last Name :<input type="text" ng-model="lastName"><br>
+                        First Name :<input type="text" ng-model="firstName"><br><br>
+                        Full Name = {{ lastName + " " + firstName }};
+
+                    </p>
+                </div>
+
+                <h1 class="h1">The ng-hide Directive</h1>
+
+                <h3> If  <b>' ng-show = "true" '</b> , then <b>' ng-hide = "false" '</b>.  </h3>
+                <div>
+                    <p>1) Find text : <input type="checkbox" ng-model="text2"></p> 
+                    <div ng-hide="text2" class="showText">
+                        <h3 >Welcome !</h3>
+                        <p>This is my text .</p>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                var x = angular.module("appA",[]);
+                x.controller("contrName",function($scope){
+                    $scope.lastName = "Hakob";
+                    $scope.firstName = "Hakobyan";
+                    $scope.bool = false;
+                    $scope.openClose = function(){
+                        $scope.bool = !$scope.bool;
+                    };
+                })
+
+            </script>
+        </div>
+
+
+    </body>
+</html>

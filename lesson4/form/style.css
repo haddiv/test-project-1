@@ -1,0 +1,29 @@
+body{
+    background-color:#E7E7E7; 
+    height: 800px;
+}
+.h1{
+    text-align:center;
+    color:#0C6538;
+    font-size: 60px;
+}
+.form{
+    margin-left: 30%;
+    font-size: 22px;
+}
+.form2{
+    margin-left: 30%;
+    color:#CD1B1E
+}
+#divNav{
+    margin-top: 30px;
+}
+#divNav2{
+    font-size: 20px;
+}
+.style{
+    margin-left: 150px;
+}
+#style{
+    margin-left: 80px;
+}

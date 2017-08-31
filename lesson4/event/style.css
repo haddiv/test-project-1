@@ -1,0 +1,52 @@
+body{
+    background-color:#E7E7E7; 
+    height: 1900px;
+}
+.divstyle {
+    padding:20px;
+    border:1px solid black;
+    width:70%;
+    font-weight:bold;
+    background-color:#2b8bc0;
+    color:White;
+}
+.event{
+    margin-left: 280px;
+    font-size: 25px;
+}
+.mouse{
+    padding:10px;
+    border:1px solid black;
+    width:30%;
+}
+#count2{
+    padding:10px;
+    width: 30%;
+    background-color: #567DFC;
+    color: white;
+    font-size: 22px;
+}
+.copy{
+    padding: 10px;
+    font-size: 22px;
+}
+.h1{
+    text-align:center;
+    color: #CD1B00;
+    font-size: 60px;
+}
+.h2{
+    color: #29397A;
+}
+#divNav{
+    margin-top: 30px;
+}
+#divNav2{
+    font-size: 20px;
+}
+.style{
+    margin-left: 150px;
+}
+#style{
+    margin-left: 80px;
+}
