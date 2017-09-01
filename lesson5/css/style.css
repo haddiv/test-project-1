@@ -1,0 +1,19 @@
+#continent{
+    background-color: #CEE0ED;
+    width: 50%;
+    height: 100%;
+    margin-left: 25%;
+    font-size: 22px;
+    padding: 2%;
+    border: 5px solid blue;
+}
+#title{
+    text-align: center;
+    color: red;
+}
+#query{
+    margin-left: 37%;
+}
+.title{
+    color: blue;
+}
