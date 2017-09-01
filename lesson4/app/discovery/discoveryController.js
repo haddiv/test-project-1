@@ -58,6 +58,21 @@ app.controller("ArticleSection",function($scope,$filter,articleDates){
 			
 					
 			}
+			/* $scope.func = function(){
+			for(var i=0; i<$scope.articleDatas.length;i++){
+			
+			 
+			   for(var k=0;k<$scope.articleDatas[i].length;k++){
+			     var array  = $scope.articleDatas[i][k].split("");
+			if($scope.searchingWord == array[k]){
+			$scope.searchingWord = {'background-color': "yellow"}
+			}
+			}
+			
+			
+			
+			} 
+			} */
 		})
 		
 	
@@ -101,6 +116,7 @@ app.controller("ArticleSection",function($scope,$filter,articleDates){
 
 
 
+
 	
 	
 	
@@ -111,21 +127,24 @@ app.service("articleDates",function(){
 		title:"What Is Mars?",
         article:"Mars is a planet. It is the fourth planet from the sun. It is the next planet beyond Earth. Mars is more than 142 million miles from the sun. The planet is about one-sixth the size of Earth. Mars is known as the Red Planet. It gets its red color from the iron in its soil. Mars has two small moons. Their names are Phobos and Deimos.",
         publicDate:new Date(2017,04,05),
-		visited:10		
+		visited:10,
+        image:"../../images/mars.jpg"		
 		},
 		
 	{
 	title:"The Earth",
      article:"Earth is the fifth largest of the planets in the solar system — smaller than the four gas giants, Jupiter, Saturn, Uranusand Neptune, but larger than the three other rocky planets, Mercury, Marsand Venus.Earth has a diameter of roughly 8,000 miles (13,000 kilometers), and is round because gravity pulls matter into a ball, although it is not perfectly round, instead being more of an 'oblate spheroid' whose spin causes it to be squashed at its poles and swollen at the equator.",
         publicDate:new Date(2017,01,01),
-		visited:14		
+		visited:14,
+		image:"../../images/earth.png"			
 		},
 		
 		{
 		title:"Venera",
         article:"Mars is a planet. It is the fourth planet from the sun. It is the next planet beyond Earth. Mars is more than 142 million miles from the sun. The planet is about one-sixth the size of Earth. Mars is known as the Red Planet. It gets its red color from the iron in its soil. Mars has two small moons. Their names are Phobos and Deimos.",
         publicDate:new Date(2017,07,28),
-		visited:10		
+		visited:10,
+		image:"../../images/venus.jpg"			
 		},
 ]
    })

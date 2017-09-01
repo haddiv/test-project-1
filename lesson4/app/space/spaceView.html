@@ -63,7 +63,17 @@
 <script src = "../../style/bootstrap/js/bootstrap.js"></script>
 <script src = "../../style/bootstrap/js/bootstrap.min.js"></script>
 <script>
+var space = document.getElementById("space");
+space.addEventListener('click',function(event){
 
+		var coords = space.clientX + window.scrollTop;
+		//paxgX = clientX+ scrollTop 
+		//paxgX = clienty+ scrollLeft
+		alert(window.scrollWidth)
+		alert(event.clientX)
+		alert(event.screenX)
+		})
+//alert(space.pageYOffset);
 </script>	
 </body>
 </html>

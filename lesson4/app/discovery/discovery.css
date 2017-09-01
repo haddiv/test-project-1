@@ -85,6 +85,10 @@ ul li a{
 	}
 .textPart{
 	color:#fff;
+	width:70%;
+	float:left;
+	height:70%;
+	padding-left:10px
 	}	
 .showDate{
 	color:#000;
@@ -98,7 +102,8 @@ ul li a{
 	font-size: 1rem;
     border-radius: 0.25rem;
 	margin-left:10px;
-	text-align:center
+	text-align:center;
+	margin-top:10px
 	}	
 .lastNews{
 	width:100%;
@@ -118,5 +123,25 @@ ul li a{
 	margin-top:10px;
 	font-size:10px;
 	width:120px;
-	font-weight:bold
+	font-weight:bold;
+	
 	}	
+.searchInput{
+	float:left;
+	margin-right:10px;
+	 background: transparent;
+	 background:url('../../images/search.png') no-repeat left top;
+	}
+
+.imageDiv{
+	width: 30%;
+    height: 70%;
+	float:left}	
+
+	.articleImages{
+	width:100%;
+	height:100%;
+	}
+.articles{
+	width: 500px;
+    height: 200px	}	
