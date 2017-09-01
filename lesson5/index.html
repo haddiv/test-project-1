@@ -13,25 +13,32 @@
         <div id="continent">
             <div ng-app="appContinent" ng-controller="contrContinent">
                 <h1 id="title">CONTINENTS</h1>
-    
                 <form class="navbar-form navbar-left" id="query">
                     <div class="form-group">
                       <input type="text" class="form-control" ng-model="query" placeholder="Search">
                     </div>
-                </form><br>
+                </form><br><br>
 
-                <ul ng-repeat="key in continents | filter:query">
-                    <h2 class="title">{{ key.continent }}</h2>
-                    <li>
-                        <p>  {{ key.text }} </p>  
-                    </li>
-                </ul>
+                <div>
+                    <div ng-repeat="key in image" >
+                        <!-- <img  ng-src="img/{{key.img}}" ng-style="style">  -->
+                    </div>
+                    <div ng-repeat="key in continents | filter:query" >
+                        <img  ng-src="img/{{key.img}}" ng-style="style">
+                        <ul id="text">
+                            <h2 class="title">{{ key.continent }}</h2>
+                            <li>
+                                <p>  {{ key.text }} </p>  
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
             </div>
 
-            <script src="js/style.js"> </script>
         </div>
         
-        
+        <script src="js/style.js"> </script>
         
         
         
