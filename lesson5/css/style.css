@@ -1,9 +1,9 @@
 #continent{
     background-color: #CEE0ED;
     width: 50%;
-    height: 110%;
+    height: 100%;
     margin-left: 25%;
-    font-size: 22px;
+    font-size: 20px;
     padding: 2%;
     border: 5px solid blue;
 }
