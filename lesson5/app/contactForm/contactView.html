@@ -1,0 +1,63 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link href = "../../style/bootstrap/css/bootstrap.css" type = "text/css" rel="stylesheet">
+	<link href="contacStyle.css" type="text/css" rel="stylesheet"/>
+</head>	
+<body ng-app="myApp" >		 
+	   <div class="container-fluid">
+			<div class = "row">				
+			   
+			<div class = "content" >
+				<div class = "asideBar">
+					<div class = "nav">
+						<ul>	
+							<li><a href = "../../index.html" target="_blank">Home</a></li>
+							<li><a href = "../space/spaceView.html" target="_blank">Space</a></li>
+							<li><a href = "../discovery/discoveryView.html" target="_blank">Discovery</a></li>
+							<li><a href = "#" target="_blank">Contact Us</a></li>
+						</ul>
+					</div>
+			  </div>
+			<div class = "formSection" ng-controller="IfMessageSubmited" >
+				<h2>Contact us</h2>
+				<form ng-show = "!showMessage" novalidate>
+					<input type = "text" name="name" class = "form-control formFields" ng-model = "name"  placeholder="enter your name"><br>
+					<input type = "text" name="lastName" class = "form-control formFields" ng-model = "lastName" placeholder="enter your last name"><br>
+					<input type = "text" name="mail" class = "form-control formFields" ng-model = "email" placeholder="enter your email adress"><br>
+					<label> Your position
+					<select ng-model = "select" dclass = "form-control" >
+						<option>Scientist</option>
+						<option>jjjj</option>
+						<option>kkk</option>
+						<option></option>
+					</select></label><br>
+					
+					
+					<textarea  rows = "8" class = "form-control formFields" placeholder = "your message" ng-model="text"></textarea><br>
+					<label> I am not a robot
+					<input type="checkbox" class="checkbox" ng-model = "isRobot" value = "" ></label><br>
+					<input type = "submit" name="submitBtn" ng-disabled ="!isRobot"  ng-click = "showMessage=!showMessage"  class = "btn" value="Send">
+					<input type = "button" name="submitBtn" class = "btn"  ng-click="reset()" value="Reset">
+				</form>
+				<div ng-show = "showMessage">
+				<p>Thank you {{name}} {{lastName}}.<p>
+				<p>Your message has been submited.<p>
+				<p>You will recive a respons letter on {{email}}.<p>
+				<p><i>The message has been submited on {{date | date}}.<i><p>
+				<div>
+		</div> <!--end of formSection-->
+		</div> <!--end of content-->
+	  </div> <!--end of row-->
+ </div> <!--end of cont-Fluid-->
+	
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+<script src = "../app.module.js"></script>
+<script src = "contactDirective.js"></script>
+<script src = "contactController.js"></script>
+<script src = "../../libs/jquery-3.2.1.js"></script>
+<script src = "../../style/bootstrap/js/bootstrap.js"></script>
+<script src = "../../style/bootstrap/js/bootstrap.min.js"></script>
+		
+</body>
+</html>
