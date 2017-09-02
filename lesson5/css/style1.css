@@ -1,0 +1,46 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.header{
+    height: 53px;
+}
+.art{
+    border: 1px solid black;
+    height: 500px;
+}
+.footer{
+    border: 1px solid black;
+    height: 50px;
+    border-radius: 2%;
+    background-color: #222222;
+}
+.col-md-3{
+height: 120px;
+    text-align: center;
+    margin-top: 5px;
+
+}
+img{
+    width: 40%;
+}
+img[src="img/polo.png"]{
+    width: 25%;
+}
+img[src="img/lacoste.jpg"]{
+    margin-top: 20px;
+}
+img[src="img/hermes.png"]{
+    margin-top: 32px;
+}
+img[src="img/hugo-boss.png"]{
+    margin-top: 30px;
+}
+img[src="img/reebok.png"]{
+    margin-top: 60px;
+    width: 50%;
+}
+img[src="img/billionaire.png"]{
+    margin-top: 68px;
+    width: 72%;
+}
