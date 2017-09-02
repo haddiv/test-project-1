@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/productStyle.css">
+    <title>House hold products</title>
+</head>
+<body ng-app="houseProdApp">
+<header ng-include="'../flaxPart/header.html'"></header>
+<div class="content">
+    <div class="row">
+        <aside ng-include="'../flaxPart/menuForPages.html'">
+
+        </aside>
+        <article class="col-sm-12  col-xs-10 col-md-10 col-lg-10">
+            <div ng-controller="houseProdCtrl">
+                <div class="productClass" ng-repeat="houseProd in houseProds">
+                    <div class="imageClass"> <img ng-src="{{houseProd.image}}"> </div>
+                    <div class="goodProperties">
+                        <div class="nameClass"> {{houseProd.name}} </div>
+                        <div class="descriptionClass"> {{houseProd.description}} </div>
+                    </div>
+                    <div class="priceClass"> {{houseProd.price | currency : "RU"}} </div>
+                </div>
+            </div>
+
+        </article>
+    </div>
+</div>
+<footer ng-include="'../flaxPart/footer.html'"></footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+    var app = angular.module("houseProdApp", []);
+    app.controller("houseProdCtrl", function ($scope) {
+        $scope.houseProds = [
+            {name: "Indesit IWB 5103", description: "5 кг, фронтальная загрузка, программ - 16, отжим - 1000 об/мин, 600 мм x 850 мм x 520 мм", image: "../img/h1.jpg", price: 17220},
+            {name: "Candy CS4 1062D1/2-07", description: "6 кг, фронтальная загрузка, программ - 16, отжим - 1000 об/мин, 600 мм x 850 мм x 432 мм", image: "../img/h2.jpg", price: 17499},
+            {name: "Hansa WHC 1038", description: "6 кг, фронтальная загрузка, программ - 16, отжим - 1000 об/мин, 595 мм x 850 мм x 470 мм", image: "../img/h3.jpg", price: 18990},
+            {name: "Beko WKB 60841 PTYA", description: "6 кг, фронтальная загрузка, программ - 16, отжим - 800 об/мин, 600 мм x 840 мм x 415 мм", image: "../img/h4.jpg", price: 19799},
+            {name: "Hotpoint-Ariston VMSG 702 B", description: "7 кг, фронтальная загрузка, программ - 16, отжим - 1000 об/мин, 600 мм x 850 мм x 440 мм", image: "../img/h5.jpg", price: 21400},
+            {name: "Hotpoint-Ariston VMSG 702 B", description: "6 кг, фронтальная загрузка, программ - 8, отжим - 1000 об/мин, 600 мм x 850 мм x 450 мм", image: "../img/h6.jpg", price: 24999}
+        ];
+    });
+
+</script>
+
+</body>
+</html>

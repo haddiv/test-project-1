@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/productStyle.css">
+    <title>Games and Consoles</title>
+</head>
+<body ng-app="gameApp">
+<header ng-include="'../flaxPart/header.html'"></header>
+<div class="content">
+    <div class="row">
+        <aside ng-include="'../flaxPart/menuForPages.html'">
+
+        </aside>
+        <article class="col-sm-12  col-xs-10 col-md-10 col-lg-10">
+            <div ng-controller="gameCtrl">
+                <div class="productClass" ng-repeat="game in games">
+                    <div class="imageClass" ng-click="showFunction()"> <img ng-src="{{game.image1}}"> </div>
+                    <div class="imageClass forHide check-element animate-show-hide"  ng-show="showElem" > <img ng-src="{{game.image2}}"> </div>
+                    <div class="goodProperties">
+                        <div class="nameClass"> {{game.name}} </div>
+                        <div class="descriptionClass"> {{game.description}} </div>
+                   </div>
+                    <div class="priceClass"> {{game.price | currency : "RU"}} </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
+<footer ng-include="'../flaxPart/footer.html'"></footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+<script>
+    var app = angular.module("gameApp", ['ngAnimate']);
+    app.controller("gameCtrl", function ($scope) {
+        $scope.games = [
+            {name: "PlayStation 4 Slim", description: "500 Гб, геймпад - 1, Bluetooth, Wi-Fi, USB x2, проприетарный (AUX), черный", image1: "../img/g1.jpg",  image2: "../img/g1_1.jpg",price: 19990},
+            {name: "Microsoft Xbox 360", description: "500 Гб, геймпад - 1 шт, Wi-Fi, USB x5, черный", image1: "../img/g2.jpg", image2: "../img/g2_2.jpg", price: 11900},
+            {name: "Microsoft Xbox One", description: "500 Гб, геймпад - 1 шт, Wi-Fi, USB x3, IR out, черный", image1: "../img/g3.jpg", image2: "../img/g3_3.jpg", price: 17990}
+        ];
+        $scope.showElem = false;
+        $scope.showFunction = function () {
+            $scope.showElem = !$scope.showElem;
+        }
+    });
+
+</script>
+
+</body>
+</html>

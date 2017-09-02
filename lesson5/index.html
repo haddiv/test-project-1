@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Shop</title>
+</head>
+<body ng-app="">
+    <header ng-include="'flaxPart/headerIndex.html'"></header>
+    <div class="content">
+        <div class="row">
+            <aside ng-include="'flaxPart/menu.html'">
+
+            </aside>
+            <article class="col-sm-12  col-xs-10 col-md-10 col-lg-10">
+                <div class="row">
+                    <div class="col-sm-12 col-md-8 col-lg-8 col-xs-8" id="WelcomeText">
+                        <p > Welcome to our internet shop !!! </p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-12">
+                        <form action="#" method="post" class="form-group" id="logInForm">
+                            <fieldset>
+                                <legend>Log in</legend>
+                                <input type="text" name="login" placeholder="login" class="form-control"> <br>
+                                <input type="text" name="password" placeholder="password" class="form-control"><br>
+                                <div  class="row">
+                                    <div  class="col-sm-6 col-md-6 col-lg-6 col-xs-12" id="rememberMe">
+                                        <input type="checkbox" value="remember" checked="checked"> Remember me
+                                    </div>
+                                    <div  class="col-sm-6 col-md-6 col-lg-6 col-xs-12" id="logInButtonDiv">
+                                        <input type="button" value="Log in" >
+                                        <input type="button" value="Sign in" >
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+
+            </article>
+        </div>
+    </div>
+    <footer ng-include="'flaxPart/footer.html'"></footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+</body>
+</html>

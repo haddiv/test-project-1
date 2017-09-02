@@ -1,0 +1,54 @@
+.productClass{
+    width: 80%;
+    border: 1px solid lightgray;
+    padding: 15px;
+    margin: 5px;
+    height: 110px;
+}
+.imageClass{
+    float: left;
+    width: 10%;
+    padding-top: 25px;
+}
+
+.goodProperties{
+    float: left;
+    float: left;
+    width: 70%;
+}
+.nameClass{
+    font-size: 18px;
+    color: grey;
+    width: 80%;
+    padding-bottom: 25px;
+}
+.descriptionClass{
+    width: 80%;
+}
+.priceClass{
+    width: 8%;
+    float: right;
+    padding-right: 116px;
+}
+.forHide{
+    width: 325px;
+    height: 300px;
+    border: 2px solid grey;
+    position: absolute;
+    top:100px;
+    left: 200px;
+}
+.animate-show-hide.ng-hide {
+    opacity: 0;
+}
+
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove {
+    transition: all linear 0.5s;
+}
+
+.check-element {
+    border: 1px solid black;
+    opacity: 1;
+    padding: 10px;
+}

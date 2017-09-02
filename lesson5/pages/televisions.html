@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/productStyle.css">
+    <title>Televisions</title>
+</head>
+<body ng-app="tvApp">
+<header ng-include="'../flaxPart/header.html'"></header>
+<div class="content">
+    <div class="row">
+        <aside ng-include="'../flaxPart/menuForPages.html'">
+
+        </aside>
+        <article class="col-sm-12  col-xs-10 col-md-10 col-lg-10">
+            <div ng-controller="tvCtrl">
+                <div class="productClass" ng-repeat="tv in tvs ">
+                    <div class="imageClass"> <img ng-src="{{tv.image}}"> </div>
+                    <div class="goodProperties">
+                        <div class="nameClass"> {{tv.name | filter:searchModel }} </div>
+                        <div class="descriptionClass"> {{tv.description}} </div>
+                    </div>
+                    <div class="priceClass"> {{tv.price | currency : "RU"}} </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
+<footer ng-include="'../flaxPart/footer.html'"></footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+    var app = angular.module("tvApp", []);
+    app.controller("tvCtrl", function ($scope) {
+        $scope.tvs = [
+            {name: "Harper", description: "1366x768 (HD), HDMI х 1, USB х 1, VGA (D-Sub)", image: "../img/t1.jpg", price: 6700},
+            {name: "Fusion FLTV-19T21", description: "1366x768 (HD), DVB-T, DVB-T2, DVB-C, HDMI х 1, USB х 1, VGA (D-Sub)", image: "../img/t2.jpg", price: 7499},
+            {name: "Shivaki STV-24LED17", description: "1366x768 (HD), DVB-T, DVB-T2, DVB-C, HDMI х 1, USB х 1, VGA (D-Sub)", image: "../img/t3.jpg", price: 8990},
+            {name: "Supra STV-LC22T890FL", description: "1366x768 (HD), DVB-T2, DVB-C, HDMI х 1, USB х 1, VGA (D-Sub)", image: "../img/t4.jpg", price: 9400},
+            {name: "Erisson 32LET41T2", description: "1366x768 (HD), DVB-T, DVB-T2, DVB-C, HDMI х 2, USB х 1, VGA (D-Sub)]", image: "../img/t5.jpg", price: 10400}
+        ];
+    });
+
+</script>
+
+</body>
+</html>

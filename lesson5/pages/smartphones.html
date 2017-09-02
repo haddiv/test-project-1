@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/productStyle.css">
+    <title>Smartphones</title>
+</head>
+<body ng-app="phoneApp">
+<header ng-include="'../flaxPart/header.html'"></header>
+<div class="content">
+    <div class="row">
+        <aside ng-include="'../flaxPart/menuForPages.html'">
+
+        </aside>
+        <article class="col-sm-12  col-xs-10 col-md-10 col-lg-10">
+            
+            <div ng-controller="phoneCtrl">
+                <div class="productClass" ng-repeat="phone in phones">
+                    <div class="imageClass"> <img ng-src="{{phone.image}}"> </div>
+                    <div class="goodProperties">
+                        <div class="nameClass"> {{phone.name}} </div>
+                        <div class="descriptionClass"> {{phone.description}} </div>
+                    </div>
+                    <div class="priceClass"> {{phone.price | currency : "RU"}} </div>
+                </div>
+            </div>
+
+
+        </article>
+    </div>
+</div>
+<footer ng-include="'../flaxPart/footer.html'"></footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+    var app = angular.module("phoneApp", []);
+    app.controller("phoneCtrl", function ($scope) {
+        $scope.phones = [
+            {name: "Samsung SM-J106F Galaxy J1", description: "4x1.5 ГГц, 1 ГБ, 2 SIM, TFT, 800x480, камера 5 Мп, 3G, 4G, GPS, microSD, 1500 мАч", image: "../img/p1.jpg", price: 2990},
+            {name: "Vertex Impress XL", description: "4x1 ГГц, 1 ГБ, 2 SIM, IPS, 1280х720, камера 8 Мп, 3G, 4G, GPS, FM, microSD, 2000 мАч", image: "../img/p2.jpg", price: 3950},
+            {name: "DEXP Ixion MS550", description: "4x1.3 ГГц, 2 ГБ, 2 SIM, IPS, 1280х720, камера 8 Мп, 3G, 4G, GPS, FM, microSD, 2000 мАч", image: "../img/p3.jpg", price: 5990},
+            {name: "Fly FS457 Nimbus", description: "4x1.5 ГГц, 1 ГБ, 2 SIM, TFT, 854x480, камера 5 Мп, 3G, 4G, GPS, FM, microSD, 1700 мАч", image: "../img/p4.jpg", price: 4200},
+            {name: "Philips S396", description: "8x1.8 ГГц, 2 ГБ, 2 SIM, IPS, 1920х1080, камера 13 Мп, 3G, 4G, GPS, FM, microSD, 2960 мАч", image: "../img/p5.jpg", price: 8000}
+        ];
+    });
+
+</script>
+
+</body>
+</html>
