@@ -13,7 +13,6 @@
 
 .goodProperties{
     float: left;
-    float: left;
     width: 70%;
 }
 .nameClass{
@@ -31,12 +30,14 @@
     padding-right: 116px;
 }
 .forHide{
-    width: 325px;
+    width: 400px;
     height: 300px;
     border: 2px solid grey;
     position: absolute;
     top:100px;
     left: 200px;
+    background-color: white;
+    text-align: center;
 }
 .animate-show-hide.ng-hide {
     opacity: 0;
@@ -48,7 +49,8 @@
 }
 
 .check-element {
-    border: 1px solid black;
+    border: 1px solid grey;
+    border-radius: 13px;
     opacity: 1;
     padding: 10px;
 }
