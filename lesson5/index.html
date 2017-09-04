@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Shopping</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body ng-app="instantSearch" ng-controller="InstantSearchController">
+<header>
+    <img src="img/logo.jpg" class="logo">
+    <input type="text" name="as_q" class="search" ng-model="searchString"
+           placeholder="SEARCH" ng-focus="focus=true" ng-blur="focus=false" ng-change="search(q)">
+
+</header>
+
+<div class="container">
+    <div class="menu-block">
+        <nav>
+            <ul>
+                <li><a href="file:///home/ashot/Desktop/GITC%20homework/lesson5/index.html">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Bucket</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="item-content">
+        <ul class="article">
+
+            <li ng-repeat="i in items | filter:searchString">
+                <a><img ng-src="{{i.image}}"/></a>
+                <h3>{{i.title}}</h3>
+                <h4>{{i.price}}</h4>
+                <p>{{i.about}}</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script src="script.js">
+</script>
+<footer><span>NEW CARS 2017</span></footer>
+</body>
+
+
+</html>
