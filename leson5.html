@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<style>
+body {
+    background-color: #001a00;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+input {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 16px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="namesCtrl">
+
+<form><input type="text" ng-model="test"  placeholder="Search.."></form>
+
+<ul>
+  <li ng-repeat="x in names | filter:test">
+   <h1> {{x.name}} </h1>
+		<img ng-src="{{ x.img }}"   height="500" width="500">
+		{{ x.txt }}
+</ul>
+
+</div>
+
+<script>
+angular.module('myApp', []).controller('namesCtrl', function($scope) {
+    $scope.names = [
+         {name:'BMW m3',txt:'Это концептуальный автомобиль, построенный из кабриолета 3 серии, с более узким корпусом, чем серийный аналог, двигатель 2-литрового двигателя «Итальянский M3» (192PS) (позже был заменен на 2,3-литровый четырехцилиндровый (200PS) двигатель ).',img:'imig1.jpg'},
+        {name:'MITSUBISHI io',txt:'Mitsubishi Pajero Io представляет собой мини - внедорожник производства японского производителя Mitsubishi в период с 1999 (с 15 июня 1998 года, в трехдверной форме, и 24 августа 1998 года, в качестве пятидверного) и 2007 [2] [ 3] Название «iO» происходит от итальянского языка «I», которое, по словам Мицубиси, «генерирует образ, позволяющий легко узнавать, легко управлять и быть собственным Pajero».',img:'imig2.jpg'},
+        {name:'MERCEDES c180',txt:'Mercedes-Benz C-Class это линия компактных автомобилей представительского класса производства Daimler AG .',img:'imig3.jpg'},
+        {name:'LADA niva',txt:'LADA 4x4 , прежнее название Lada Niva ( русский : Лада Нива , Нива ( нива ) является русским словом «поле урожая»), является внедорожник разработан и произведен российской (бывший советский) производитель АвтоВАЗ . Он также был продан как Lada Sport в Исландии , [3] Lada Тайга в Австрии , Bognor Diva в Уругвае , на Lada казака в Соединенном Королевстве , [4]и предлагается с 2009 года на большинстве рынков как LADA 4x4 ',img:'imig4.jpg'},
+        {name:'OPEL astra',txt:'Opel Astra F дебютировал в сентябре 1991 года. С преемником Kadett E Opel принял паспортную табличку Astra, которая уже использовалась Vauxhall для Kadett D и E (см. Vauxhall Astra ).',img:'imig5.jpg'},
+        ];
+});
+</script>
+</body>
+</html>
