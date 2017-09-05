@@ -27,6 +27,7 @@
 				<li><a href = "../../index.html" target="_blank">Home</a></li>
 				<li><a href = "#" target="_blank">Space</a></li>
 				<li><a href = "../discovery/discoveryView.html" target="_blank">Discovery</a></li>
+				<li><a href = "../contactForm/contactView.html" target="_blank">Contact Us</a></li>
 			</ul>
 	</div>
 	<div class = "zoom">
@@ -40,7 +41,7 @@
 </div>
 	
 	<div class = "search" >
-		<input type= "text" class="searchInput"  ng-model="planetName" placeholder = "enter a planet name">
+		<input type= "text" class="searchInput" id = "search" to-lowercase input-value= "planetName" ng-model="planetName" placeholder = "enter a planet name">
 		<input type= "button" class="btn searchBtn" ng-click = "showPlanetInfo()" value = "go" >
 	</div>
    <search-div  class="searchDiv" ng-model="planetInfo">  
@@ -59,21 +60,12 @@
 <script src = "../app.module.js"></script>
 <script src = "spaceDirective.js"></script>
 <script src = "spaceController.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
 <script src = "../../libs/jquery-3.2.1.js"></script>
 <script src = "../../style/bootstrap/js/bootstrap.js"></script>
 <script src = "../../style/bootstrap/js/bootstrap.min.js"></script>
 <script>
-var space = document.getElementById("space");
-space.addEventListener('click',function(event){
 
-		var coords = space.clientX + window.scrollTop;
-		//paxgX = clientX+ scrollTop 
-		//paxgX = clienty+ scrollLeft
-		alert(window.scrollWidth)
-		alert(event.clientX)
-		alert(event.screenX)
-		})
-//alert(space.pageYOffset);
 </script>	
 </body>
 </html>

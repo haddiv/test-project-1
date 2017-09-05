@@ -1,6 +1,7 @@
 app.controller("SpaceController",function($scope,data){
 
     $scope.showPlanetInfo=function(){
+	console.log(angular.element('#search').value);
 			for($scope.i =0;$scope.i< data.length;$scope.i++){
 				if($scope.planetName === data[$scope.i].name){
 				$scope.planetInfo = data[$scope.i].about;
@@ -14,6 +15,9 @@ app.controller("SpaceController",function($scope,data){
 		})
 		
 
+		
+	
+		
 		
 app.service('data', function() {
    return planets = [

@@ -6,3 +6,22 @@ app.directive('searchResultDiv', function() {
 	restrict:"AEC"
   };
 });
+
+app.directive('toLowercase',function(){
+	return {
+	     restrict:"A",
+		 require: 'ngModel',
+		 scope:{
+			value:'@inputValue',
+			},
+	    link:function(scope,elem,attr,ngModel){
+		
+		console.log(ngModel.$viewValue);
+
+		var newString = attr.inputValue.toLowerCase;
+		}
+	
+	
+	}
+	})	
+	
