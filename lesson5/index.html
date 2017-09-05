@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search	</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="searchApp" ng-controller="contr">
+<div class="container">
+<header>
+   <h1>ArmenianSity</h1>
+   <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search" ng-model="sitySearch">
+                    </div>
+</header>
+<nav>
+  <ul>
+    <li><img src='img/home.png' width='30' height='15' border='1'><a href="#">Home</a></li>
+    <li><img src='img/table-go.png' width='30' height='15' border='1'><a href="table.html">Table</a></li>
+    <li><img src='img/forms.png' width='30' height='15' border='1'><a href="forms.html">Forms</a></li>
+  </ul>
+</nav>
+               
+ <article>         
+    <div>
+        <div class="sitys" ng-repeat="x in sityArm | filter : sitySearch">
+            <div>{{x.sityName}}</div>
+            <img ng-src="{{x.src}}">
+           <p>{{x.country}}</p>
+		   <p>{{x.area}}</p>
+		   <p>{{x.population}}</p>
+		   
+        </div>
+
+    </div>
+</div>
+</article>
+<div class="footer">
+<footer>Copyright &copy; Shavarsh Gevorgyan</footer>
+</div>
+<script>
+    var app = angular.module("searchApp", []);
+    app.controller("contr", function ($scope) {
+        $scope.sityArm =
+            [
+                {
+                    sityName: "Yerevan",
+					country: "Страна Армения, Город	Ереван,",
+					area: "Площадь 223,28 км?,",
+					population: "1, 074 млн человек(2016)",
+                    src: "img/yrevan.jpg"
+                },
+                {
+                    sityName: "Gyumri",
+					country: "Страна Армения, Марз Ширакская область,",
+					area: "Площадь 46,2 км?,",
+					population: "121 976  человек(2011)",
+                    src: "img/gyumri.jpg"
+                },
+                {
+                    sityName: "Vanadzor",
+					country: "Страна Армения, Марз Лорийская область,",
+					area: "Площадь 25,1 км?,",
+					population: "90 525 человек(2017)",
+                    src: "img/vanadzor.jpg"
+                },
+                {
+                    sityName: "Echmiatsin",
+					country: "Страна Армения, Марз Армавир,",
+					area: "Площадь 40 км?,",
+					population: "57 500 человек (2010)",
+                    src: "img/echmiatsin.jpg"
+                },
+                {
+                    sityName: "Dilijan",
+					country: "Страна Армения, Марз Тавушская область,",
+					area: "Площадь 13 км?,",
+					population: "18 000 человек (2011)",
+                    src: "img/dilijan.jpg"
+                },
+                {
+                    sityName: "Jermuk",
+					country: "Страна Армения, Марз Вайоцдзорская область,",
+					area: "Площадь 55,14 км?,",
+					population: "8013 человек(2001)",
+                    src: "img/jermuk.jpg"
+                },
+                {
+                    sityName: "Kapan",
+					country: "Страна Армения, Марз Сюник,",
+					area: "Площадь 36 км?,",
+					population: "43190 человек (2011)",
+                    src: "img/kapan.jpg"
+                },               
+            ];
+    });
+</script>
+</body>
+</html>

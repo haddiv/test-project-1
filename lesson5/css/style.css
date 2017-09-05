@@ -1,0 +1,53 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+div.container{
+    width: 100%;
+    border: 5px solid red;
+}
+header{
+    padding: 1em;
+    color: white;
+    background-color: lightblue;
+    clear: left;
+    text-align: center;
+}	
+.footer{
+    border: 1px solid black;
+    height: 50px;
+    border-radius: 2%;
+    background-color: orange;
+	text-align: center;
+}
+input{
+            float: right;
+            margin-right: 30px;
+        }
+
+}
+.sitys{
+            height: 200px;
+            width:25%;
+            float:left;
+            margin: 10px;
+            border: 1px solid gray;
+        }
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 2em;
+    padding: 1em;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+
+img{
+    width: 20%;
+}
