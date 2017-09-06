@@ -20,8 +20,8 @@
             <div class="nameDiv">
                 -- Luci S.
             </div>
-            <div class="rating">
-                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            <div class="rating" ng-click="count1 = count1+1">
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span> {{count1}}
             </div>
         </div>
         <div class="col-xs-6 col-sm-12 col-md-6 col-lg-6" >
@@ -33,6 +33,9 @@
             </div>
             <div class="nameDiv">
                 -- Alex M.
+            </div>
+            <div class="rating" ng-click="count2 = count2+1">
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>{{count2}}
             </div>
         </div>
 
@@ -48,6 +51,9 @@
             <div class="nameDiv">
                 -- Max Flex
             </div>
+            <div class="rating" ng-click="count3 = count3+1">
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>{{count3}}
+            </div>
         </div>
         <div class="col-xs-6 col-sm-12 col-md-6 col-lg-6" >
             <div class="imageDiv rounded-circle">
@@ -59,21 +65,27 @@
             <div class="nameDiv">
                -- Liza Roberts
             </div>
-            <div id="rateYo"></div>
+            <div class="rating" ng-click="count4 = count4+1">
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>{{count4}}
+            </div>
+
 
         </div>
 
     </div>
     <div class="row padding margin">
         <div class="col-xs-6 col-sm-12 col-md-6 col-lg-6" >
-            <div class="imageDiv rounded-circle" id="upload" ng-show="showImg">
-                Photo 100 x 100
+            <div class="imageDiv rounded-circle" ng-show="showImg">
+                <img src="img/unknownUser.png" src="LizaUser">
             </div>
             <div class="textDiv">
                 {{userTestimonial}}
             </div>
             <div class="nameDiv">
-                {{userName}}
+                <span ng-show="showLines"> -- </span> {{userName}}
+            </div>
+            <div class="rating" ng-show="showStar">
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>{{count4}}
             </div>
         </div>
         <div class="col-xs-6 col-sm-12 col-md-6 col-lg-6" >

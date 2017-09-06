@@ -42,9 +42,16 @@ app.controller('BlogCtrl', function (/* $scope, $location, $http */) {
 app.controller('addTestimonials', function ($scope) {
     $scope.addFunction = function () {
         $scope.showImg=true;
+        $scope.showStar=true;
+        $scope.showLines=true;
         $scope.userTestimonial = $scope.testimonial;
         $scope.userName = $scope.name ;
-    }
+    };
+        this.count1 = 0;
+        this.count2 = 0;
+        this.count3 = 0;
+        this.count4 = 0;
+
 });
 
 /**
@@ -63,14 +70,3 @@ app.controller('PageCtrl', function (/* $scope, $location, $http */) {
     selector: "a[data-toggle=tooltip]"
   })
 });
-$(function () {
-
-    $("#rateYo").rateYo({
-        starWidth: "40px"
-    });
-
-});
-var starWidth = $("#rateYo").rateYo("option", "starWidth"); //returns 40px
-
-// Setter
-$("#rateYo").rateYo("option", "starWidth", "40px"); //returns a jQuery Element
