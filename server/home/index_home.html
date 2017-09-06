@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        
+        <link rel="stylesheet" href="css/index_home.css">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body ng-app="app">
+         
+        <div ng-controller="ctrl">
+            
+            <div ng-include=" 'pages/index1.html' "></div> 
+            <div id="menu">
+                <h3 id="menu_cars">Menu</h3>
+                <div id="typeCars">
+                    <ul>
+                        <li class="typeCar"><a href="#">Home</a></li>
+                        <li class="typeCar"><a href="pages/mers.html">Mercedes-Benz</a></li>
+                        <li class="typeCar"><a href="pages/bmw.html">BMW</a></li>
+                        <li class="typeCar"><a href="pages/audi.html">Audi</a></li>
+                        <li class="typeCar"><a href="pages/nissan.html">Nissan</a></li>
+                        <li class="typeCar"><a href="pages/chevrolet.html">Chevrolet</a></li>
+                        <li class="typeCar"><a href="pages/opel.html">Opel</a></li>
+                        <li class="typeCar"><a href="pages/volkswagen.html">Volkswagen</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="text">
+                <h2 id="h2">Cars</h2>
+                <p id="textCar">
+                    A car (or automobile) is a wheeled motor vehicle used for transportation. Most definitions of car say they run primarily on roads, seat one to eight people, have four tires, and mainly transport people rather than goods. Cars came into global use during the 20th century, and developed economies depend on them. The year 1886 is regarded as the birth year of the modern car, when German inventor Karl Benz built his Benz Patent-Motorwagen. Cars did not become widely available until the early 20th century. One of the first cars that was accessible to the masses was the 1908 Model T, an American car manufactured by the Ford Motor Company. Cars were rapidly adopted in the US, where they replaced animal-drawn carriages and carts, but took much longer to be accepted in Western Europe and other parts of the world.<br>
+                    Cars have controls for driving, parking, passenger comfort and safety, and controlling a variety of lights. Over the decades, additional features and controls have been added to vehicles, making them progressively more complex. Examples include rear reversing cameras, air conditioning, navigation systems, and in car entertainment. Most cars in use in the 2010s are propelled by an internal combustion engine, fueled by the combustion of fossil fuels. This causes air pollution and is also blamed for contributing to climate change and global warming. Vehicles using alternative fuels such as ethanol flexible-fuel vehicles and natural gas vehicles are also gaining popularity in some countries. Electric cars, which were invented early in the history of the car, began to become commercially available in 2008.<br>
+                    There are costs and benefits to car use. The costs include acquiring the vehicle, interest payments (if the car is financed), repairs and maintenance, fuel, depreciation, driving time, parking fees, taxes, and insurance. The costs to society include maintaining roads, land use, road congestion, air pollution, public health, health care, and disposing of the vehicle at the end of its life. Road traffic accidents are the largest cause of injury-related deaths worldwide.<br>
+                    The benefits include on-demand transportation, mobility, independence, and convenience. The societal benefits include economic benefits, such as job and wealth creation from the automotive industry, transportation provision, societal well-being from leisure and travel opportunities, and revenue generation from the taxes. The ability for people to move flexibly from place to place has far-reaching implications for the nature of societies.
+                </p>
+            </div>
+            <div ng-include=" 'pages/index2.html' "></div>
+            
+        </div>
+        
+        
+        <script>
+        var app = angular.module('app', []);
+        app.controller('ctrl', function($scope, $location) {
+            $scope.myUrl = $location.absUrl();
+        });
+        </script>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </body>
+</html>
