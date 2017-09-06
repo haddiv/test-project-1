@@ -1,0 +1,133 @@
+ <html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        
+        <link rel="stylesheet" href="../css/style.css">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body ng-app="app">
+         
+        <div ng-controller="ctrl">
+            
+            <div>
+                <div class="cars">
+                    <h1 id="h1">C A R</h1>
+                    <form class="navbar-form navbar-left" id="search">
+                        <input type="text" class="form-control" id="query" placeholder="Search">
+                        <button type="button" class="btn btn-primary" id="sear">Search</button>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                      <div class="numbertext">1 / 3</div>
+                      <img src="../img/audi.jpg" style="width:100%">
+                      <div class="text">Caption Text</div>
+                    </div>
+                    <div class="mySlides fade">
+                      <div class="numbertext">2 / 3</div>
+                      <img src="../img/bmw.jpg" style="width:100%">
+                      <div class="text">Caption Two</div>
+                    </div>
+                    <div class="mySlides fade">
+                      <div class="numbertext">3 / 3</div>
+                      <img src="../img/lmbj.jpg" style="width:100%">
+                      <div class="text">Caption Three</div>
+                    </div>
+
+                  </div>
+                    <br>
+
+                    <div style="text-align:center">
+                      <span class="dot"></span> 
+                      <span class="dot"></span> 
+                      <span class="dot"></span> 
+                    </div>
+            </div>
+            <div id="menuTest">
+                <div id="menu">
+                    <h3 id="menu_cars">Menu</h3>
+                    <div id="typeCars">
+                        <ul>
+                            <li class="typeCar"><a href="#">Home</a></li>
+                            <li class="typeCar"><a href="#">Mercedes-Benz</a></li>
+                            <li class="typeCar"><a href="#">BMW</a></li>
+                            <li class="typeCar"><a href="#">Audi</a></li>
+                            <li class="typeCar"><a href="#">Nissan</a></li>
+                            <li class="typeCar"><a href="#">Chevrolet</a></li>
+                            <li class="typeCar"><a href="#">Opel</a></li>
+                            <li class="typeCar"><a href="#">Volkswagen</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="text">
+                    <h2 id="h2">Responsive Testimonials</h2>
+                    <div class="container">
+                        <img src="../img/jhon.jpg" alt="Avatar" style="width:90px">
+                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
+                        <p><b>The most beautiful cars in the world is Mercedes-Benz.</b></p>
+                    </div>
+                    <div class="container">
+                        <img src="../img/humel.jpg" alt="Avatar" style="width:90px">
+                        <p><span >Rebecca Flex.</span> CEO at Company.</p>
+                        <p><b>I really like Audi.</b></p>
+                    </div>
+                    <div class="container">
+                        <img src="../img/nikol.jpg" alt="Avatar" style="width:90px">
+                        <p><span >Maks Novikov.</span> CEO at or ceo of.</p>
+                        <p><b>My car is a monster - BMW.</b></p>
+                    </div>
+                </div>
+            </div>
+            <div id="end">
+                <p id="endCar">New site about cars</p>
+                <p id="author">Author: Tigran Maghlodjyan </p>
+                
+                <div id="social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <script>
+            var slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                   slides[i].style.display = "none";  
+                }
+                slideIndex++;
+                if (slideIndex> slides.length){
+                    slideIndex = 1}    
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+                setTimeout(showSlides, 1500);
+            }
+            </script>
+        
+    
+        
+        
+        
+        
+        
+    </body>
+</html>
