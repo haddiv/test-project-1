@@ -41,10 +41,12 @@ app.controller('BlogCtrl', function (/* $scope, $location, $http */) {
 });
 app.controller('addTestimonials', function ($scope) {
     $scope.addFunction = function () {
+        $scope.showImg=true;
         $scope.userTestimonial = $scope.testimonial;
-        $scope.userName = $scope.name;
+        $scope.userName = $scope.name ;
     }
 });
+
 /**
  * Controls all other Pages
  */
@@ -61,3 +63,14 @@ app.controller('PageCtrl', function (/* $scope, $location, $http */) {
     selector: "a[data-toggle=tooltip]"
   })
 });
+$(function () {
+
+    $("#rateYo").rateYo({
+        starWidth: "40px"
+    });
+
+});
+var starWidth = $("#rateYo").rateYo("option", "starWidth"); //returns 40px
+
+// Setter
+$("#rateYo").rateYo("option", "starWidth", "40px"); //returns a jQuery Element

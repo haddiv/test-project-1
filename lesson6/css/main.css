@@ -162,7 +162,15 @@ footer {
 #upload{
     background-color: #ccc;
     padding-top: 50px;
+
 }
-.vis-hidden{
-    visibility: hidden;
+
+
+.rating > span:hover:after,
+.rating > span:hover ~ span:before {
+    content: "\2605";
+    position: absolute;
+    color: yellow;
+
+
 }
