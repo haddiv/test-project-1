@@ -53,9 +53,9 @@ app.controller('PageCtrl', ['$scope', 'testimonialStories', function ( $scope,te
   $scope.newTest = function(){
 			$scope.newObj ={ 
 			name:$scope.name + " " + $scope.surname,
-			country:$scope.country,
+			country:$scope.city +  "," +  $scope.country ,
 			story:$scope.text,
-			img:$scope.img
+			img:"images/profPic.png"
 			}
 			$scope.view = true;
 			$scope.hidden = false;
