@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Testimonials</title>
+<link rel="stylesheet" href="testimonials_page.css">
+
+</head>
+ <body>
+<div class="container" ng-app="ui.bootstrap.carousel.demo">
+ 
+  <h3 class="header">User Testimonials</h3>
+  <div ng-controller="uiCtrl" id="slides_control">
+    <div>
+      <carousel interval="myInterval" class="ui-bootstrap-carousel">
+        <slide ng-repeat="user in users" active="slide.active">
+							<h2 class="review">{{user.desc}}<h2>
+                <h4 class="name">
+                  {{user.name}}
+							<small class="title">{{user.title}}<small>
+                </h4> 
+							    <img ng-src="{{user.image}}">
+           
+                
+							<div class="carousel-caption">
+            	</div>
+						</slide>
+					</carousel>
+    </div>
+                
+  </div>
+	<script src=" https://cdnjs.cloudflare.com/ajax/libs/angular-carousel/0.3.10/angular-carousel.css"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap-tpls.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-touch.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-carousel/0.3.10/angular-carousel.js"></script>
+  
+   <script src="testemonials.js"></script>
+  
+  </body>
+  </html>
+  
+ 
+
+
+
+  
+  
+  
+  
+  
+  
