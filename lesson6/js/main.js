@@ -82,11 +82,17 @@ app.controller('PageCtrl', ['$scope', 'testimonialStories', function ( $scope,te
 
 
 app.controller('calculatorController',function ($scope) {
-		$scope.inputNumbers=0; 
 		
+		$scope.divsVal = function(e){
+		//$scope.inputNumbers = angular.element(e.val());
+		console.log($scope.inputNumbers);
+		console.log("hello");
+		console.log(angular.e);
+		//console.log(angular.element(e.val()));
+		  }
 		//clear all
         $scope.clearAll = function(){
-			$scope.inputNumbers=0;
+			$scope.inputNumbers="";
 			}		
 			
 		//backspace	

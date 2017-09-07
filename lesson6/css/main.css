@@ -152,3 +152,19 @@ footer {
 .styleBtn{
     background-color: gray;
 }
+
+#inputForNum::-webkit-input-placeholder { 
+    color:#000
+}
+#inputForNum:-moz-placeholder { 
+   color:#000
+}
+#inputForNum::-moz-placeholder { 
+  color:#000
+}
+#inputForNum:-ms-input-placeholder { 
+  color:#000
+}
+#inputForNum::-ms-input-placeholder { 
+   color:#000
+}
