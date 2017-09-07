@@ -26,8 +26,10 @@ app.config(['$routeProvider', function ($routeProvider) {
     // testimonials
     .when("/testimonials", {templateUrl: "partials/testimonials.html",  controller: "addTestimonials"})
     // Blog
+    .when("/calculator", {templateUrl: "partials/calculator.html", controller: "BlogCtrl"})
     .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
     .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
+    .when("/blog/post", {templateUrl: "partials/calculator.html", controller: "BlogCtrl"})
 
     // else 404
     .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
