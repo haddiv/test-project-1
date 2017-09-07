@@ -24,6 +24,7 @@ app.config(['$routeProvider', function ($routeProvider) {
         .when("/services", {templateUrl: "partials/services.html", controller: "PageCtrl"})
         .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
         .when("/testimonials", {templateUrl: "partials/testimonials.html", controller: "PageCtrl"})
+        .when("/calculator", {templateUrl: "partials/calculator.html", controller: "PageCtrl"})
         // Blog
         .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
         .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
@@ -81,3 +82,81 @@ app.controller('testimonialsCtrl', function ($scope) {
 
     ];
 });
+//calculator
+function CalcCtrl($scope) {
+    $scope.output = "0";
+    $scope.inOperation = false;
+    $scope.num1 = 0;
+
+    $scope.updateOutput = function (btn) {
+        if ($scope.newNumber) {
+            $scope.output = 0;
+        }
+        if ($scope.output == "0" || $scope.newNumber) {
+            $scope.output = btn;
+            $scope.newNumber = false;
+        } else {
+            $scope.output += String(btn);
+        }
+    };
+
+    $scope.operate = function (op) {
+        console.log($scope.output);
+        if ($scope.output && !$scope.inOperation) {
+            $scope.num1 = $scope.output;
+            $scope.output += op;
+            $scope.inOperation = true;
+        } else if ($scope.output.length > $scope.num1.length + 1) {
+            $scope.output = eval($scope.output);
+            $scope.output += op;
+        }
+        switch (op) {
+            case "sin":
+                $scope.output = parseInt($scope.output);
+                $scope.output = Math.round(Math.sin($scope.output));
+                console.log($scope.output);
+                break;
+            case "cos":
+                $scope.output = parseInt($scope.output);
+                $scope.output = Math.round(Math.cos($scope.output));
+                console.log($scope.output);
+                break;
+            case "tan":
+                $scope.output = parseInt($scope.output);
+                $scope.output = Math.round(Math.tan($scope.output));
+                console.log($scope.output);
+                break;
+            case "log":
+                $scope.output = parseInt($scope.output);
+                $scope.output = Math.log($scope.output);
+                console.log($scope.output);
+                break;
+            case "sqrt":
+                $scope.output = parseInt($scope.output);
+                $scope.output = Math.sqrt($scope.output);
+                console.log($scope.output);
+                break;
+            case "pow":
+                $scope.output = parseInt($scope.output);
+                $scope.output = Math.pow($scope.output, 2);
+                console.log($scope.output);
+                break;
+            case "pow3":
+                $scope.output = parseInt($scope.output);
+                $scope.output = Math.pow($scope.output, 3);
+                console.log($scope.output);
+                break;
+            case "exp":
+                $scope.output = parseInt($scope.output);
+                $scope.output = Math.exp($scope.output);
+                console.log($scope.output);
+                break;
+        }
+    };
+
+    $scope.equal = function () {
+        $scope.output = eval($scope.output);
+        $scope.num1 = $scope.output;
+    };
+}
+app.controller('CalcCtrl', CalcCtrl);
