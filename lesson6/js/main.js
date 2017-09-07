@@ -56,37 +56,64 @@ app.controller('addTestimonials', function ($scope) {
 
 });
 app.controller("calcCtrl", function ($scope) {
-    // show result when click on "=" button
-    $scope.showValue =function () {
-        $scope.screen = $scope.nine;
+    $scope.output = "0";
+    $scope.result = 0;
 
+    $scope.checkInput = function(num) {
+        var tmp = true;
+        if($scope.result != 0) {
+            $scope.result = 0;
+            $scope.output = "0";
+            tmp = true;
+        }
+        return tmp;
     }
 
-    // show value
-    $scope.showValue = function (btn) {
-        if ($scope.output == "0" || $scope.newNumber) {
-            $scope.output = btn;
-            $scope.newNumber = false;
-        } else {
-            $scope.output += String(btn);
+    $scope.operate = function(op) {
+        if($scope.checkInput(op)) {
+            $scope.output = $scope.output + op;
         }
-        $scope.pendingValue = toNumber($scope.output);
-    };
+    }
+    $scope.clean=function () {
+        if($scope.checkInput()) {
+            $scope.output = 0;
+        }
 
-    $scope.result = function() {
-        if ($scope.operator == '+') {
-            return $scope.a + $scope.b;
+    }
+    $scope.backspace = function () {
+        var numbers = $scope.output.split("");
+        console.log(numbers);
+
+        for(var i=0; i<numbers.length;i++){
+            $scope.number+= $scope.output[i];
         }
-        if ($scope.operator == '-') {
-            return $scope.a - $scope.b;
+        $scope.result = parseInt($scope.number);
+        $scope.inputNumbers=$scope.number;
+        console.log($scope.result);
+        console.log($scope.inputNumbers);
+        console.log($scope.number);
+    }
+
+    $scope.press = function(num) {
+        if($scope.checkInput(num)) {
+                if (angular.equals($scope.output, "0")) {
+                    $scope.output = "";
+                    $scope.output += num;
+                } else if (angular.equals(".", $scope.output)){
+                    $scope.output = "0.";
+                    $scope.output += num;
+                } else {
+                    $scope.output += num;
+                }
         }
-        if ($scope.operator == '*') {
-            return $scope.a * $scope.b;
+
+        $scope.equal = function() {
+                $scope.result = eval($scope.output);
+                $scope.output = $scope.result;
+
         }
-        if ($scope.operator == '/') {
-            return $scope.a / $scope.b;
-        }
-    };
+    }
+
 });
 
 /**
