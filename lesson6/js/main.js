@@ -26,7 +26,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     // testimonials
     .when("/testimonials", {templateUrl: "partials/testimonials.html",  controller: "addTestimonials"})
     // Blog
-    .when("/calculator", {templateUrl: "partials/calculator.html", controller: "BlogCtrl"})
+    .when("/calculator", {templateUrl: "partials/calculator.html", controller: "calcCtrl"})
     .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
     .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
     .when("/blog/post", {templateUrl: "partials/calculator.html", controller: "BlogCtrl"})
@@ -54,6 +54,39 @@ app.controller('addTestimonials', function ($scope) {
         this.count3 = 0;
         this.count4 = 0;
 
+});
+app.controller("calcCtrl", function ($scope) {
+    // show result when click on "=" button
+    $scope.showValue =function () {
+        $scope.screen = $scope.nine;
+
+    }
+
+    // show value
+    $scope.showValue = function (btn) {
+        if ($scope.output == "0" || $scope.newNumber) {
+            $scope.output = btn;
+            $scope.newNumber = false;
+        } else {
+            $scope.output += String(btn);
+        }
+        $scope.pendingValue = toNumber($scope.output);
+    };
+
+    $scope.result = function() {
+        if ($scope.operator == '+') {
+            return $scope.a + $scope.b;
+        }
+        if ($scope.operator == '-') {
+            return $scope.a - $scope.b;
+        }
+        if ($scope.operator == '*') {
+            return $scope.a * $scope.b;
+        }
+        if ($scope.operator == '/') {
+            return $scope.a / $scope.b;
+        }
+    };
 });
 
 /**
