@@ -82,7 +82,30 @@ app.controller('PageCtrl', ['$scope', 'testimonialStories', function ( $scope,te
 
 
 app.controller('calculatorController',function ($scope) {
-
+		$scope.inputNumbers=0; 
+		
+		//clear all
+        $scope.clearAll = function(){
+			$scope.inputNumbers=0;
+			}		
+			
+		//backspace	
+		$scope.backspace=function(){
+		$scope.numbersInArray = $scope.inputNumbers.split("");			
+		$scope.popNum = $scope.numbersInArray.pop();
+		$scope.number = "";
+			for(var i=0; i<$scope.numbersInArray.length;i++){
+					$scope.number+= $scope.numbersInArray[i];
+						}
+		$scope.result = parseInt($scope.number);
+		$scope.inputNumbers=$scope.number;
+		console.log($scope.result);
+		console.log($scope.inputNumbers);
+		console.log($scope.number);
+		
+		
+			
+			}
 
 })
 
