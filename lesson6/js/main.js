@@ -22,7 +22,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/faq", {templateUrl: "partials/faq.html", controller: "PageCtrl"})
     .when("/pricing", {templateUrl: "partials/pricing.html", controller: "PageCtrl"})
     .when("/services", {templateUrl: "partials/services.html", controller: "PageCtrl"})
-      .when("/calculator", {templateUrl: "partials/calculator.html", controller: "calcCtrl"})
+      .when("/calculator", {templateUrl: "partials/calculator.html", controller: "MyCtrl"})
     .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
     // Blog
     .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
@@ -37,6 +37,8 @@ app.config(['$routeProvider', function ($routeProvider) {
 app.controller('BlogCtrl', function (/* $scope, $location, $http */) {
   console.log("Blog Controller reporting for duty.");
 });
+
+
 
 
 app.controller('calcCtrl',function($scope) {
@@ -55,8 +57,8 @@ app.controller('calcCtrl',function($scope) {
         }
         }});
 
-/**
- * Controls all other Pages
+
+ /** Controls all other Pages
  */
 app.controller('PageCtrl', function (/* $scope, $location, $http */) {
   console.log("Page Controller reporting for duty.");
