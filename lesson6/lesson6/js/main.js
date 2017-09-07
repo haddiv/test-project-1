@@ -27,6 +27,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
     .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
     .when("/testimonial", {templateUrl: "partials/testimonial.html", controller: "PageCtrl"})
+    .when("/calculator", {templateUrl: "partials/calculator.html", controller: "calculatorController"})
     // else 404
     .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
 }]);
@@ -78,6 +79,16 @@ app.controller('PageCtrl', ['$scope', 'testimonialStories', function ( $scope,te
     selector: "a[data-toggle=tooltip]"
   })
 }]);
+
+
+app.controller('calculatorController',function ($scope) {
+
+
+})
+
+
+
+
 
 //List of Custommers
 app.service('testimonialStories',function(){

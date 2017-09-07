@@ -135,3 +135,20 @@ footer {
         /* increases the carousel height so it looks good on phones */
     }
 }
+
+.claculatorBody{
+    border:1px solid gray;
+
+}
+
+
+.calcBtn{
+    width:50px;
+    height: 50px;
+    margin-top: 5px;
+    text-align: center;
+    border:1px solid black
+}
+.styleBtn{
+    background-color: gray;
+}
