@@ -1,0 +1,49 @@
+.header{
+  color:#000000;
+  font-family:'FontAwesome';
+}
+.container{
+  text-align:center;
+ background-color: yellow​;
+}
+.ui-bootstrap-carousel {
+  width:50%;
+  margin-left:20px;
+  font-family:'FontAwesome';
+  display: inline-block;
+  color:#8A2BE2;
+}
+
+.ui-bootstrap-carousel img {
+    width: 30%;
+    height: auto;
+    border-radius: 50%;
+    float: center;
+    margin-right: 15px;
+}
+
+  
+.name{
+  font-family:'FontAwesome';
+  font-style:bold;
+  color:#656565;
+  text-align: center;
+    padding-top: 15px;
+    line-height: 18px;
+    
+}
+  
+.title{
+    display: block;
+    font-family:'FontAwesome';
+    font-style: italic;
+    color:#93a0aa;
+ 
+  
+}
+
+.angular-carousel {
+  width:1000px;
+  margin-left:20px;
+ 
+}
