@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example Filter Mariam</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+    <style>
+        .table{
+            background-color: hotpink;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body ng-app >
+<h1>Blog List</h1>
+<strong>Search:</strong>
+    <input type="text" ng-model="text" pl/>
+
+<div ng-controller="contactList">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surename</th>
+            <th>Phone</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Language</th>
+            <th>Praffesion</th>
+        </tr>
+        </thead>
+        <tbody ng-repeat ="contact in contacts | filter:text">
+    <tr>
+        <th>{{contact.firstName}}</th>
+        <th>{{contact.lastName}}</th>
+        <th>{{contact.phoneNumber}}</th>
+        <th>{{contact.age}}</th>
+        <th>{{contact.gender}}</th>
+        <th>{{contact.programmingLanguage}}</th>
+        <th>{{contact.proffesion}}</th>
+    </tr>
+        </tbody>
+    </table>
+</div>
+    <script>
+        function contactList($scope){
+            $scope.contacts = [{
+                firstName: "Mariam",
+                lastName: "Poghosyan",
+                phoneNumber: "+31477888888",
+                email: "Poghosyan@gmail.com",
+                age: "21 year",
+                gender: "Female",
+                programmingLanguage: "Javascript",
+                proffesion: "Economist"
+                }, {
+                    firstName: "Narek",
+                    lastName: "Karapetyan",
+                    phoneNumber: "+31477777777",
+                    email: "Karapet@gmail.com",
+                    age: "23 year",
+                    gender: "Male",
+                    programmingLanguage: "Java",
+                    proffesion: "Programmer"
+
+            },{
+                firstName: "Mary",
+                lastName: "Saribekyan",
+                phoneNumber: "+31477181118",
+                email: "Mery@gmail.com",
+                age:"24 year",
+                gender:"Female",
+                programmingLanguage:"PHP",
+                proffesion:"Economist"
+            }
+                ,{
+                    firstName: "Karine",
+                    lastName: "Rafayelyan",
+                    phoneNumber: "+31477123456",
+                    email: "Karine@gmail.com",
+                    age:"20 year",
+                    gender:"Female",
+                    programmingLanguage:"Pyton",
+                    proffesion:"Doctor"
+                }
+                ,{
+                    firstName: "Robert",
+                    lastName: "Zuhrabyan",
+                    phoneNumber: "+31477906785",
+                    email: "Rob@gmail.com",
+                    age:"28 year",
+                    gender:"male",
+                    programmingLanguage:"C#",
+                    proffesion:"Consultant"
+                }]
+        }
+    </script>
+
+</body>
+</html>
