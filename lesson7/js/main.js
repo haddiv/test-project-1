@@ -23,10 +23,8 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/pricing", {templateUrl: "partials/pricing.html", controller: "PageCtrl"})
     .when("/services", {templateUrl: "partials/services.html", controller: "PageCtrl"})
     .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
-<<<<<<< HEAD
       .when("/testimonials", {templateUrl: "partials/testimonials.html", controller: "PageCtrl"})
-=======
->>>>>>> eda65dbd45c4d55c3d7a083ff04251cfbc24216a
+      .when("/Calculator", {templateUrl: "partials/Calculator.html", controller: "PageCtrl"})
     // Blog
     .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
     .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
@@ -56,7 +54,6 @@ app.controller('PageCtrl', function (/* $scope, $location, $http */) {
   $('.tooltip-social').tooltip({
     selector: "a[data-toggle=tooltip]"
   })
-<<<<<<< HEAD
 });
 
 
@@ -72,6 +69,25 @@ app.controller('PageCtrl', function (/* $scope, $location, $http */) {
             }
         };
     }]);
-=======
+
+
+
+
+
+
+app.controller('CalculatorController', function($scope) {
+    $scope.result = function() {
+        if ($scope.operator == '+') {
+            return $scope.a + $scope.b;
+        }
+        if ($scope.operator == '-') {
+            return $scope.a - $scope.b;
+        }
+        if ($scope.operator == '*') {
+            return $scope.a * $scope.b;
+        }
+        if ($scope.operator == '/') {
+            return $scope.a / $scope.b;
+        }
+    };
 });
->>>>>>> eda65dbd45c4d55c3d7a083ff04251cfbc24216a
