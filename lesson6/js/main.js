@@ -93,7 +93,7 @@ function MyCtrl($scope) {
         }
     }
     $scope.operate = function (op) {
-        if ($scope.output || !$scope.inOperation) {
+        if ( || !$scope.inOperation) {
             $scope.inOperation = false;
             $scope.num1 = $scope.output;
             $scope.output += op;
@@ -111,5 +111,20 @@ function MyCtrl($scope) {
             $scope.output = $scope.num1;
         }
     }
+    $scope.pow = function(x){
+        x = $scope.output;
+        $scope.k = Math.pow(x,2);
+        
+    }
 }
+
+
+
+
+
+
+
+
+
+
 
