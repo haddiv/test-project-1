@@ -73,14 +73,14 @@ app.controller('PageCtrl', function (/* $scope, $location, $http */) {
 });
 
 ///////////////
+
+
+app.controller('MyCtrl', MyCtrl);
+
 function MyCtrl($scope) {
-
     $scope.output = "0";
-
     $scope.inOperation = false;
-
     $scope.num1 = 0;
-
     $scope.updateOutput = function (btn) {
         if ($scope.newNumber) {
             $scope.output = 0;
@@ -91,10 +91,10 @@ function MyCtrl($scope) {
         } else {
             $scope.output += String(btn);
         }
-    };
-
+    }
     $scope.operate = function (op) {
-        if ($scope.output && !$scope.inOperation) {
+        if ($scope.output || !$scope.inOperation) {
+            $scope.inOperation = false;
             $scope.num1 = $scope.output;
             $scope.output += op;
             $scope.inOperation = true;
@@ -102,8 +102,7 @@ function MyCtrl($scope) {
             $scope.output = eval($scope.output);
             $scope.output += op;
         }
-    };
-
+    }
     $scope.equal = function () {
         if ($scope.output.length > $scope.num1.length + 1) {
             $scope.output = eval($scope.output);
@@ -111,8 +110,6 @@ function MyCtrl($scope) {
         } else {
             $scope.output = $scope.num1;
         }
-    };
-
+    }
 }
 
-app.controller('MyCtrl', MyCtrl);
