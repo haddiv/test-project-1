@@ -1,1 +1,61 @@
-<div>test</div>
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h1 class="page-header">KITS para PS3 </h1>
+        </div>
+    </div>
+
+
+    <div class="row padding margin">
+        <div class="col-xs-6 col-sm-12 col-md-6 col-lg-6" >
+            <div class="imageDiv rounded-circle">
+                <img src="img/index.png" src="LizaUser">
+            </div>
+            <div class="textDiv">
+                The lion  is one of the big cats in the Felidae family and a member of genus Panthera. It has been listed as Vulnerable on the IUCN Red List since 1996, as populations in African range countries declined by about 43% since the early 1990s. Lion populations are untenable outside designated protected areas. The West African lion population is listed as Critically Endangered since 2016.
+                <div class="nameDiv">
+                -- Lion.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    </div>
+    <div class="row padding margin">
+        <div class="col-xs-6 col-sm-12 col-md-6 col-lg-6" >
+            <div class="imageDiv rounded-circle" ng-show="showImg">
+                <img src="img/unknownUser.png" src="LizaUser">
+            </div>
+            <div class="textDiv">
+                {{userTestimonial}}
+            </div>
+            <div class="nameDiv">
+                <span ng-show="showLines"> -- </span> {{userName}}
+            </div>
+            <div class="rating" ng-show="showStar">
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>{{count4}}
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-12 col-md-6 col-lg-6" >
+
+        </div>
+    </div>
+    <div class="row padding margin">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+            <form action="#" method="post">
+                <input type="text" name="name" ng-model="name" class="form-control padding margin">
+                <textarea class="form-control padding margin" ng-model="testimonial"> </textarea>
+                <input type="button" class="btn btn-primary" id="addButton" ng-model="myButton" ng-click="addFunction()" value="Add">
+            </form>
+        </div>
+    </div>
+    <!-- /.row -->
+
+
+
+</div><!-- /.container -->
