@@ -82,14 +82,16 @@ app.controller('PageCtrl', ['$scope', 'testimonialStories', function ( $scope,te
 
 
 app.controller('calculatorController',function ($scope) {
+		$scope.inputNumbers= "";
+		$scope.divsVal = function(item){
 		
-		$scope.divsVal = function(e){
-		//$scope.inputNumbers = angular.element(e.val());
 		console.log($scope.inputNumbers);
-		console.log("hello");
-		console.log(angular.e);
-		//console.log(angular.element(e.val()));
+		$scope.inputNumbers += angular.element(item).text();
+		console.log(angular.element(item).text())
+		
 		  }
+		  
+		  
 		//clear all
         $scope.clearAll = function(){
 			$scope.inputNumbers="";
