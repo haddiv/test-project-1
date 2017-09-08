@@ -169,7 +169,7 @@ footer {
     color: yellow;
 
 }
-/* Calc*/
+/* Calc standard*/
 .box{
     border: 1px solid grey;
     border-radius: 10px;
@@ -179,26 +179,30 @@ footer {
 }
 .display{
     width: 230px;
-    margin: 17px auto;
+    margin: 14px auto;
+    padding-top: 13px;
 
 }
 .view a {
-    display: block;
+    display: inline-block;
     border: 1px solid grey;
     width: 105px;
     float: left;
     padding: 7px;
-    margin: 9px;
+    margin: 3px;
     color:white;
     text-decoration: none;
     background-color:#6f6f6f;
-    border-bottom:black 2px solid;
+    border-bottom: 2px solid black;
     border-top:2px #6f6f6f solid;
 }
 .view{
-    margin-bottom: 5px;
+    margin-bottom: 12px;
+    padding: 3px 9px;
+    width: 251px;
+    height: 55px;
 }
-#screen{
+#screen1{
     width: 230px;
     height: 43px;
     margin: 0 0 20px;
@@ -218,7 +222,6 @@ footer {
     margin-bottom: 11px;
     cursor:pointer;
     border-top:2px solid transparent;
-
 }
 .button.gray {
     color:white;
@@ -232,31 +235,44 @@ footer {
     border-bottom:black 2px solid;
 }
 .button.black {
-    color:white;
-    background-color:#303030;
-    border-bottom:black 2px solid;
-    border-top:2px #303030 solid;
+    color: white;
+    background-color: #303030;
+    border-bottom: black 2px solid;
+    border-top: 2px #303030 solid;
 }
+/*calc Scientific*/
+.box2{
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 515px;
+    height: 350px;
+    background-color: #f0efef;
+}
+#screen2{
+    width: 230px;
+    height: 43px;
+    margin: 0 ;
+    padding: 3px;
+    border-radius: 3px;
 
-/* active part
-.gray:active {
-    border-top:black 2px solid;
-    border-bottom:2px #6f6f6f solid;
 }
-
-.pink:active
-{
-    border-top:black 2px solid;
-    border-bottom:#ff4561 2px solid;
+.display2{
+    width: 459px;
+    margin: 12px auto;
+    padding-top: 13px;
 }
-.black:active
-{
-    border-top:black 2px solid;
-    border-bottom:#303030 2px solid;
+.usuallKeys{
+    position:relative;
+    top:15px;
+    float: right;
+    padding-right: 25px;
 }
-.orange:active
-{
-    border-top:black 2px solid;
-    border-bottom: #FF9933 2px solid;
-} */
-
+.sinsKeys{
+    position:relative;
+    top:15px;
+    float: left;
+    padding-left: 10px;
+}
+#equalBtn{
+    width: 100px;
+}

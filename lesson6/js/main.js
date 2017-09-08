@@ -113,6 +113,15 @@ app.controller("calcCtrl", function ($scope) {
 
         }
     }
+    $scope.standCalc = true;
+    $scope.showCalcSyintific =function () {
+        $scope.standCalc = false;
+        $scope.sinCalc = true;
+    }
+    $scope.showCalcStandart=function () {
+        $scope.standCalc = true;
+        $scope.sinCalc = false;
+    }
 
 });
 

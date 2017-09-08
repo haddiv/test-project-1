@@ -11,12 +11,13 @@
 
     <div class="row padding margin">
         <div class="col-xs-4 col-sm-12 col-md-4 col-lg-4" >
-            <div class="box">
-                <div class="view">
-                    <a href="#/calculator"> Standard </a>
-                    <a href="#"> Scientific </a>
-                </div>
-                <div class="display"><input type="text" id="screen" class="form-control" value="{{output}}"></div>
+            <div class="view">
+                <button ng-click="showCalcStandart()"> Standard </button>
+                <button ng-click="showCalcSyintific()"> Scientific </button>
+            </div>
+            <div class="box" ng-show="standCalc">
+
+                <div class="display"><input type="text" id="screen1" class="form-control" value="{{output}}"></div>
 
                 <div class="keys">
                     <div>
@@ -48,6 +49,75 @@
                         <button type="button" class="button black" value="." ng-click="press('.')" > . </button>
                         <button type="button" class="button black" ng-click="clean()">C </button>
                         <button type="button" class="button gray"  ng-click="equal()"> = </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box2" ng-show="sinCalc" >
+
+                <div class="display2"><input type="text" id="screen" class="form-control" value="{{output}}"></div>
+                <div class="sinsKeys">
+                    <div>
+                        <button type="button" class="button gray" ng-click="press('7')"> MS </button>
+                        <button type="button" class="button gray" ng-click="press('8')"> M+ </button>
+                        <button type="button" class="button gray" ng-click="press(9)"> M- </button>
+                        <button type="button" class="button gray" ng-click="clean()"> C </button>
+                    </div>
+                    <div>
+                        <button type="button" class="button black" >sin</button>
+                        <button type="button" class="button black"> cos</button>
+                        <button type="button" class="button black">tan</button>
+                        <button type="button" class="button black" ng-click='operate("/")'> π </button>
+                    </div>
+                    <div>
+                        <button type="button" class="button black" ng-click="press('4')"> <sup>x</sup>y </button>
+                        <button type="button"  class="button black" ng-click="press('5')" > <sup>x</sup>3  </button>
+                        <button type="button" class="button black" ng-click="press('6')"> <sup>x</sup>2  </button>
+                        <button type="button" class="button black" ng-click='operate("-")'> <sup>x</sup>e  </button>
+                    </div>
+                    <div>
+                        <button type="button" class="button black" ng-click="press('1')"> <sup>y</sup>√x </button>
+                        <button type="button" class="button black" ng-click="press('2')"> <sup>3</sup>√x </button>
+                        <button type="button" class="button black" ng-click="press('3')"> log </button>
+                        <button type="button" class="button black" ng-click='operate("+")'> 10<sup>x</sup> </button>
+                    </div>
+                    <div>
+                        <button type="button" class="button black" value="0" ng-click="press('0')"> ( </button>
+                        <button type="button" class="button black" value="." ng-click="press('.')" > ) </button>
+                        <button type="button" class="button black" ng-click="clean()">1/x</button>
+                        <button type="button" class="button black"  ng-click="equal()"> % </button>
+                    </div>
+                </div>
+                <div class="usuallKeys">
+                    <div>
+                        <button type="button" class="button gray" ng-click="backspace()"><img src="img/backspace.png"> </button>
+                        <button type="button" class="button gray"> x <sub>2</sub></button>
+                        <button type="button" class="button gray">  x <sup>2</sup></button>
+                        <button type="button" class="button pink" ng-click='operate("/")'> / </button>
+                    </div>
+                    <div>
+                        <button type="button" class="button black" ng-click="press('7')"> 7 </button>
+                        <button type="button" class="button black" ng-click="press('8')"> 8 </button>
+                        <button type="button" class="button black" ng-click="press(9)"> 9 </button>
+                        <button type="button" class="button pink" ng-click='operate("*")'> * </button>
+                    </div>
+                    <div>
+                        <button type="button" class="button black" ng-click="press('4')"> 4 </button>
+                        <button type="button"  class="button black" ng-click="press('5')" > 5 </button>
+                        <button type="button" class="button black" ng-click="press('6')"> 6 </button>
+                        <button type="button" class="button pink" ng-click='operate("-")'> - </button>
+                    </div>
+                    <div>
+                        <button type="button" class="button black" ng-click="press('1')"> 1 </button>
+                        <button type="button" class="button black" ng-click="press('2')"> 2 </button>
+                        <button type="button" class="button black" ng-click="press('3')"> 3 </button>
+                        <button type="button" class="button pink" ng-click='operate("+")'> + </button>
+                    </div>
+                    <div>
+                        <button type="button" class="button black" value="0" ng-click="press('0')"> 0 </button>
+                        <button type="button" class="button black" value="." ng-click="press('.')" > . </button>
+
+                        <button type="button" class="button gray" id="equalBtn" ng-click="equal()"> = </button>
                     </div>
                 </div>
             </div>
