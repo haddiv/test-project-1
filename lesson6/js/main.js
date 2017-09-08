@@ -82,33 +82,47 @@ app.controller('PageCtrl', ['$scope', 'testimonialStories', function ( $scope,te
 
 
 app.controller('calculatorController',function ($scope) {
-		$scope.inputNumbers= "";
-		$scope.divsVal = function(item){
-		
-		console.log($scope.inputNumbers);
-		$scope.inputNumbers += angular.element(item).text();
-		console.log(angular.element(item).text())
-		
-		  }
+		$scope.firstStage= "";
+
+
+		$scope.divsVal = function(item) {
+            $scope.firstStage += angular.element(item).text();
+
+            if (angular.element(item).hasClass('styleBtn')) {
+                $scope.thirdStage =  $scope.secondStage;
+                $scope.secondStage =  $scope.firstStage;
+                $scope.firstStage = angular.element(item).text();
+
+            }
+            else {
+
+                //$scope.thirdStage =  $scope.secondStage;
+                //$scope.secondStage =  $scope.firstStage;
+
+            }
+            console.log($scope.firstStage);
+        }
+
+
 		  
 		  
 		//clear all
         $scope.clearAll = function(){
-			$scope.inputNumbers="";
+			$scope.firstStage="";
 			}		
 			
 		//backspace	
 		$scope.backspace=function(){
-		$scope.numbersInArray = $scope.inputNumbers.split("");			
+		$scope.numbersInArray = $scope.firstStage.split("");
 		$scope.popNum = $scope.numbersInArray.pop();
 		$scope.number = "";
 			for(var i=0; i<$scope.numbersInArray.length;i++){
 					$scope.number+= $scope.numbersInArray[i];
 						}
 		$scope.result = parseInt($scope.number);
-		$scope.inputNumbers=$scope.number;
+		$scope.firstStage=$scope.number;
 		console.log($scope.result);
-		console.log($scope.inputNumbers);
+		console.log($scope.firstStage);
 		console.log($scope.number);
 		
 		
