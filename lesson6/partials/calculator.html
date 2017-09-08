@@ -1,4 +1,7 @@
-<form class="calc">
+
+
+
+<form class="calc" ng-controller="MyCtrl">
     <p class="calc-display">
         <input type="text" name="output" id="res" value="{{output}}" class="calc-display-input">
     </p>
@@ -18,12 +21,10 @@
 
     </p>
     <p class="calc-row">
-        <button type="button" class="calc-button calc-button-yellow calc-button-big" ng-click="equal()">=</button>
+        <button type="button" class="calc-button calc-button-blue calc-button-big" ng-click="equal()">=</button>
     </p>
     
-    <p>
-        <button ng-click="pow(x)">x2</button>
-    </p>
+    
     
 </form>
 

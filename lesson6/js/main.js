@@ -25,10 +25,11 @@ app.config(['$routeProvider', function ($routeProvider) {
         .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
         // testimonials
         .when("/testimonials", {templateUrl: "partials/testimonials.html", controller: "addTestimonials"})
+        .when("/calculator", {templateUrl: "partials/calculator.html", controller: "PageCtrl"})
         // Blog
         .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
         .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
-        .when("/calculator", {templateUrl: "partials/calculator.html", controller: "MyCtrl"})
+
 
         // else 404
         .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
@@ -93,7 +94,7 @@ function MyCtrl($scope) {
         }
     }
     $scope.operate = function (op) {
-        if ( || !$scope.inOperation) {
+        if ($scope.output || !$scope.inOperation) {
             $scope.inOperation = false;
             $scope.num1 = $scope.output;
             $scope.output += op;
@@ -111,13 +112,7 @@ function MyCtrl($scope) {
             $scope.output = $scope.num1;
         }
     }
-    $scope.pow = function(x){
-        x = $scope.output;
-        $scope.k = Math.pow(x,2);
-        
-    }
 }
-
 
 
 
