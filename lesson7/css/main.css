@@ -136,11 +136,51 @@ footer {
     }
 }
 
-.calc {
-    background:#306;
-    width:210px;
-    padding:10px;
-    box-shadow: 5px 5px 5px #888888;
-    border-radius:12px;
 
+
+/*calculator*/
+
+
+#calrap {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #E6E6E6;
+    border-radius: 23px;
+    padding: 2em 1em 1em 1em;
+    margin: auto;
+    width: 330px;
+    clear: both;
+    display: table;
 }
+.tp input {
+    height: 36px;
+    width: 90%;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin: 0 0 14px 0;
+    border: 0;
+    padding: 0 1em;
+    box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+}
+#ks div {
+    cursor: pointer;
+    width: 66px;
+    height: 36px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 2em;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+    margin: 0 7px 11px 0;
+    float: left;
+    transition: all 0.2s ease;
+}
+#ks div:hover {
+    background-color:#f4f4f4 ;
+}
+#ks .zero {
+    width: 138px !important;
+}
+
+

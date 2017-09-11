@@ -24,7 +24,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/services", {templateUrl: "partials/services.html", controller: "PageCtrl"})
     .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
       .when("/testimonials", {templateUrl: "partials/testimonials.html", controller: "PageCtrl"})
-      .when("/Calculator", {templateUrl: "partials/Calculator.html", controller: "PageCtrl"})
+      .when("/calkulator", {templateUrl: "partials/calkulator.html", controller: "PageCtrl"})
     // Blog
     .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
     .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
@@ -64,30 +64,27 @@ app.controller('PageCtrl', function (/* $scope, $location, $http */) {
         $scope.text = 'hello';
         $scope.submit = function() {
             if ($scope.text) {
-                $scope.list +=(this.text)+<br>;
+                $scope.list +=(this.text);
                 $scope.text = "";
             }
         };
     }]);
 
 
-
-
-
-
-app.controller('CalculatorController', function($scope) {
-    $scope.result = function() {
-        if ($scope.operator == '+') {
-            return $scope.a + $scope.b;
-        }
-        if ($scope.operator == '-') {
-            return $scope.a - $scope.b;
-        }
-        if ($scope.operator == '*') {
-            return $scope.a * $scope.b;
-        }
-        if ($scope.operator == '/') {
-            return $scope.a / $scope.b;
-        }
+app.controller("caltrl", function($scope) {
+    $scope.total = "";
+    $scope.key = function(num) {
+        return $scope.total +=""+num;
     };
+    $scope.clear =  function() {
+        return $scope.total = "";
+    }
+    $scope.equal = function() {
+        var equal = $scope.total;
+        return $scope.total = eval(equal);
+    }
+
 });
+
+
+

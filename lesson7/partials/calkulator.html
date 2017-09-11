@@ -1,17 +1,50 @@
 
 
 
+<div class="container">
 
-<div class="calc" ng-controller="CalculatorController">
-    Calculator
-    <p><input type="number" ng-model="a"></p>
-    <p><input type="number" ng-model="b"></p>
-    <p><select ng-model="operator">
-        <option>+</option>
-        <option>*</option>
-        <option>-</option>
-        <option>/</option>
-    </select></p>
-    <p>{{ result() }}</p>
+    <div class="row">
 
+        <div class="col-lg-12">
+            <h1 class="page-header">Services
+                <small>What We Do</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Home</a>
+                </li></ol>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div id="calrap"  ng-controller="caltrl">
+    <div class="tp">
+        <input type="text" value="{{ total }}" />
+    </div>
+    <div id="ks">
+
+        <div ng-click="key(7)">7</div>
+        <div ng-click="key(8)">8</div>
+        <div ng-click="key(9)">9</div>
+        <div ng-click="key('+')">+</div>
+
+        <div ng-click="key(4)">4</div>
+        <div ng-click="key(5)">5</div>
+        <div ng-click="key(6)">6</div>
+        <div ng-click="key('-')">-</div>
+
+        <div ng-click="key(1)">1</div>
+        <div ng-click="key(2)">2</div>
+        <div ng-click="key(3)">3</div>
+        <div ng-click="key('*')">x</div>
+
+        <div ng-click="key(0)">0</div>
+        <div ng-click="clear()">c</div>
+        <div ng-click="equal()">=</div>
+        <div ng-click="key('/')">/</div>
+    </div>
+
+</div>
 
