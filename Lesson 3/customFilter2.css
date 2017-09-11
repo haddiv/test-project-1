@@ -1,0 +1,14 @@
+.table{
+  border:1px solid grey;
+  
+  
+}
+.head{
+  color:red;
+  padding:2px;
+}
+.row{
+  border:1px solid grey;
+  padding:2px;
+  margin:1px;
+}

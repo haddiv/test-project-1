@@ -1,0 +1,78 @@
+<html ng-app="store">
+<head>
+<title> Store</title>
+    <link rel="stylesheet" href="../css/angular_store.css">
+
+</head>
+
+<body ng-controller="storeController as store">
+
+<div class="wrapper">
+
+    <div class="centered-wrapper">
+    	
+        <div class="general-desc-wrap">
+        	
+            <h1>Bookstore</h1>
+            <hr>
+			    <table>
+        <tr>
+            <td align="right">Search :</td>
+            <td><input ng-model="search" /></td>
+        </tr>           
+        <tr>
+            <td align="right">Search By :</td>
+            <td>
+                <select ng-model="search">
+                    <option value="name">Name</option>
+                    <option value="author">Author</option>
+                </select>   
+            </td>
+        </tr>
+    </table>
+    <hr>
+     
+          
+        
+        <div class="item-wrap">
+            
+            
+            <div class="item" ng-repeat="book in books | filter: search">
+                <h2>{{book.name | uppercase}}</h2>
+                <img class="thumb" ng-src="{{book.image}}" onclick="changeImage(this);" />
+                <span class="close-icon" onclick="closeImage(this);"></span>
+                <p>{{book.description}}</p>
+                <h3>{{book.price | currency:"€"}}</h3>
+                <button class="button sold-out" disabled ng-show="book.soldOut">Sold Out</button>
+                <button class="button" ng-show="book.canPurchase">Add to Cart</button>
+                
+                <div class="panel" ng-show="tab === 1">
+                	<h2>Description</h2>
+                    <p>{{book.description}}</p>
+                    <span class="close-icon" ng-click="tab = 0" style="display:block;"></span>
+                </div>
+                
+                <div class="panel" ng-show="tab === 2">
+                	<h2>Reviews</h2>
+                    <blockquote>None Yet</blockquote>
+                    <span class="close-icon" ng-click="tab = 0" style="display:block;"></span>
+                </div>
+                
+                <ul class="nav nav-pills">
+                	<li ng-class="{active:tab === 1}"><a href ng-click="tab = 1">Description</a></li>
+                    <li ng-class="{active:tab === 2}"><a href ng-click="tab = 2">Reviews</a></li>
+                </ul>
+            </div>
+            
+        
+        </div>
+       
+    
+    </div>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="../js/angular_store.js"></script>
+    
+</body>
+</html>

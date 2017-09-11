@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registration Form</title>
+<link href
+<script src="https://ajax.googleapis.com/…/angularjs/1.6.4/angular.min.js"></script>
+
+</head>
+<div class="container">
+<form class="registration-form" method="post" action="#">
+<div class="form-title-row">
+<h1>Registration Form</h1>
+</div>
+<div class="form-row form-input-name-row">
+<label>Username </label>
+<span style=color:red> *</span>
+<input type="text" name="uname" ng-model="uname" placeholder="Use only letters & numbers"  required>
+
+</div>
+<div class="form-row form-input-email-row">
+<label for="pass">Password </label>
+<span style=color:red > *</span>
+<input type="email" name="email" value="email@example.com"  >
+
+</div >
+<div class="form-row form-input-pass-row">
+<label for="pass">Password </label>
+<span style=color:red> *</span>
+<input type="password" name="pass" ng-model="pass" required minlength="4" >
+
+</div>
+<div class="form-row">
+<label for="crs"> Courses </label>
+<span> </span>
+<select name="course" ng-init="course=['Choose a Course','Javascript','Java','Php','Python','C++']">
+<option ng-repeat="i in course">{{i}}</option>
+</select>
+
+</div>
+<div class="form-row">
+<label class="form-checkbox">
+<span>Male</span>
+<input type="checkbox" name="checkbox" >
+</label>
+</div>
+<div class="form-row1">
+<label class="form-checkbox">
+<span>Female</span>
+<input type="checkbox" name="checkbox" >
+</label>
+</div>
+<div class="form-row">
+<button type="submit">Get Started</button>
+</div>
+</form>
+</div>
+
+<script>
+ *ngIf="pass.errors.minlength"
+{{Name must be at least 4 characters long.}}
+*ng-show = "uname.$error.required"
+{{ Usernameame is required}}
+</script>
+</body>
+</html>
