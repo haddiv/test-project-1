@@ -27,7 +27,7 @@
 					<div class="icon"></div>
 				</div>						
 						<ul class="dropdown-menu" role="menu" aria-labelledby="menu1" >
-						  <li role="presentation" ng-repeat="x in menuList"><a role="menuitem" tabindex="-1" href="#">{{x}}</a></li>
+						  <li role="presentation" ng-repeat="x in menuList"><a role="menuitem" tabindex="-1" href="{{x}}">{{x}}</a></li>
 						   
 						</ul>
 				</div>
@@ -44,6 +44,82 @@
                 </div>
 				
 				<!--Standart Calculator-->
+				<div ng-switch="menuList">
+				
+					<div ng-switch-default>
+				<div class="row">
+					<div class="calcBtn mBtn" ng-click = "divsVal($event.target)">MC</div>
+					<div class="calcBtn mBtn" ng-click = "divsVal($event.target)">MR</div>
+					<div class="calcBtn mBtn" ng-click = "divsVal($event.target)">M+</div>
+					<div class="calcBtn mBtn" ng-click = "divsVal($event.target)">M-</div>
+					<div class="calcBtn mBtn" ng-click = "divsVal($event.target)">MS</div>
+					<div class="calcBtn mBtn" ng-click = "divsVal($event.target)">MSs</div>
+				</div>
+				
+				<div class="row">
+					<div class="calcBtn actionBtn secondStageAct" ng-click = "divsVal($event.target)">%</div>
+					<div class="calcBtn actionBtn secondStageAct"  ng-click = "sqrt()"><img src = "images/root.png" width="25%" height="25%"></div>
+					<div class = "calcBtn actionBtn secondStageAct" ng-click = "pow()">x<sup>2</sup></div>
+					<div class="calcBtn actionBtn secondStageAct " ng-click = "xDivide()">1/x</div>
+				</div>
+				
+				
+				<div class="row">
+					
+					<div class="calcBtn actionBtn" ng-click="clear()">CE</div>
+					<div class="calcBtn actionBtn" ng-click="clearAll()">C</div>
+					<div class="calcBtn actionBtn" ng-click ="backspace()" ><img src = "images/backspace.png" width="25%" height="25%"></div>
+					<div class="calcBtn actionBtn" ng-click ="divsVal($event.target)">/</div>
+				</div>
+				
+				
+                <div class="row">
+					<div class="calcBtn numbers" ng-click = "getNum($event.target)">7</div>
+					<div class="calcBtn numbers" ng-click = "getNum($event.target)">8</div>
+					<div class="calcBtn numbers" ng-click = "getNum($event.target)">9</div>
+					<div class="calcBtn actionBtn" ng-click = "divsVal($event.target)">*</div>
+                </div>
+
+                
+				<div class="row">
+					<div class="calcBtn numbers" ng-click = "getNum($event.target)">4</div>
+					<div class="calcBtn numbers" ng-click = "getNum($event.target)">5</div>
+					<div class="calcBtn numbers" ng-click = "getNum($event.target)">6</div>
+					<div class="calcBtn actionBtn" ng-click = "divsVal($event.target)">-</div>
+					
+				</div>
+
+               
+					<div class = "row">
+						<div class="calcBtn numbers" ng-click = "getNum($event.target)">1</div>
+						<div class="calcBtn numbers" ng-click = "getNum($event.target)">2</div>
+						<div class="calcBtn numbers" ng-click = "getNum($event.target)">3</div>
+						<div class="calcBtn actionBtn" ng-click = "divsVal($event.target)">+</div>
+						
+						 
+					</div>
+					
+					
+				   
+
+
+					<div class = "row">
+						<div class="calcBtn actionBtn" ng-click = "reverseNum()">+-</div>
+						<div class="calcBtn numbers"  ng-click = "getNum($event.target)">0</div>
+						<div class="calcBtn actionBtn" ng-click = "dot()">.</div>
+						<div class="calcBtn equal"  ng-click = "equal()">=</div>
+					</div>
+				
+				</div> <!--ng-switch-when="default"-->
+				
+				<!--Sxientific Calculator-->
+				<div ng-switch-when="Programmer">
+               <div class="row">
+					<div class = "hex">HEX<span>0</span></div>
+					<div class = "dec">DEC<span>0</span></div>
+					<div class = "oct">OCT<span>0</span></div>
+					<div class = "bin">BIN<span>0</span></div>
+			   </div>
 				<div class="row">
 					<div class="calcBtn mBtn" ng-click = "divsVal($event.target)">MC</div>
 					<div class="calcBtn mBtn" ng-click = "divsVal($event.target)">MR</div>
@@ -106,14 +182,9 @@
 						<div class="calcBtn actionBtn" ng-click = "divsVal($event.target)">.</div>
 						<div class="calcBtn equal"  ng-click = "equal()">=</div>
 					</div>
-				
-				
-				
-				<!--Sxientific Calculator-->
-               
+					</div> <!--ng-switch-when="proggrammer"-->
 
-
-            
+            </div><!--ng-switch="menuList"-->
 
 
 

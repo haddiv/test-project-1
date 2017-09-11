@@ -149,7 +149,7 @@ app.controller('calculatorController',function ($scope) {
 							break;	
 				}
 				
-			
+			console.log($scope.result);
 					$scope.firstStage=$scope.result;
 					$scope.show=false; 
 					$scope.secondStage="";
@@ -184,6 +184,49 @@ app.controller('calculatorController',function ($scope) {
 			    $scope.secondStage="("+$scope.firstNum+ ")"+"sqrt";
 				}
 			}
+			
+			//dot
+		$scope.dot = function(){
+				if($scope.firstStage==""){
+			  
+			   $scope.firstStage= 0+"." ;
+			   
+			   
+			}
+			else{
+				$scope.show=true;
+			    $scope.firstStage=$scope.firstStage + ".";				
+			    
+				}
+			}
+		  
+		  
+		  //reverse
+		$scope.reverseNum = function(){
+		       (function(x){
+					var y = x.toString();
+					var z = y.split("").reverse().join("");
+					var aa = Number(z);
+					console.log(aa);
+					})($scope.firstNum)
+				if($scope.firstStage==""){
+			  
+			   $scope.firstStage= 0;
+			   
+			   
+			}
+			else{
+				//$scope.show=true;
+				//$scope.secondStage=$scope.firstStage + ".";				
+			   // $scope.firstNum="-" + $scope.firstStage;
+			    //$scope.firstNum= $scope.firstStage - "-";
+				console.log($scope.firstStage);
+				console.log($scope.firstNum);
+			
+			    
+				}
+			}
+		  
 		  
 		 //pow
 		 
