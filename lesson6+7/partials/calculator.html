@@ -1,0 +1,55 @@
+
+
+<div class="container">
+    
+            <div class="box" ng-show="standCalc">
+                <div class="display">
+                    <input type="text" name="output" class="form-control" id="usr" value="{{output}}">
+                </div>
+                <div class="keys">
+                    <div class="x">
+                        <button type="button" class="button black noNumber" ng-click="">MC</button>
+                        <button type="button" class="button black noNumber" ng-click="">MR</button>
+                        <button type="button" class="button gray noNumber" ng-click="">M+</button>
+                        <button type="button" class="button pink noNumber" ng-click=''> M-</button>
+                    </div>
+                    <div class="x">
+                        <button type="button" class="button black noNumber" ng-click="">MS </button>
+                        <button type="button" class="button black noNumber" ng-click="root()">√</button>
+                        <button type="button" class="button gray noNumber " ng-click='press("%")'>% </button>
+                        <button type="button" class="button pink noNumber" ng-click='revertNum()'> 1/x </button>
+                    </div>
+                    
+                    <div>
+                        <button type="button" class="button black noNumber" ng-click="clean()">CE </button>
+                        <button type="button" class="button black noNumber" ng-click="clean()">C </button>
+                        <button type="button" class="button gray " ng-click="delete()"><img src="img/backspace.png" id="delete"> </button>
+                        <button type="button" class="button pink " ng-click='operate("/")'> / </button>
+                    </div>
+                    <div>
+                        <button type="button" class="button black" ng-click="press('7')"> 7 </button>
+                        <button type="button" class="button black" ng-click="press('8')"> 8 </button>
+                        <button type="button" class="button black" ng-click="press(9)"> 9 </button>
+                        <button type="button" class="button pink " ng-click='operate("*")'> * </button>
+                    </div>
+                    <div>
+                        <button type="button" class="button black" ng-click="press('4')"> 4 </button>
+                        <button type="button"  class="button black" ng-click="press('5')" > 5 </button>
+                        <button type="button" class="button black" ng-click="press('6')"> 6 </button>
+                        <button type="button" class="button pink " ng-click='operate("-")'> - </button>
+                    </div>
+                    <div>
+                        <button type="button" class="button black" ng-click="press('1')"> 1 </button>
+                        <button type="button" class="button black" ng-click="press('2')"> 2 </button>
+                        <button type="button" class="button black" ng-click="press('3')"> 3 </button>
+                        <button type="button" class="button pink " ng-click='operate("+")'> + </button>
+                    </div>
+                    <div>
+                        <button type="button" class="button black noNumber" value="+/-" ng-click="plusMinus()">+/-</button>
+                        <button type="button" class="button black" value="0" ng-click="press('0')"> 0 </button>
+                        <button type="button" class="button black " value="." ng-click="press('.')" > . </button>
+                        <button type="button" class="button gray " value="="  ng-click="equal()"> = </button>
+                    </div>
+                </div>
+            </div>
+        </div>
