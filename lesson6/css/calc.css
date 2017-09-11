@@ -1,0 +1,42 @@
+.container {
+    font-family: serif;
+    font-size: 25px;
+    border-style: solid;
+    border-radius: 10px;
+    text-align: center;
+    width: fit-content;
+    margin-top: 20px;
+
+}
+.result {
+    text-align: center;
+    border-style:solid;
+    height: 80px;
+    padding: 20px;
+}
+.col-xs-9 {
+    border-color: black;
+    background-color: #ffffcc;
+    color: #000000;
+    text-align: center;
+}
+.col-xs-3 {
+    text-align: center;
+    background-color: grey;
+    padding: 10px;
+}
+button {
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+button:active {
+    opacity: 0.5;
+}
+button:focus {
+    outline: 0;
+}
+.info {
+    display: inline-block;
+}

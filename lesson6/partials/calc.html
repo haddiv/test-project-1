@@ -1,0 +1,53 @@
+<!DOCTYPE html >
+<html ng-app="calculatorApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+<div  class="container">
+    <div ng-controller="calculatorController" class="">
+        <div class="row">
+
+            <div class="col-xs-9 result">{{ calculator.currentDisplay }}</div>
+            <div class="col-xs-3"><button ng-click="resetClicked()" class="">c</button></div>
+        </div>
+        <div class="row">
+
+            <div class="col-xs-3"><button ng-click="numberButtonClicked(1)">1</button></div>
+            <div class="col-xs-3"><button ng-click="numberButtonClicked(2)">2</button></div>
+            <div class="col-xs-3"><button ng-click="numberButtonClicked(3)">3</button></div>
+            <div class="col-xs-3"><button ng-click="operationButtonClicked('/')">/</button></div>
+        </div>
+        <div class="row">
+
+            <div class="col-xs-3"><button ng-click="numberButtonClicked(4)">4</button></div>
+            <div class="col-xs-3"><button ng-click="numberButtonClicked(5)">5</button></div>
+            <div class="col-xs-3"><button ng-click="numberButtonClicked(6)">6</button></div>
+            <div class="col-xs-3"><button ng-click="operationButtonClicked('*')">*</button></div>
+        </div>
+        <div class="row">
+
+            <div class="col-xs-3"><button ng-click="numberButtonClicked(7)" >7</button></div>
+            <div class="col-xs-3"><button ng-click="numberButtonClicked(8)" >8</button></div>
+            <div class="col-xs-3"><button ng-click="numberButtonClicked(9)" >9</button></div>
+            <div class="col-xs-3"><button ng-click="operationButtonClicked('-')">-</button></div>
+        </div>
+        <div class="row">
+
+            <div class="col-xs-3"><button ng-click="numberButtonClicked('0')">0</button></div>
+            <div class="col-xs-3"><button ng-click="numberButtonClicked('.')" >.</button></div>
+            <div class="col-xs-3"><button ng-click="enterClicked()">=</button></div>
+            <div class="col-xs-3"><button ng-click="operationButtonClicked('+')">+</button></div>
+        </div>
+
+    </div>
+</div>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+<script src="calc.js"></script>
+</body>
+</html>
