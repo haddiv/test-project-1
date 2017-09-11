@@ -216,12 +216,14 @@ app.controller('calculatorController',function ($scope) {
 			   
 			}
 			else{
-			$scope.firstNum *= -1;
+			
 			if($scope.firstNum<0){
+			$scope.firstNum *= -1;
 					$scope.firstStage = $scope.firstNum;
 					}
 				
 			    else{
+				$scope.firstNum *= -1;
 				$scope.firstStage = $scope.firstStage + "-" ;
 			    
 					}
