@@ -19,63 +19,108 @@
 
         <div class="col-md-12">
             <div class="col-md-4 claculatorBody">
-                <div>
-                <input type = "text" name = "inputNumbers"  dir= "rtl" placeholder="0" class="form-control inputForNum" ng-model="thirdStage"><br>
-                <input type = "text" name = "inputNumbers"  dir= "rtl" placeholder="0" class="form-control inputForNum" ng-model="secondStage"><br>
-                <input type = "text" name = "inputNumbers"  dir= "rtl" placeholder="0" class="form-control inputForNum" ng-model="firstStage"><br>
+			    
+				<div class="dropdown" >
+				<div class="dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">
+					<div class="icon"></div>
+					<div class="icon"></div>
+					<div class="icon"></div>
+				</div>						
+						<ul class="dropdown-menu" role="menu" aria-labelledby="menu1" >
+						  <li role="presentation" ng-repeat="x in menuList"><a role="menuitem" tabindex="-1" href="#">{{x}}</a></li>
+						   
+						</ul>
+				</div>
+
+								
+				
+				
+                <div class="row">
+				
+				
+				
+					<input type = "text" name = "inputNumbers" ng-show="show" dir= "rtl" placeholder="0" class="inputForNum" ng-model="secondStage"><br>
+					<input type = "text" name = "inputNumbers"  dir= "rtl" placeholder="0" class="inputForNum" ng-model="firstStage">
+                </div>
+				
+				<!--Standart Calculator-->
+				<div class="row">
+					<div class="calcBtn mBtn" ng-click = "divsVal($event.target)">MC</div>
+					<div class="calcBtn mBtn" ng-click = "divsVal($event.target)">MR</div>
+					<div class="calcBtn mBtn" ng-click = "divsVal($event.target)">M+</div>
+					<div class="calcBtn mBtn" ng-click = "divsVal($event.target)">M-</div>
+					<div class="calcBtn mBtn" ng-click = "divsVal($event.target)">MS</div>
+					<div class="calcBtn mBtn" ng-click = "divsVal($event.target)">MSs</div>
+				</div>
+				
+				<div class="row">
+					<div class="calcBtn actionBtn secondStageAct" ng-click = "divsVal($event.target)">%</div>
+					<div class="calcBtn actionBtn secondStageAct"  ng-click = "sqrt()"><img src = "images/root.png" width="25%" height="25%"></div>
+					<div class = "calcBtn actionBtn secondStageAct" ng-click = "pow()">x<sup>2</sup></div>
+					<div class="calcBtn actionBtn secondStageAct " ng-click = "xDivide()">1/x</div>
+				</div>
+				
+				
+				<div class="row">
+					
+					<div class="calcBtn actionBtn" ng-click="clear()">CE</div>
+					<div class="calcBtn actionBtn" ng-click="clearAll()">C</div>
+					<div class="calcBtn actionBtn" ng-click ="backspace()" ><img src = "images/backspace.png" width="25%" height="25%"></div>
+					<div class="calcBtn actionBtn" ng-click ="divsVal($event.target)">/</div>
+				</div>
+				
+				
+                <div class="row">
+					<div class="calcBtn numbers" ng-click = "getNum($event.target)">7</div>
+					<div class="calcBtn numbers" ng-click = "getNum($event.target)">8</div>
+					<div class="calcBtn numbers" ng-click = "getNum($event.target)">9</div>
+					<div class="calcBtn actionBtn" ng-click = "divsVal($event.target)">*</div>
                 </div>
 
-                <div class="btn styleBtn" ng-click ="backspace()" >Backspace</div>
-                <div class="btn styleBtn" >Clear</div>
-                <div class="btn styleBtn" ng-click="clearAll()">Cleare All</div><br>
+                
+				<div class="row">
+					<div class="calcBtn numbers" ng-click = "getNum($event.target)">4</div>
+					<div class="calcBtn numbers" ng-click = "getNum($event.target)">5</div>
+					<div class="calcBtn numbers" ng-click = "getNum($event.target)">6</div>
+					<div class="calcBtn actionBtn" ng-click = "divsVal($event.target)">-</div>
+					
+				</div>
+
+               
+					<div class = "row">
+						<div class="calcBtn numbers" ng-click = "getNum($event.target)">1</div>
+						<div class="calcBtn numbers" ng-click = "getNum($event.target)">2</div>
+						<div class="calcBtn numbers" ng-click = "getNum($event.target)">3</div>
+						<div class="calcBtn actionBtn" ng-click = "divsVal($event.target)">+</div>
+						
+						 
+					</div>
+					
+					
+				   
+
+
+					<div class = "row">
+						<div class="calcBtn actionBtn" ng-click = "divsVal($event.target)">+-</div>
+						<div class="calcBtn numbers"  ng-click = "getNum($event.target)">0</div>
+						<div class="calcBtn actionBtn" ng-click = "divsVal($event.target)">.</div>
+						<div class="calcBtn equal"  ng-click = "equal()">=</div>
+					</div>
 				
 				
-                <div class="btn calcBtn styleBtn" ng-click = "divsVal($event.target)">MC</div>
-                <div class="btn calcBtn numbers" ng-click = "divsVal($event.target)">7</div>
-                <div class="btn calcBtn numbers" ng-click = "divsVal($event.target)">8</div>
-                <div class="btn calcBtn numbers" ng-click = "divsVal($event.target)">9</div>
-                <div class="btn calcBtn styleBtn" ng-click = "divsVal($event.target)">/</div>
-                <div class="btn calcBtn styleBtn" ng-click = "divsVal($event.target)">Sqrt</div><br>
+				
+				<!--Sxientific Calculator-->
+               
 
 
-                <div class="btn calcBtn styleBtn" ng-click = "divsVal($event.target)">MR</div>
-                <div class="btn calcBtn numbers" ng-click = "divsVal($event.target)">4</div>
-                <div class="btn calcBtn numbers" ng-click = "divsVal($event.target)">5</div>
-                <div class="btn calcBtn numbers" ng-click = "divsVal($event.target)">6</div>
-                <div class="btn calcBtn styleBtn" ng-click = "divsVal($event.target)">*</div>
-                <div class = "btn calcBtn styleBtn" ng-click = "divsVal($event.target)">x<sup>2</sup></div><br>
-
-                <div class="btn calcBtn styleBtn" ng-click = "divsVal($event.target)">MS</div>
-                <div class="btn calcBtn numbers" ng-click = "divsVal($event.target)" >1</div>
-                <div class="btn calcBtn numbers" ng-click = "divsVal($event.target)">2</div>
-                <div class="btn calcBtn numbers" ng-click = "divsVal($event.target)">3</div>
-                <div class="btn calcBtn styleBtn" ng-click = "divsVal($event.target)">-</div>
-                <div class = "btn calcBtn styleBtn" ng-click = "divsVal($event.target)">1/x</div><br>
-
-
-                <div class="btn calcBtn styleBtn" ng-click = "divsVal($event.target)">M+</div>
-                <div class="btn calcBtn numbers" ng-click = "divsVal($event.target)">0</div>
-                <div class="btn calcBtn styleBtn" ng-click = "divsVal($event.target)">.</div>
-                <div class="btn calcBtn styleBtn" ng-click = "divsVal($event.target)">+-</div>
-                <div class="btn calcBtn styleBtn" ng-click = "divsVal($event.target)">+</div>
-                <div class = "btn calcBtn styleBtn" ng-click = "divsVal($event.target)">=</div><br>
+            
 
 
 
 
-
-
-
-
-
-
-
-
-            <div>
-
-
-
-
+			
+			
+			
         </div>
 
 
@@ -84,5 +129,7 @@
 
 
 
+</div>
+</div>
 </div>
 <!-- /.container -->

@@ -82,34 +82,139 @@ app.controller('PageCtrl', ['$scope', 'testimonialStories', function ( $scope,te
 
 
 app.controller('calculatorController',function ($scope) {
+		//menu
+     $scope.menuList = ["Standart","Scientific","Programmer","Settings"];
+	 
 		$scope.firstStage= "";
-
-
+		$scope.sign = "";
+		$scope.secondStage="";
+		$scope.firstNum=0;
+		$scope.secondNum=0;
+		$scope.result=0;
+		$scope.show=false;         
+        $scope.resNum= 0; 
+		
+		$scope.getNum = function(item){
+		         	 if($scope.secondStage!=""){
+				     
+					 $scope.firstStage +=angular.element(item).text();
+					 console.log($scope.firstStage);
+				     $scope.firstNum =Number($scope.firstStage);
+					 console.log($scope.firstNum);
+				}
+		else{
+			$scope.firstStage += angular.element(item).text();
+			$scope.firstNum = Number($scope.firstStage);
+			console.log(typeof $scope.firstNum);
+			console.log($scope.firstNum);
+			//$scope.secondNum = Number(angular.element(item).text());
+			}
+		
+		}
+		
+		
 		$scope.divsVal = function(item) {
-            $scope.firstStage += angular.element(item).text();
+                $scope.show=true; 
+				
+				$scope.sign = angular.element(item).text();
+				if($scope.firstStage==""){
+					$scope.secondNum =0;
+					//$scope.firstStage = $scope.firstNum;
+					$scope.secondStage = 0 + $scope.sign;
+					
+					}
+				else{
+				$scope.firstStage="";
+				$scope.secondNum=$scope.firstNum;
+				$scope.secondStage = $scope.sign + $scope.firstNum;
+				console.log($scope.secondStage);
+				console.log($scope.secondNum);
+				
+				
+						
+					}
+           }
+			
+			$scope.equal=function(){
+			switch($scope.sign){
+				case "+":$scope.result=$scope.firstNum + $scope.secondNum; 
+							break;
+				case "/":$scope.result=$scope.firstNum / $scope.secondNum; 
+							break;
+				case "*":$scope.result=$scope.firstNum * $scope.secondNum; 
+							break;	
+				case "-":$scope.result=$scope.firstNum - $scope.secondNum; 
+							break;	
+				case "%":$scope.result=($scope.secondNum * 100)/$scope.firstNum; 
+							break;	
+				}
+				
+			
+					$scope.firstStage=$scope.result;
+					$scope.show=false; 
+					$scope.secondStage="";
+					}
+					
+       //Divison on x     
+       $scope.xDivide  = function(){
+			if($scope.firstStage==""){
+			   $scope.show=true;
+			   $scope.secondStage="(0) reciproc ";
+			   $scope.firstStage="division on 0 is impossible";
+			   
+			}
+			else{
+				$scope.show=true;
+			    $scope.firstStage=1/$scope.firstNum;				
+			    $scope.secondStage="("+$scope.firstNum+")"+"reciproc";
+				}
+			}
 
-            if (angular.element(item).hasClass('styleBtn')) {
-                $scope.thirdStage =  $scope.secondStage;
-                $scope.secondStage =  $scope.firstStage;
-                $scope.firstStage = angular.element(item).text();
-
-            }
-            else {
-
-                //$scope.thirdStage =  $scope.secondStage;
-                //$scope.secondStage =  $scope.firstStage;
-
-            }
-            console.log($scope.firstStage);
-        }
-
-
+		//sqrt
+		$scope.sqrt = function(){
+				if($scope.firstStage==""){
+			   $scope.show=true;
+			   $scope.secondStage="(0) sqrt";
+			   $scope.firstStage=0;
+			   
+			}
+			else{
+				$scope.show=true;
+			    $scope.firstStage=Math.sqrt($scope.firstNum);				
+			    $scope.secondStage="("+$scope.firstNum+ ")"+"sqrt";
+				}
+			}
 		  
-		  
+		 //pow
+		 
+           $scope.pow= function(){
+				if($scope.firstStage==""){
+			   $scope.show=true;
+			   $scope.secondStage=0;
+			   $scope.firstStage=0;
+			   
+			}
+			else{
+				$scope.show=true;
+			    $scope.secondStage=$scope.firstNum * $scope.firstNum;				
+			   
+				}
+			}
+  
+		 		 
 		//clear all
         $scope.clearAll = function(){
 			$scope.firstStage="";
-			}		
+			$scope.secondStage="";
+			$scope.show=false;
+			$scope.firstNum=0;
+			$scope.secondNum=0;
+			}	
+    	//clear	
+        $scope.clear = function(){
+			$scope.firstStage="";
+			
+			}			
 			
 		//backspace	
 		$scope.backspace=function(){
