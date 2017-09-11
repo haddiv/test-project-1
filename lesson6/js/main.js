@@ -148,11 +148,17 @@ app.controller('calculatorController',function ($scope) {
 				case "%":$scope.result=($scope.secondNum * 100)/$scope.firstNum; 
 							break;	
 				}
-				
-			console.log($scope.result);
-					$scope.firstStage=$scope.result;
+				if($scope.result<0){
+					$scope.result = Math.abs($scope.result);
+					$scope.firstStage= $scope.result+ "-";
+					}
+			
+					else{
+						$scope.firstStage=$scope.result;
+					}
 					$scope.show=false; 
 					$scope.secondStage="";
+					
 					}
 					
        //Divison on x     
@@ -203,13 +209,7 @@ app.controller('calculatorController',function ($scope) {
 		  
 		  //reverse
 		$scope.reverseNum = function(){
-		       (function(x){
-					var y = x.toString();
-					var z = y.split("").reverse().join("");
-					var aa = Number(z);
-					console.log(aa);
-					})($scope.firstNum)
-				if($scope.firstStage==""){
+		       	if($scope.firstStage==""){
 			  
 			   $scope.firstStage= 0;
 			   
@@ -219,7 +219,8 @@ app.controller('calculatorController',function ($scope) {
 				//$scope.show=true;
 				//$scope.secondStage=$scope.firstStage + ".";				
 			   // $scope.firstNum="-" + $scope.firstStage;
-			    //$scope.firstNum= $scope.firstStage - "-";
+			    $scope.firstStage = $scope.firstStage + "-" ;
+			    $scope.firstNum *= -1;
 				console.log($scope.firstStage);
 				console.log($scope.firstNum);
 			
