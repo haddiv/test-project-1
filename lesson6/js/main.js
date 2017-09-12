@@ -76,20 +76,28 @@ app.controller("calcCtrl", function ($scope) {
         return tmp;
     };
     $scope.addArr=function () {
-        $scope.array=[];
-        $scope.array.push($scope.output+$scope.result);
+        var array=[];
+        array.push($scope.output+$scope.result);
         $scope.output=$scope.array;
-        console.log($scope.output);
-    }
+
+    };
 
     $scope.operate = function(op) {
         if($scope.checkInput(op)) {
             $scope.output = $scope.output + op;
         }
     };
+    $scope.prosent=function (num, num2) {
+
+    };
     $scope.clean=function () {
             $scope.result = 0;
             $scope.output = "0";
+    };
+    $scope.cleanLastElement=function () {
+        var array=[];
+        array.push($scope.output);
+        console.log(array);
     };
     $scope.root=function () {
         $scope.num=$scope.output;

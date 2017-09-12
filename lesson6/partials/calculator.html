@@ -38,13 +38,13 @@
                         <button type="button" class="mButtons"> M <sup>+</sup>  </button>
                     </div>
                     <div>
-                        <button type="button" class="button grey" ng-click='press("%")'> % </button>
+                        <button type="button" class="button grey" ng-click='prosent()'> % </button>
                         <button type="button" class="button grey" ng-click='root()'> √ </button>
                         <button type="button" class="button grey" ng-click="sqrNum()">  x <sup>2</sup></button>
                         <button type="button" class="button grey" ng-click='revertNum()'> 1/x </button>
                     </div>
                     <div>
-                        <button type="button" class="button grey smallFont"> CE </button>
+                        <button type="button" class="button grey smallFont" ng-click="cleanLastElement()"> CE </button>
                         <button type="button" class="button grey smallFont" ng-click="clean()"> C </button>
                         <button type="button" class="button grey" ng-click="backspace()"> &#9003;</button>
                         <button type="button" class="button grey" ng-click='operate("/")'> / </button>
