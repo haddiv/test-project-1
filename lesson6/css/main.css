@@ -137,7 +137,10 @@ footer {
 }
 
 
-
+.main{
+	position:relative 
+	
+	}
 .inputForNum{
     border:none;
     margin: 0;
@@ -205,10 +208,39 @@ footer {
 	}
 .secondStageAct{
 	background-color:#f5f5f5
+	}
+
+.icons{	
+	width:35px;
+	
 	}	
 .icon{
 	width: 35px;
     height: 5px;
     background-color: #d7d7d7;
     margin: 6px 0;
+	}	
+	
+.menuList{
+		background-color:#f5f5f5;
+		width:50%;
+		position:absolute;
+		top:35px;
+		left:0;
+		z-index:1
+		
+		}	
+.menuSections{
+	border-top:1px solid gray;
+	
+	
+	}		
+.sBtn{
+	width:50px;
+	height:50px;
+	border-bottom:1px solid #cacaca;
+	background-color:#f5f5f5;
+	display: flex;
+	align-items: center;
+    justify-content: center;
 	}	

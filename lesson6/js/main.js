@@ -83,8 +83,21 @@ app.controller('PageCtrl', ['$scope', 'testimonialStories', function ( $scope,te
 
 app.controller('calculatorController',function ($scope) {
 		//menu
-     $scope.menuList = ["Standart","Scientific","Programmer","Settings"];
-	 
+     //$scope.menuList = ["Standart","Scientific","Programmer","Settings"];
+	 $scope.showStandart =true; 
+	 $scope.showScientific =false;
+	 $scope.getMenu = function(item){
+	 console.log(angular.element(item).text());
+	 switch(angular.element(item).text()){
+			case "Standart": $scope.showStandart =true; 
+			break;
+			case "Scientific": $scope.showScientific =true; 
+			 $scope.showStandart =false; 
+			 $scope.show=false;
+			break;
+			//default:$scope.showStandart =true;
+			}
+	 }
 		$scope.firstStage= "";
 		$scope.sign = "";
 		$scope.secondStage="";
@@ -117,10 +130,16 @@ app.controller('calculatorController',function ($scope) {
                 $scope.show=true; 
 				
 				$scope.sign = angular.element(item).text();
+				console.log($scope.sign);
+				
+				if($scope.sign=="xy" || $scope.sign=="y"){
+					$scope.sign =  "^";
+					}
 				if($scope.firstStage==""){
 					$scope.secondNum =0;
 					//$scope.firstStage = $scope.firstNum;
 					$scope.secondStage = 0 + $scope.sign;
+					
 					
 					}
 				else{
@@ -146,8 +165,11 @@ app.controller('calculatorController',function ($scope) {
 				case "-":$scope.result=$scope.firstNum - $scope.secondNum; 
 							break;	
 				case "%":$scope.result=($scope.secondNum * 100)/$scope.firstNum; 
-							break;	
+							break;
+				case "^":$scope.result=Math.pow($scope.secondNum,$scope.firstNum); 
+							break;								
 				}
+				
 				if($scope.result<0){
 					$scope.result = Math.abs($scope.result);
 					$scope.firstStage= $scope.result+ "-";
@@ -158,7 +180,7 @@ app.controller('calculatorController',function ($scope) {
 					}
 					$scope.show=false; 
 					$scope.secondStage="";
-					
+					console.log($scope.result);
 					}
 					
        //Divison on x     
@@ -247,7 +269,95 @@ app.controller('calculatorController',function ($scope) {
 			   
 				}
 			}
-  
+			
+			 //sin()
+			 
+			 $scope.sin= function(){
+			 $scope.show=true;
+				if($scope.firstStage==""){
+					$scope.firstStage= 0;
+					$scope.secondStage= "("+0+")"+"sin";
+			}
+			else{
+				
+			    $scope.firstNum=Math.sin($scope.firstNum);	
+				if($scope.firstNum<0){
+						$scope.secondStage="("+ $scope.firstStage +")"+"sin";	
+						$scope.firstStage =  Math.abs($scope.firstNum) + "-";
+						
+						}
+				else{
+					$scope.secondStage="("+ $scope.firstStage +")"+"sin";	
+					$scope.firstStage = $scope.firstNum;
+					}		
+			    
+				}
+			}
+			
+			//cos()
+			$scope.cos= function(){
+			 $scope.show=true;
+				if($scope.firstStage==""){
+					$scope.firstStage= 0;
+					$scope.secondStage= "("+0+")"+"cos";
+			}
+			else{
+				
+			    $scope.firstNum=Math.cos($scope.firstNum);	
+				if($scope.firstNum<0){
+						$scope.secondStage="("+ $scope.firstStage +")"+"cos";	
+						$scope.firstStage =  Math.abs($scope.firstNum) + "-";
+						
+						}
+				else{
+					$scope.secondStage="("+ $scope.firstStage +")"+"cos";	
+					$scope.firstStage = $scope.firstNum;
+					}		
+			    
+				}
+			}
+			
+			
+			//tan()
+			$scope.tan= function(){
+			 $scope.show=true;
+				if($scope.firstStage==""){
+					$scope.firstStage= 0;
+					$scope.secondStage= "("+0+")"+"tan";
+			}
+			else{
+				
+			    $scope.firstNum=Math.tan($scope.firstNum);	
+				if($scope.firstNum<0){
+						$scope.secondStage="("+ $scope.firstStage +")"+"tan";	
+						$scope.firstStage =  Math.abs($scope.firstNum) + "-";
+						
+						}
+				else{
+					$scope.secondStage="("+ $scope.firstStage +")"+"tan";	
+					$scope.firstStage = $scope.firstNum;
+					}		
+			    
+				}
+			}
+		//tenPow()
+     
+         $scope.tenPow= function(){
+				
+				if($scope.firstStage==""){
+			   $scope.show=true;
+			   $scope.secondStage="("+0+")"+ "powten";
+			   $scope.firstStage=1;
+			}
+			else{
+				$scope.show=true;
+			    $scope.secondStage="("+$scope.firstStage+")" + "powten" ;
+				$scope.firstStage=Math.pow(10,$scope.firstNum);
+						
+			   
+				}
+			}
+	 
 		 		 
 		//clear all
         $scope.clearAll = function(){
