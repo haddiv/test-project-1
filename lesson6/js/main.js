@@ -151,6 +151,12 @@ app.controller("calcCtrl", function ($scope) {
         $scope.result = eval($scope.output);
         $scope.output = $scope.result;
     };
+    $scope.desOutput=0;
+    $scope.toMakeDecimal=function () {
+        $scope.desOutput=$scope.output.toString(2);
+        console.log($scope.desOutput);
+
+    };
 
     $scope.press = function(num) {
         if($scope.checkInput(num)) {
@@ -179,11 +185,35 @@ app.controller("calcCtrl", function ($scope) {
     $scope.showCalcSyintific =function () {
         $scope.standCalc = false;
         $scope.sinCalc = true;
+        $scope.progCalc = false;
+        $scope.settings = false;
     };
     $scope.showCalcStandart=function () {
         $scope.standCalc = true;
         $scope.sinCalc = false;
+        $scope.progCalc = false;
+        $scope.settings = false;
+    };
+    $scope.showCalcProg=function () {
+        $scope.standCalc = false;
+        $scope.sinCalc = false;
+        $scope.settings = false;
+        $scope.progCalc = true;
+    };
+    $scope.showSettings=function () {
+        $scope.standCalc = false;
+        $scope.sinCalc = false;
+        $scope.progCalc = false;
+        $scope.settings = true;
     }
+    $scope.changeColorClass=function () {
+        $scope.backgroundColor={
+            'background-color':"#1f1f1f",
+            'color':"#e6e7e8"
+
+        };
+    };
+
 });
 
 /**
