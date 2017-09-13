@@ -218,7 +218,9 @@ footer {
 #screen4{
     text-align: left;
     font-size: 16px;
-    border-top:none;
+    border-top: none;
+    margin-bottom: 5px;
+    margin-left: -4px;
 }
 .keys{
     position:relative;
@@ -330,6 +332,7 @@ footer {
 .choseClass{
     padding: 25px;
 }
-#text{
-    font-size: 18px;
+.leftMargin{
+    margin-left: 4px;
 }
+

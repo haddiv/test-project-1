@@ -27,9 +27,9 @@
                         <img src="img/historyIcon.png" alt="history">
                     </div>
                 </div>
-                <div class="display"><input type="text" id="screen1" class="form-control" value="{{output}}"></div>
+                <div class="display"><input type="text" ng-style="backgroundColor" id="screen1" class="form-control" value="{{output}}"></div>
                 <div class="keys">
-                    <div>
+                    <div class="leftMargin">
                         <button type="button" class="mButtons"> MC </button>
                         <button type="button" class="mButtons"> MR </button>
                         <button type="button" class="mButtonsSin darkText"> M+ </button>
@@ -75,7 +75,7 @@
                     </div>
                 </div>
             </div>
-            <div class="displayHistory hist1" ng-show="showHistoryWindow1" >{{output}}</div>
+            <div class="displayHistory hist1" ng-show="showHistoryWindow1" ng-style="backgroundColor">{{output}}</div>
             <div class="box2" ng-show="sinCalc" ng-style="backgroundColor" >
                 <div>
                     <div class="menuDiv" data-toggle="dropdown">
@@ -94,9 +94,9 @@
                     </div>
                 </div>
 
-                <div class="display"><input type="text" id="screen2" class="form-control" value="{{output}}"></div>
+                <div class="display"><input type="text" ng-style="backgroundColor" id="screen2" class="form-control" value="{{output}}"></div>
                 <div class="keys">
-                    <div>
+                    <div class="leftMargin">
                         <button type="button" class="mButtonsSin" > MC </button>
                         <button type="button" class="mButtonsSin" > MR </button>
                         <button type="button" class="mButtonsSin darkText">  M+ </button>
@@ -156,7 +156,7 @@
                     </div>
                 </div>
             </div>
-            <div class="displayHistory hist2" ng-show="showHistoryWindow2">{{output}}</div>
+            <div class="displayHistory hist2" ng-show="showHistoryWindow2" ng-style="backgroundColor">{{output}}</div>
             <div class="box3" ng-show="progCalc" ng-style="backgroundColor">
                 <div>
                     <div class="menuDiv" data-toggle="dropdown">
@@ -175,10 +175,10 @@
                     </div>
                 </div>
 
-                <div class="display"><input type="text" id="screen3" class="form-control" value="{{output}}"></div>
+                <div class="display"><input type="text" id="screen3" ng-style="backgroundColor" class="form-control" value="{{output}}"></div>
                 <div class="keys">
                     <div>
-                        <input type="text" id="screen4" class="form-control" value="{{desOutput}}">
+                        <input type="text" id="screen4" class="form-control" ng-style="backgroundColor" value="{{desOutput}}">
                     </div>
                     <div>
                         <button type="button" class="button grey" ng-click="sqrNum()"> MOD </button>

@@ -208,11 +208,10 @@ app.controller("calcCtrl", function ($scope) {
     }
     $scope.changeColorClass=function () {
         $scope.backgroundColor={
-            'background-color':"#1f1f1f",
-            'color':"#e6e7e8"
-
+            'background-color':"#1f1f1f"
         };
     };
+
 
 });
 

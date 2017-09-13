@@ -19,21 +19,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="calculator.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="calculator.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lesson6/partials/calculator.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="75" lean-forward="false" selection-start-line="12" selection-start-column="75" selection-end-line="12" selection-end-column="75" />
+            <state relative-caret-position="476">
+              <caret line="235" column="78" lean-forward="true" selection-start-line="235" selection-start-column="78" selection-end-line="235" selection-end-column="78" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lesson6/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="211" column="28" lean-forward="false" selection-start-line="211" selection-start-column="22" selection-end-line="211" selection-end-column="28" />
+            <state relative-caret-position="340">
+              <caret line="209" column="30" lean-forward="false" selection-start-line="209" selection-start-column="15" selection-end-line="209" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -42,8 +42,8 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lesson6/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="335" column="0" lean-forward="false" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="0" />
+            <state relative-caret-position="516">
+              <caret line="337" column="0" lean-forward="true" selection-start-line="337" selection-start-column="0" selection-end-line="337" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -52,8 +52,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lesson6/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="153">
+              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
                 <marker date="1505246497717" expanded="true" signature="1418:1571" ph="..." />
                 <marker date="1505246497717" expanded="true" signature="1511:1539" ph="..." />
@@ -80,6 +80,7 @@
       <find>showMe</find>
       <find>showCalcStandart</find>
       <find>showMenu</find>
+      <find>backgroundColor</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -92,9 +93,9 @@
         <option value="$PROJECT_DIR$/lesson6/partials/testimonials.html" />
         <option value="$PROJECT_DIR$/lesson6/partials/draft.html" />
         <option value="$PROJECT_DIR$/lesson6/partials/dff.html" />
+        <option value="$PROJECT_DIR$/lesson6/js/main.js" />
         <option value="$PROJECT_DIR$/lesson6/css/main.css" />
         <option value="$PROJECT_DIR$/lesson6/partials/calculator.html" />
-        <option value="$PROJECT_DIR$/lesson6/js/main.js" />
       </list>
     </option>
   </component>
@@ -104,7 +105,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -193,15 +194,15 @@
       <workItem from="1505110782291" duration="11966000" />
       <workItem from="1505137307254" duration="3450000" />
       <workItem from="1505206988786" duration="589000" />
-      <workItem from="1505312625815" duration="9109000" />
+      <workItem from="1505312625815" duration="13573000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98200000" />
+    <option name="totallyTimeSpent" value="102664000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -615,18 +616,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lesson6/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="335" column="0" lean-forward="false" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lesson6/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <marker date="1505246497717" expanded="true" signature="1418:1571" ph="..." />
             <marker date="1505246497717" expanded="true" signature="1511:1539" ph="..." />
@@ -634,18 +627,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lesson6/partials/calculator.html">
+    <entry file="file://$PROJECT_DIR$/lesson6/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="75" lean-forward="false" selection-start-line="12" selection-start-column="75" selection-end-line="12" selection-end-column="75" />
+        <state relative-caret-position="340">
+          <caret line="209" column="30" lean-forward="false" selection-start-line="209" selection-start-column="15" selection-end-line="209" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lesson6/js/main.js">
+    <entry file="file://$PROJECT_DIR$/lesson6/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="211" column="28" lean-forward="false" selection-start-line="211" selection-start-column="22" selection-end-line="211" selection-end-column="28" />
+        <state relative-caret-position="516">
+          <caret line="337" column="0" lean-forward="true" selection-start-line="337" selection-start-column="0" selection-end-line="337" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lesson6/partials/calculator.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="235" column="78" lean-forward="true" selection-start-line="235" selection-start-column="78" selection-end-line="235" selection-end-column="78" />
           <folding />
         </state>
       </provider>
