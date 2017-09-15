@@ -1,8 +1,8 @@
-/* 
+/*
 Custom CSS for...
 'Modern Business' HTML Theme by Start Bootstrap
 
-All Start Bootstrap themes are licensed under Apache 2.0. 
+All Start Bootstrap themes are licensed under Apache 2.0.
 For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap.com!
 */
 
@@ -173,106 +173,94 @@ footer {
 
 }
 
-/**/
 
-body {
+/* Calc css*/
 
-    color: #404040;
-    background: #d8e5e5;
-}
 
-.calc {
-    margin: 50px auto;
-    padding: 15px;
-    width: 26%;
-    background: #3d4543;
-    border: 1px solid #222;
-    border-radius: 4px;
-}
-
-.calc-display {
-    margin: 0 0 20px;
-    padding: 3px;
-    background: #222;
-    border-radius: 3px;
-
-}
-
-.calc-display-input {
-    display: block;
-    width: 100%;
-    height: 35px;
-    padding: 0 8px;
-    font: 26px/35px UbuntuMono, monospace;
-    color: #444;
-    text-align: right;
-    background: #bccd95;
-    background-clip: padding-box;
-
-    border: 1px solid #222;
-    border-radius: 2px;
-
-}
-
-.calc-row, .operators {
-    margin-top: 7px;
-    zoom: 1;
-}
-
-.calc-row:before, .calc-row:after, .operators:after, .operators:before {
-    content: '';
-    display: table;
-    clear: both;
-}
-
-.calc-button {
+.calculator{
+    border:none;
+    width: 30%;
+    height:400px;
     float: left;
-    padding: 0;
-    margin: 0 0 0 7px;
-    width: 74px;
-    font: 15px/35px UbuntuMono, monospace;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    background: #313131;
-    border-radius: 3px;
+    background-color:#e6e7e8;
+}
+
+.divinputHistory{
+    width: 250px;
+    background-color:#e6e7e8;
+    padding: 25px 15px;
+    border:none;
+    position: absolute;
+    border-left: 2px solid #fafafa;
+
+}
+
+.divinput{
+    width: 99%;
+    margin: 14px auto;
+    padding-top: 13px;
+}
+#myInput{
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    background-color: #e6e7e8;
+    text-align: right;
+}
+.calc{
+    position:relative;
+    top:15px;
+    margin-left: 7px;
+}
+.MButton, .MButton{
+    height: 20px;
+    border: none;
+    margin-top: 0;
+    margin-bottom: 15px;
+    background-color: #e6e7e8;
     cursor: pointer;
+    color: #7c7c7c;
+    padding: 0;
+    font-size: 10px;
+    margin-left: -5px;
+}
+.MButton{
+    width: 20%;
+    color: #7c7c7c;
+    font-weight: bold;
 }
 
-.calc-row .calc-button {
-    width: 101px;
-    margin-bottom: 10px;
+.MButton:hover{
+    font-size: 20px;
+    color: #3f3f3f;
 }
 
-.calc-row .calc-button:nth-child(3n+1) {
-    margin-left: 0px;
+.button {
+    width:25%;
+    height: 40px;
+    border: none;
+    margin-left: -3px;
+    margin-bottom: 2px;
+    cursor: pointer;
+    font-size: 12px;
 }
-
-.calc-button:first-child {
-    margin-left: 0;
+.button.white {
+    color:black;
+    background-color:#fafafa;
 }
-
-.calc-button-gray {
-    background: #6f6f6f;
-
+.button Color {
+    color: black;
+    background-color: #eff0f1;
 }
-
-.calc-button-gray:active {
-    background: #555;
+.button Color:hover{
+    background-color: #fafafa;
 }
-
-.calc-button-red {
-    background: #ff4561;
+.button.Color1:hover{
+    background-color: #eff0f1;
 }
-
-.calc-button-red:active {
-    background: #ff4561;
+.button :active{
+    border: 2px solid grey;
 }
-
-.calc-button-yellow {
-    background: #ffa70c;
-    width: 100% !important;
-}
-
-
-
