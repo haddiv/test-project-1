@@ -29,19 +29,16 @@
 				
 
 				<!--menu List -->				
-				<div class ="menuList" ng-show="showMenu">
-					<!--<div ng-repeat="x in menuList" ng-switch on ="x">
-						<div class = "menuSections" ng-click="showCalc($this)">{{x}}</div>
-					</div>	-->
-                    <div class = "menuSections" ng-model="showStandart" ng-click="getMenu($event.target)">Standart</div>					
-                    <div class = "menuSections" ng-click ="getMenu($event.target)" ng-model="showScientific">Scientific</div>					
-                    <div class = "menuSections"></div>					
-                    <div class = "menuSections"></div>					
+				<div class ="menuList" ng-show="showMenu" >
+					<div ng-repeat="x in menuList" >
+						<div class = "menuSections" ng-model="text" ng-click=  "getMenu($event.target)">{{x}}</div>
+					</div>	
+                   		
 				</div>				
 
 								
 				
-			<div class="main">
+			<div class="main" >
 					
 				<div class="row">
 						
@@ -51,8 +48,8 @@
 				
 				<!--Standart Calculator-->
 				
-				
-					<div class="standart" ng-show="showStandart">
+				<div ng-switch on="text">
+					<div class="standart" ng-switch-default>
 				<div class="row">
 					<div class="calcBtn mBtn" ng-click = "divsVal($event.target)">MC</div>
 					<div class="calcBtn mBtn" ng-click = "divsVal($event.target)">MR</div>
@@ -119,7 +116,7 @@
 				</div> <!--ng-switch-when="default"-->
 				
 				<!--Sxientific Calculator-->
-				<div ng-model="scientific" ng-show="showScientific">
+				<div ng-switch-when="Scientific">
                
 				<div class="row">
 					<div class="calcBtn sBtn" ng-click = "divsVal($event.target)">MC</div>
@@ -208,8 +205,7 @@
 						<div class="calcBtn equal"  ng-click = "equal()">=</div>
 					</div>
 					</div> <!--ng-switch-when="proggrammer"-->
-
-           <!--ng-switch="menuList"-->
+					</div>            <!--ng-switch="menuList"-->
 	
 				
 

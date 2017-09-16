@@ -83,21 +83,12 @@ app.controller('PageCtrl', ['$scope', 'testimonialStories', function ( $scope,te
 
 app.controller('calculatorController',function ($scope) {
 		//menu
-     //$scope.menuList = ["Standart","Scientific","Programmer","Settings"];
-	 $scope.showStandart =true; 
-	 $scope.showScientific =false;
-	 $scope.getMenu = function(item){
-	 console.log(angular.element(item).text());
-	 switch(angular.element(item).text()){
-			case "Standart": $scope.showStandart =true; 
-			break;
-			case "Scientific": $scope.showScientific =true; 
-			 $scope.showStandart =false; 
-			 $scope.show=false;
-			break;
-			//default:$scope.showStandart =true;
+     $scope.menuList = ["Standart","Scientific","Programmer","Settings"];
+	 	 $scope.getMenu = function(item){
+			$scope.text = angular.element(item).text();
+			$scope.showMenu=false;  
+									
 			}
-	 }
 		$scope.firstStage= "";
 		$scope.sign = "";
 		$scope.secondStage="";
