@@ -348,7 +348,33 @@ app.controller('calculatorController',function ($scope) {
 			   
 				}
 			}
-	 
+	 //pi()
+	  $scope.pi = function(){
+		$scope.firstStage=3.14159265358979323846264;
+		
+		}
+		//factorial()
+		 $scope.factorial= function(){
+				if($scope.firstStage==""){
+			   $scope.show=true;
+			   $scope.secondStage="("+0+")"+ "fact";
+			   $scope.firstStage=1;
+			}
+			else{
+				$scope.show=true;
+			    $scope.secondStage="("+$scope.firstStage+")" + "fact" ;
+				$scope.fact=1;
+				while($scope.firstNum>=1){
+					$scope.fact*= $scope.firstNum;
+					$scope.firstNum--;
+					}
+			
+				$scope.firstStage=$scope.fact;
+				
+						
+			   
+				}
+			}
 		 		 
 		//clear all
         $scope.clearAll = function(){
