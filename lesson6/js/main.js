@@ -23,6 +23,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/pricing", {templateUrl: "partials/pricing.html", controller: "PageCtrl"})
     .when("/services", {templateUrl: "partials/services.html", controller: "PageCtrl"})
     .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
+	.when("/calculator", {templateUrl: "partials/calculator.html", controller: "MyCtrl"})
     // Blog
     .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
     .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
@@ -53,3 +54,50 @@ app.controller('PageCtrl', function (/* $scope, $location, $http */) {
     selector: "a[data-toggle=tooltip]"
   })
 });
+
+
+
+
+
+function MyCtrl($scope) {
+
+        $scope.output = "0";
+
+        $scope.inOperation = false;
+
+        $scope.num1 = 0;
+
+        $scope.updateOutput = function(btn) {
+            if($scope.newNumber){
+                $scope.output = 0;
+            }
+            if($scope.output == "0" || $scope.newNumber) {
+                $scope.output = btn;
+                $scope.newNumber = false;
+            } else {
+                $scope.output += String(btn);
+            }
+        };
+
+        $scope.operate = function(op) {
+            if($scope.output && !$scope.inOperation){
+                $scope.num1 = $scope.output;
+                $scope.output += op;
+                $scope.inOperation = true;
+            }else if($scope.output.length > $scope.num1.length+1){
+                $scope.output = eval($scope.output);
+                $scope.output += op;
+            }
+        };
+
+        $scope.equal = function() {
+            if($scope.output.length > $scope.num1.length+1){
+                $scope.output = eval($scope.output);
+                $scope.num1 = $scope.output;
+            }else{
+                $scope.output = $scope.num1;
+            }
+        };
+
+    }
+    app.controller('MyCtrl', MyCtrl);

@@ -135,3 +135,98 @@ footer {
         /* increases the carousel height so it looks good on phones */
     }
 }
+
+
+
+
+
+/*calc*/
+
+
+ .padding, .margin{
+    padding: 15px;
+    margin: 15px;
+}
+.box{
+    background-color:#e6e7e8;
+    border:none;
+	width: 230px;
+    height: 381px;
+    float: left;
+}
+
+
+
+
+.calc-display{
+    width: 98%;
+    margin: 14px auto;
+    padding-top: 13px;
+}
+#screen1, #screen2{
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    background-color: #e6e7e8;
+    text-align: right;
+}
+.keys {
+    position:relative;
+    top:15px;
+    margin-left: 7px;
+}
+.mButtons, .mButtonsSin{
+    height: 20px;
+    border: none;
+    margin-top: 0;
+    margin-bottom: 15px;
+    background-color: #e6e7e8;
+    cursor: pointer;
+    color: #7c7c7c;
+    padding: 0;
+    font-size: 10px;
+    margin-left: -5px;
+}
+.mButtons{
+    width: 33px;
+}
+.mButtonsSin{
+    width: 46px;
+}
+.mButtons:hover, .mButtonsSin:hover{
+    font-size: 16px;
+    color: #3f3f3f;
+}
+.darkText{
+    color: #7c7c7c;
+    font-weight: bold;
+}
+.button {
+    width: 55px;
+    height: 31px;
+    border: none;
+    margin-left: -3px;
+    margin-bottom: 2px;
+    cursor: pointer;
+    font-size: 12px;
+}
+.button.white {
+    color:black;
+    background-color:#fafafa;
+}
+.button.grey {
+    color: black;
+    background-color: #eff0f1;
+}
+.button.grey:hover{
+    background-color: #fafafa;
+}
+.button.white:hover{
+    background-color: #eff0f1;
+}
+.button :active{
+    border: 1px solid grey;
+}
