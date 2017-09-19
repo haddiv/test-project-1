@@ -157,6 +157,17 @@ app.controller("calcCtrl", function ($scope) {
         console.log($scope.desOutput);
 
     };
+    $scope.factorial=function (num) {
+        if(num=0){
+            $scope.output = 1;
+            $scope.result = eval($scope.output);
+            $scope.output = $scope.result;
+        }else if(num>1){
+            $scope.output = num * factorial(num - 1) ;
+            $scope.result = eval($scope.output);
+            $scope.output = $scope.result;
+        }
+    }
 
     $scope.press = function(num) {
         if($scope.checkInput(num)) {
