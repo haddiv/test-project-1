@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+    <style>
+        .page {
+
+            height: 500px;
+            width: 90%;
+        }
+
+        .menu {
+            border: 1px solid black;
+            height: 30px;
+            width: 100%;
+            display:flex;
+            justify-content: center;
+        }
+
+        .text {
+            height: 400px;
+            width: 100%;
+        }
+
+        #textarea {
+            -moz-appearance: textfield-multiline;
+            -webkit-appearance: textarea;
+            border: 1px solid gray;
+            height: 350px;
+            overflow: auto;
+            padding: 2px;
+            resize: both;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        img {
+            height: 200px;
+            width: 200px;
+            margin: 15%;
+        }
+
+        .ingredient-block {
+            width: 75%
+        }
+        .text_type_bold{
+            font-style:normal;
+            font-weight:bold;
+        }
+
+        .text_type_italic{
+            font-weight:normal;
+            font-style:italic;
+        }
+    .text_align_center{
+        text-align: center;
+    }
+        .text_align_right{
+            text-align: right;
+        }
+        .text_align_left{
+            text-align: left;
+        }
+    </style>
+    <script>
+        var app = angular.module('myApp',[]);
+
+        function MyCtrl($scope) {
+            $scope.class="";
+            $scope.chiliSpicy=function(){
+                $scope.class="text_type_bold"
+            };
+            $scope.jalapenoSpicy=function(){
+                $scope.class="text_type_italic"
+            };
+            $scope.alignTextCenter=function(){
+                $scope.class="text_align_center"
+            };
+            $scope.alignTextRight=function(){
+                $scope.class="text_align_right"
+            };
+            $scope.alignTextLeft=function(){
+                $scope.class="text_align_left"
+            };
+        }
+    </script>
+</head>
+
+<body  ng-app="myApp" ng-controller="MyCtrl">
+<div class="page">
+    <div class="menu">
+        <button ng-click="chiliSpicy()">
+            <i class="fa fa-bold" aria-hidden="true"></i>
+        </button>
+        <button ng-click="jalapenoSpicy()">
+            <i class="fa fa-italic" aria-hidden="true"></i>
+        </button>
+        <button ng-click="alignTextCenter()">
+            <i class="fa fa-align-center" aria-hidden="true"></i>
+        </button>
+        <button ng-click="alignTextRight()">
+            <i class="fa fa-align-right" aria-hidden="true"></i>
+        </button>
+        <button ng-click="alignTextLeft()">
+            <i class="fa fa-align-left" aria-hidden="true"></i>
+        </button>
+        <button>
+            <i class="fa fa-list-ul" aria-hidden="true"></i>
+        </button>
+        <button>
+            <i class="fa fa-list-ol" aria-hidden="true"></i>
+        </button>
+
+
+    </div>
+
+    <div class="text" id="textarea" contenteditable>
+        <div><img src="fruits.jpg"></div>
+        <div class="ingredient-block {{class}}" ng-model="rootFolders"  >
+            <h1>Orange Juice</h1>
+            <h2>ingredients</h2>
+            <ul>
+                <li>1</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <p>Lorem is simply dummy text of the printing and
+                typesetting industry.  has been the industry's
+                standard dummy text ever since the 1500s, when an unknown
+                printer took a galley of type and scrambled it to make a type
+                specimen book. It has survived not only five centuries, but also the
+                leap into electronic typesetting, remaining essentially unchanged.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+</html>
