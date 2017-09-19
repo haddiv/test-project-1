@@ -213,7 +213,7 @@ app.controller('calculatorController',function ($scope) {
 			   
 			}
 			else{
-				$scope.show=true;
+
 			    $scope.firstStage=$scope.firstStage + ".";				
 			    
 				}
@@ -375,6 +375,28 @@ app.controller('calculatorController',function ($scope) {
 			   
 				}
 			}
+
+
+			//log()
+    $scope.log= function(){
+        if($scope.firstStage==""){
+            $scope.show=true;
+            $scope.secondStage="("+0+")"+ "log";
+            $scope.firstStage="Invalid Input";
+        }
+        else{
+            $scope.show=true;
+            $scope.secondStage="("+$scope.firstStage+")" + "log" ;
+            $scope.firstStage=Math.log($scope.firstNum);
+            console.log($scope.firstStage)
+            }
+
+
+
+
+
+        }
+
 		 		 
 		//clear all
         $scope.clearAll = function(){
