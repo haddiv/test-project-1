@@ -1,0 +1,37 @@
+.box{
+    width: 80%;
+    height: 350px;
+    border: 1px solid grey;
+    margin: 25px auto;
+}
+.boxHeader{
+    background-color: #e9edf2;
+    height: 45px;
+}
+.icons{
+    padding: 15px 14px;
+}
+.selectBox{
+    border: none;
+    background-color: #e9edf2;
+    padding: 0;
+}
+.icons:hover{
+    cursor: pointer;
+}
+.imageDiv{
+    float: left;
+    padding: 25px 0px;
+    margin: 25px 6px;
+    width: 20%;
+}
+.descriptionDiv{
+    float: right;
+    width: 64%;
+    border: none;
+    padding: 25px;
+}
+.downloadLink a{
+    cursor: pointer;
+    text-decoration: none;
+}
