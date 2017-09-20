@@ -1,0 +1,52 @@
+.page {
+            height: 500px;
+            width: 90%;
+        }
+        .menu {
+            border: 1px solid black;
+            height:50px;
+            width: 100%;
+            display:flex;
+            justify-content: left;
+        }
+        .text {
+            height: 300px;
+            width: 100%;
+        }
+        #textarea {
+            -moz-appearance: textfield-multiline;
+            -webkit-appearance: textarea;
+            border: 1px solid gray;
+            height: 350px;
+            overflow: auto;
+            padding: 2px;
+            resize: both;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        img {
+            height: 200px;
+            width: 200px;
+            margin: 15%;
+        }
+        .ingredient-block {
+            width: 75%
+        }
+        .text_type_bold{
+            font-style:normal;
+            font-weight:bold;
+        }
+        .text_type_italic{
+            font-weight:normal;
+            font-style:italic;
+        }
+    .text_align_center{
+        text-align: center;
+    }
+        .text_align_right{
+            text-align: right;
+        }
+        .text_align_left{
+            text-align: left;
+        }

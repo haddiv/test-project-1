@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet"  href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+	<script src="main.js"></script>
+</head>
+
+<body  ng-app="myApp" ng-controller="MyCtrl">
+<div class="page">
+    <div class="menu">
+        <button ng-click="chiliSpicy()">
+            <i class="fa fa-bold" aria-hidden="true"></i>
+        </button>
+        <button ng-click="jalapenoSpicy()">
+            <i class="fa fa-italic" aria-hidden="true"></i>
+        </button>
+        <button ng-click="alignTextCenter()">
+            <i class="fa fa-align-center" aria-hidden="true"></i>
+        </button>
+        <button ng-click="alignTextRight()">
+            <i class="fa fa-align-right" aria-hidden="true"></i>
+        </button>
+        <button ng-click="alignTextLeft()">
+            <i class="fa fa-align-left" aria-hidden="true"></i>
+        </button>
+        <button>
+            <i class="fa fa-list-ul" aria-hidden="true"></i>
+        </button>
+        <button>
+            <i class="fa fa-list-ol" aria-hidden="true"></i>
+        </button>
+
+
+    </div>
+
+    <div class="text" id="textarea" contenteditable>
+        <div><img src="barbecue.jpg"></div>
+        <div class="ingredient-block {{class}}" ng-model="rootFolders"  >
+            <h1>Barbecue</h1>
+            
+            <p>Barbecue or barbeque (informally BBQ or barby/barbies) is both a cooking method and an apparatus. 
+			Barbecuing is done slowly over low, indirect heat and the food is flavored by the smoking process, 
+			while grilling, a related process, is generally done quickly over moderate-to-high direct heat that 
+			produces little smoke. Barbecue is practiced in many areas of the world and there are numerous regional variations.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+</html>
