@@ -1,0 +1,146 @@
+*{
+	margin:0 auto;
+	padding:0
+	}
+.main{
+	display: block;
+    background: #fff;
+    padding: 0;
+	border:1px solid gray;
+	position:relative
+		}
+
+.tool_bar{
+	border-bottom: 1px solid #d1d1d1;
+    background: #f8f8f8;
+    padding: 6px 8px 2px;
+    white-space: normal;
+	height:70px;
+	position:relative
+	}
+.arrows{
+	border-right:1px solid gray;
+    float: left;
+    margin: 1px 2px 6px 0;
+    padding-right: 3px;
+	cursor:pointer
+	}
+
+.undo{
+	width:20px;
+	height:20px;
+	float:left;
+	margin-right:10px
+	
+	}
+.select{
+	line-height: 26px;
+    padding-left: 10px;
+    text-overflow: ellipsis;
+    float: left;
+    cursor: default;
+    color: #484848;
+    
+	
+	
+	
+	}
+
+.select:hover{	
+	border:1px solid #b7b6b6;
+	background-color:#bebebe
+	}
+.drop_down{
+		position:absolute;
+		height:150px;
+		overflow:auto;
+		background-color:white
+		}
+.style{
+		left:68px;
+		top:35px;
+	}
+.heading{
+		left:188px;
+		top:35px;
+	}	
+.open{
+	cursor: default;
+    display: inline-block;
+    font-size: 0;
+    
+    line-height: 17px;
+    margin: 1px 10px 1px;
+    width: 5px;	
+	}
+.open_arrow{
+    cursor: default;
+    margin: 11px 0 0;
+    float: left;
+    height: 0;
+    width: 0;
+    font-size: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 3px solid #484848;}	
+.style_properties {
+	display:block;
+	
+	}	
+.formating:hover{
+	border:1px solid #b7b6b6;
+	background-color:#bebebe	}
+	
+	.partitions{
+	cursor: inherit;
+     margin-top: 5px;
+    height: 20px;
+    float: left;
+    display: inline-block;
+	border-right:1px solid gray
+	}
+.styles_section{
+	width: 100px;
+	}
+.arrows_section{
+		width:65px
+		}
+.heading_section{
+	
+	width: 105px;
+	}	
+.formating_section,.media_section {
+		width: 105px;
+		}	
+.formating,.list_icon, .dent, .link_icon,.media_icon, .full_screen_icon{
+	float:left;
+	text-align:center;
+	margin-left:10px
+	}
+.list_section, .dent_section,.link_section{
+	width:65px;
+	}
+.full_screen_section{
+width:30px;
+	}	
+
+
+
+/*angular styles*/	
+.heading_one{
+	font-size:25;
+	font-weight:bold
+	}	
+.heading_two{
+	font-size:15;
+	font-weight:bold
+	}	
+.bold{
+font-weight:bold
+}
+
+.italic{
+font-style:italic
+}
+
+	

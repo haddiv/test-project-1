@@ -1,0 +1,140 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link href = "style/bootstrap/css/bootstrap.css" type = "text/css" rel="stylesheet">
+	<link href="style/style.css" type="text/css" rel="stylesheet">
+	
+</head>
+<body ng-app = "myApp" ng-controller = "editController">
+   <div class="container">
+    <div class = "row">
+			<div class = "col-md-12 main">
+				<div class = "col-md-12 tool_bar"  > 
+				
+					<div class = "partitions arrows_section">
+						<div class="undo">
+							<img src= "images/undo.png" title = "Cancel(Ctrl + Z)" width="100%" height="100%"/>
+						</div>
+						<div class="undo">
+							<img src= "images/undo.png" title = "Repeat(Ctrl + Y)" width="100%" height="100%"/>
+						</div>
+					</div >
+					
+					<!--selctr-->
+					<div class="partitions style_section">
+						<div class = "select" ng-click="showStyle=!showStyle">
+							<span>Styles</span>
+							<span class ="open">
+								<span class= "open_arrow"></span>
+							</span>
+						</div>
+						    <div class= "drop_down style" ng-show="showStyle">
+								<span class= "style_properties block_style">Block Styles</span>
+								<span class="style_properties  italic"><i>Italic Title</i></span>
+								<span class = "style_properties  subtitle">Subtitle</span>
+								<span class = "style_properties  spacial-containers">Special Container</span>
+								<span class = "style_properties ">Element Stiles</span>
+								<span class = "style_properties marker"><mark>Marker</mark></span>
+								<span class = "style_properties big"><h6>Big</h6></span>
+								<span class = "style_properties small"><small>Small</small></span>
+								<span class = "style_properties typewrriter">Typewriter</span>
+								<span class = "style_properties comp_code">Computer code</span>
+								<span class = "style_properties keyboard">Keyboard Phrace</span>
+								<span class = "style_properties sample_text">Sample text</span>
+								<span class = "style_properties variable">Variable</span>
+								<span class = "style_properties deleted"><del>Deleted text</del></span>
+								<span class = "style_properties inserted"><ins>Inserted text</ins></span>
+								<span class = "style_properties cited_work">Cited Work</span>
+								<span class = "style_properties rtl">Language:RTL</span>
+								<span class = "style_properties ltr">Language:LTR</span>
+							</div>
+							
+					</div><!--end of select-->
+				
+				<!--heading-->
+					<div class="partitions heading_section">
+						<div class = "select " ng-click="showHeading=!showHeading">
+							<span>Heading</span>
+							<span class ="open">
+								<span class= "open_arrow"></span>
+							</span>
+						</div>
+						    <div class= "drop_down heading" ng-show="showHeading" >
+								<span class= "style_properties standart">Formating</span>
+								<span class= "style_properties standart" 
+								ng-click="standartText()">Standart</span>
+								<span class="style_properties  heading_one" ng-click="headingOne()"><h1>Heading 1</h1></span>
+								<span class = "style_properties  heading_two" ng-click="headingTwo()"><h2>Heading 2</h2></span>
+								<span class = "style_properties  heading_three"><h3>Heading 3</h3></span>
+								<span class = "style_properties  small_heading"><h6>Smallest</h6></span>
+								
+							</div>
+							
+					</div><!--heading-->
+				<!--bold,italic-->
+				<div class= "partitions formating_section">
+					<div class = "formating" ng-click="bold()"><i class="fa fa-bold " aria-hidden="true" title = "bold"></i></div>
+					<div class = "formating" ng-click="italic()"><i class="fa fa-italic formating" aria-hidden="true" title = "italic" ></i></div>
+					<div class = "formating"><i class="fa fa-strikethrough formating" aria-hidden="true" title = "strikethrough"></i></div>
+				</div>
+				
+				<!--clea formating-->
+				
+				
+				
+				<!--list-->
+				<div class= "partitions list_section">
+					<div class= "list_icon"><i class="fa fa-list-ol" aria-hidden="true"></i></div>
+					<div class= "list_icon"><i class="fa fa-list-ul" aria-hidden="true"></i></div>
+				</div>
+				
+				<!--denting-->
+				<div class= "partitions dent_section">
+					<div class= "dent"><i class="fa fa-indent" aria-hidden="true" title = "indent"></i></div>
+					<div class= "dent"><i class="fa fa-outdent" aria-hidden="true" title = "outdent"></i></div>
+				</div>
+				
+				<!--linking-->
+				<div class= "partitions link_section">
+					<div class= "link_icon"><i class="fa fa-link" aria-hidden="true" title = "linking CTRL + L"></i></div>
+					<div class= "link_icon"><i class="fa fa-chain-broken" aria-hidden="true" title = "Unlink"></i></div>
+				</div>
+				
+				<!--media-->
+				<div class= "partitions media_section">
+					<div class= "media_icon"><i class="fa fa-picture-o" aria-hidden="true" title = "Image"></i></div>
+					<div class= "media_icon"><i class="fa fa-file-video-o" aria-hidden="true" title="Video"></i></div>
+					<div class= "media_icon"><i class="fa fa-table" aria-hidden="true" title = "table"></i></div>
+					
+				</div>
+				
+				
+				<!--media-->
+				<div class= "partitions full_screen_section">
+					<div class = "full_screen_icon"><i class="fa fa-arrows-alt" aria-hidden="true"></i></div>
+					
+				</div>
+				
+				
+				</div>
+				
+				<!--content div-->
+				<div contenteditable="true" select-text ng-model="text"  ng-mouseup="getText()" ng-class = "class">
+										
+						{{text}}	
+				</div>
+					<!--end of content div-->
+				
+			</div>
+   </div>
+   </div>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+<script src = "libs/jquery-3.2.1.js"></script>
+	<script src = "app/app.module.js"></script>
+	<script src = "app/controller.js"></script>
+	<script src = "style/bootstrap/js/bootstrap.js"></script>
+	<script src = "style/bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/d739431f06.js"></script>
+	
+</body>
+</html>
