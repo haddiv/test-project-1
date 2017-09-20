@@ -9,33 +9,37 @@ function getSelectionText() {
 }
 
 app.service('getText', function() {
+    var text = "";
     this.myFunc = function () {
-        var text = "";
         if (window.getSelection) {
             text = window.getSelection().toString();
+            console.log("sfdsda");
         }
+        console.log(text);
         return text;
-    }
+
+    };
 });
-app.controller('myCtrl', function($scope, getText) {
-    /*$scope.myFunc = function () {
-        $scope.textStyle = "";
+app.controller('myCtrl', function($scope) {
+    $scope.text = "";
+    $scope.myFunc = function () {
         if (window.getSelection) {
-            $scope.textStyle = window.getSelection().toString();
+            $scope.text = window.getSelection().toString();
         }
-        return $scope.textStyle;
-        console.log($scope.textStyle)
-    };*/
+        console.log($scope.text)
+        return $scope.text;
 
+    };
 
-    $scope.textStyle=getText.myFunc();
+    $scope.testClick=function () {
+        console.log($scope.text);
+    };
     // bold italic strike
-    $scope.changeToBold=function () {
-        $scope.textStyle={
+    $scope.changeToBold=function (test) {
+        $scope.text={
             'font-weight':"bold"
         };
-
-        console.log($scope.textStyle);
+        console.log($scope.text)
     };
     $scope.changeToItalic=function () {
         $scope.textStyle={
@@ -65,19 +69,20 @@ app.controller('myCtrl', function($scope, getText) {
 
     //normal, heading1, heading2, formated
 
+
     $scope.normal=function () {
         $scope.textStyle={
-            'font-size':"15px"
+            'font-size':"12px"
         };
     };
     $scope.heading1=function () {
         $scope.textStyle={
-            'background-color':"red"
+            'font-size':"20px"
         };
     };
     $scope.heading2=function () {
         $scope.textStyle={
-            'font-size':"20px"
+            'font-size':"18px"
         };
     };
 });
