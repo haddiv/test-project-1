@@ -1,0 +1,80 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h1 class="page-header">ACME Stories
+                <small>How ACME brings changes!</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Home</a>
+                </li>
+                <li class="active">Testimonial</li>
+            </ol>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-12">
+		<iframe width = "100%" height="450px" height="100%" src="https://www.youtube.com/embed/UhRvzjNS058" frameborder="0" allowfullscreen></iframe>
+        </div>
+		
+		
+		
+		
+        <div class="col-md-6">
+            <h2>Know more about our successful people</h2>
+
+            <p>Businessmen and businesswomen from all over the world share with their success stories. Their dream came into the reality because they believe in us</p>
+
+         </div>
+
+    </div>
+
+    <!-- Team Member Profiles -->
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h2 class="page-header">Our Custommers Responses</h2>
+        </div>
+
+		<div ng-controller = "PageCtrl">
+		<div ng-show="view">
+        <div  class="col-sm-4" ng-repeat="x in testimonialStories" >
+		    
+              <img class="img-responsive" ng-src={{x.img}}>
+              <h3>{{x.name}}</h3>
+			  <i>{{x.country}}</i>
+              <p>{{x.story}}</p>
+        </div>
+		<div class="col-sm-12">
+		<input type = "button" ng-click = "showForm()" class = "btn" value = "Tell Us Your Story"/>
+		</div>
+        </div>
+		 
+		
+			<div class="col-md-6" ng-show = "hidden">
+				<form>
+					<input type = "text" name = "name" placeholder= "enter your name" class="form-control" ng-model="name"><br>
+					<input type = "text"  name="last_name" placeholder= "enter your last name" class="form-control" ng-model="surname"><br>
+					<input type = "text" name = "email" placeholder= "enter your email" class="form-control" ng-model="email"><br>
+					<input type = "text" name = "country" placeholder= "enter your country" class="form-control" ng-model="country"><br>
+					<input type = "text" name = "city" placeholder= "enter your city" class="form-control" ng-model="city"><br>
+					<input type="file" ng-model="img" name="filename" accept="image/gif, image/jpeg, image/png">
+					<textarea cols="8" rows = "10" class="form-control" placeholder="tell us yor story" ng-model="text"></textarea><br>
+					<input type="submit" name ="submit"  ng-click = "newTest()" value = "submit" class="btn">
+				
+				</form>
+			</div>
+		</div>
+       
+
+    </div>
+
+    
+
+</div>
+<!-- /.container -->
