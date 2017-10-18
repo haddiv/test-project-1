@@ -36,6 +36,16 @@ module.exports = function (app) {
             res.json({ message: 'deleted' });
         });
     });
+    app.get('/api/nerd/:id', function (req, res) {
+        var id = req.params.id;
+        console.log(id);
+        Nerd.findOne(_id, function (err, nerds) {
+            if (err)
+                res.send(err);
+
+            res.json(nerds); // return all nerds in JSON format
+        });
+    });
 
     // route to handle creating goes here (app.post)
     // route to handle delete goes here (app.delete)

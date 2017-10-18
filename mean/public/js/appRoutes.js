@@ -19,12 +19,14 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
         })
         .when('/form', {
             templateUrl: 'views/form.html',
-            controller: 'FormController'
+            controller: 'NerdController'
+            // controller: 'FormController'
 
         })
         .when('/nerds/form', {
             templateUrl: 'views/form.html',
-            controller: 'FormController'
+            controller: 'NerdController'
+            //  controller: 'FormController'
 
         })
 

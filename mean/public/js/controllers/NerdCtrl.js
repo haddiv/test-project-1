@@ -1,4 +1,4 @@
-angular.module('NerdCtrl', []).controller('NerdController', function($scope, Nerd, $location) {
+angular.module('NerdCtrl', []).controller('NerdController', function($scope, Nerd, Form, $location) {
     $scope.tagline = 'Nothing beats a pocket protector!';
     angular.element(document).ready(function () {
 
@@ -15,12 +15,25 @@ angular.module('NerdCtrl', []).controller('NerdController', function($scope, Ner
             alert(this.nerd);
         }
 
-    }
+    };
     $scope.deleteFunction = function (id) {
         console.log(id)
         Nerd.delete(id).then(function(val) {
             console.log("Asti");
         });
 
-    }
+    };
+    $scope.updateFunction = function (id) {
+        console.log(id)
+        Nerd.get('/nerds/' + id).then(function(response) {
+            $scope.nerds = response.data;
+        });
+
+    };
+    $scope.returnObj=function () {
+        //console.log($scope.nerdObj);
+        Nerd.create($scope.Nerd).then(function() {
+            console.log($scope.Nerd);
+        });
+    };
 });
