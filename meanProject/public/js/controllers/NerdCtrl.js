@@ -1,5 +1,6 @@
 angular.module('NerdCtrl', []).controller('NerdController', function($scope, Nerd) {
     angular.element(document).ready(function () {
+	$scope.show=true;
 $scope.submit = function(){
 	 
 	 $scope.nerdObj = {
@@ -29,12 +30,20 @@ $scope.submit = function(){
 			console.log("done")
         })
     }  
-			
-  
-	   
-			
-			
-			
+		
+			//Update
+			$scope.updateUser=function(){
+					$scope.show=false;
+					
+					
+					$scope.id= this.x._id;
+					$scope.name= this.x.name;
+					$scope.age= this.x.age;
+					$scope.city= this.x.city;
+					}
+					
+					
+  			
 			//Get from DB
 			Nerd.get().then(function(value) {
 			$scope.resArr = value.data;

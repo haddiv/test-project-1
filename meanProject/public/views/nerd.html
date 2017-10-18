@@ -8,7 +8,8 @@
         <label>Enter Your Age<input type ="text" name = "age" id = "age" ng-model="age"></label><br>
         <label>Enter Your City<input type ="text" name = "city" id = "city" ng-model="city"></label><br>
 
-       <input type = "button" value ="Send" ng-click="submit()">
+       <input type = "button" value ="Send" ng-click="submit()" ng-show="show">
+       <input type = "button" value ="Update" ng-click="uptadeSave()" ng-show="!show">
 
 
     </form>
@@ -16,11 +17,11 @@
     <table>
         <tr ng-repeat="x in resArr">
            
-            <td><input type = "text" name = "idNumber" ng-model = "x._id">
+            <td><input type = "hidden" name = "idNumber" ng-model = "x._id">
 			{{x.name }}</td>
             <td>{{x.age}}</td>
             <td>{{x.city}}</td>
-            <td><input type="button" ng-click="update()" value="Update"></td>
+            <td><input type="button" ng-click="updateUser()" value="Update"></td>
             <td><input type="button" ng-click="deleteUser()" value="Delete"></td>
         </tr>
      </table>
