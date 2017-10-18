@@ -1,0 +1,15 @@
+<div class="jumbotron text-center">
+    <h1> Form </h1>
+    <form name="nerdsForm" action="localhost:8080/nerds" method="post" >
+        <input type="text" name="name" placeholder="name" class="form-control" ng-model="Nerd.name">
+        <input type="text" name="age" placeholder="age" class="form-control" ng-model="Nerd.age">
+        <select class="form-control" name="country">
+            <option> Armenia </option>
+            <option> America </option>
+            <option> GB </option>
+            <option> Swaziland </option>
+        </select>
+        <input type="button" name="submit" value="submit" class="btn btn-primary floatRight" ng-click="returnObj()" >
+    </form>
+</div>
+

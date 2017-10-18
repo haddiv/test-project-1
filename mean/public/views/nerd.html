@@ -1,0 +1,42 @@
+<div class="jumbotron text-center">
+    <h1>Nerds and Proud</h1>
+
+    <p>{{ tagline }}</p>
+
+
+</div>
+<button class="btn btn-primary floatRight" ng-click="openForm()" > Add </button>
+<div>
+    <table class="table table-striped ">
+        <thead>
+        <tr>
+            <th> N </th>
+            <th> Name </th>
+            <th> Age </th>
+            <th> Country </th>
+            <th> Action </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="nerd in nerds">
+            <td ng-model="id"> {{$index + 1}} </td>
+            <td> {{nerd.name}} </td>
+            <td> {{nerd.age}} </td>
+            <td> {{nerd.country}} </td>
+            <td>
+
+                <a href="" ng-click="viewFunction()">
+                    <span class="glyphicon glyphicon-eye-open margin_right"></span>
+                </a>
+                <a href=""  ng-click="updateFunction()">
+                    <span class="glyphicon glyphicon-edit margin_right"></span>
+                </a>
+                <a href="" ng-click="deleteFunction()">
+                    <span class="glyphicon glyphicon-trash margin_right"></span>
+                </a>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
