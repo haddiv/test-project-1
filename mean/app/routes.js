@@ -26,8 +26,9 @@ module.exports = function (app) {
         });
     });
 
-    app.delete('/api/nerds/:_id', function (req, res) {
-        Nerd.remove({_id: req.params._id
+    app.delete('/api/nerds/:id', function (req, res) {
+        var id = req.params.id;
+        Nerd.remove({_id: req.params.id
         }, function(err) {
             if (err)
                 res.send(err);

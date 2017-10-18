@@ -16,10 +16,11 @@ angular.module('NerdCtrl', []).controller('NerdController', function($scope, Ner
         }
 
     }
-    $scope.deleteFunction = function () {
-        $scope.id=this.id;
-        Nerd.delete(this.id).then(function() {
-            console.log($scope.nerdObj[0])
+    $scope.deleteFunction = function (id) {
+        console.log(id)
+        Nerd.delete(id).then(function(val) {
+            console.log("Asti");
         });
+
     }
 });

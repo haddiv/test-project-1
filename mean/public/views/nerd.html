@@ -19,7 +19,7 @@
         </thead>
         <tbody>
         <tr ng-repeat="nerd in nerds">
-            <td ng-model="id"> {{$index + 1}} </td>
+            <td ng-model="myid"> {{$index + 1}} </td>
             <td> {{nerd.name}} </td>
             <td> {{nerd.age}} </td>
             <td> {{nerd.country}} </td>
@@ -31,7 +31,7 @@
                 <a href=""  ng-click="updateFunction()">
                     <span class="glyphicon glyphicon-edit margin_right"></span>
                 </a>
-                <a href="" ng-click="deleteFunction()">
+                <a href="" ng-click="deleteFunction(nerd._id)">
                     <span class="glyphicon glyphicon-trash margin_right"></span>
                 </a>
             </td>
