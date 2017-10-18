@@ -1,0 +1,27 @@
+<!-- public/views/nerd.html -->
+
+<div class="jumbotron text-center">
+    <h1>Nerds and Proud</h1>
+	
+	<form action="/nerds" method="get">
+        <label>Enter Your Name<input type ="text" name = "name" id = "name" ng-model="name"></label><br>
+        <label>Enter Your Age<input type ="text" name = "age" id = "age" ng-model="age"></label><br>
+        <label>Enter Your City<input type ="text" name = "city" id = "city" ng-model="city"></label><br>
+
+       <input type = "button" value ="Send" ng-click="submit()">
+
+
+    </form>
+	
+    <table>
+        <tr ng-repeat="x in resArr">
+           
+            <td><input type = "text" name = "idNumber" ng-model = "x._id">
+			{{x.name }}</td>
+            <td>{{x.age}}</td>
+            <td>{{x.city}}</td>
+            <td><input type="button" ng-click="update()" value="Update"></td>
+            <td><input type="button" ng-click="deleteUser()" value="Delete"></td>
+        </tr>
+     </table>
+</div>
