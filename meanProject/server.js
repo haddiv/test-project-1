@@ -14,7 +14,7 @@ var bson = require('bson');
 var db = require('./config/db');
 var Nerd     = require('./app/models/nerd');
 //console.log(Nerd);
-//console.log(db);
+console.log(db);
 
 // set our port
 var port = process.env.PORT || 8080;

@@ -20,9 +20,19 @@
             templateUrl: 'views/geek.html',
             controller: 'GeekController'
         })
-		
+
+        // geek page that will use the NerdController
+        .when('/news', {
+            templateUrl: 'views/news.html',
+            controller: 'NewsController'
+        })
+
+        .when('/news/addNews', {
+            templateUrl: 'views/addNews.html',
+            controller: 'NewsController'
+        })
 		.otherwise({
-            templateUrl: 'views/error.html',
+            templateUrl: 'views/error.html'
             
         })
 		;

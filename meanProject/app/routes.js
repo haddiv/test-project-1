@@ -2,6 +2,7 @@
 
 // grab the nerd model we just created
 var Nerd = require('./models/nerd');
+var Categories = require('./models/categories');
 var Geek = require('./models/geek');
 
     module.exports = function(app) {
@@ -26,8 +27,23 @@ var Geek = require('./models/geek');
                 res.json(nerds); // return all nerds in JSON format
             });
         });
-		
-		
+
+
+        app.get('/api/news/addNews', function(req, res) {
+            // use mongoose to get all nerds in the database
+            Categories.find(function(err, nerds) {
+
+                // if there is an error retrieving, send the error.
+                // nothing after res.send(err) will execute
+                if (err){
+                    res.send(err);
+                    console.log(err)
+                }
+                res.json(nerds); // return all nerds in JSON format
+            });
+        });
+
+
 		
 		 // route to handle creating goes here (app.post)
         app.post('/api/nerds', function(req, res) {		   
