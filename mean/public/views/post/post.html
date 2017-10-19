@@ -1,0 +1,72 @@
+<div class="jumbotron text-center">
+    <form action="" method="post">
+        <fieldset>
+            <legend>Post:</legend>
+            <div class="row">
+                <p>Choose Category: </p>
+                <div class="col-sm-1 col-md-4 col-lg-4">
+                    EN
+                    <select class="form-control" multiple>
+                        <option ng-repeat="category in categoris" value="{{category.id}}">{{category.name}}</option>
+                    </select>
+                </div>
+                <div class="col-sm-1 col-md-4 col-lg-4">
+                    RU
+                    <select class="form-control" multiple>
+                        <option>Politic</option>
+                        <option>Spot</option>
+                        <option>Interesting</option>
+                    </select>
+                </div>
+                <div class="col-sm-1 col-md-4 col-lg-4">
+                    ARM
+                    <select class="form-control" multiple>
+                        <option>Politic</option>
+                        <option>Spot</option>
+                        <option>Interesting</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <input type="button" name="submit" value="Create category" class="btn btn-primary floatRight"
+                       target="_blank" ng-click="createCategory()">
+            </div>
+            <div class="row">
+                <p> Title: </p>
+                <div class="col-sm-1 col-md-4 col-lg-4">
+                    EN
+                    <input type="text" name="enTitle" ng-model="enTitle" class="form-control">
+                </div>
+                <div class="col-sm-1 col-md-4 col-lg-4">
+                    RU
+                    <input type="text" name="ruTitle" ng-model="ruTitle" class="form-control">
+                </div>
+                <div class="col-sm-1 col-md-4 col-lg-4">
+                    ARM
+                    <input type="text" name="armTitle" ng-model="armTitle" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <p> Content: </p>
+                <div class="col-sm-1 col-md-4 col-lg-4">
+                    EN
+                    <textarea  name="enContent" ng-model="enContent" class="form-control"> </textarea>
+                </div>
+                <div class="col-sm-1 col-md-4 col-lg-4">
+                    RU
+                    <textarea name="ruContent" ng-model="ruContent" class="form-control"></textarea>
+                </div>
+                <div class="col-sm-1 col-md-4 col-lg-4">
+                    ARM
+                    <textarea  name="armContent" ng-model="armenContent" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <input type="button" name="submit" value="Create post" class="btn btn-primary floatRight"
+                       ng-click="createPost()">
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+

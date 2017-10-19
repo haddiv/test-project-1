@@ -12,22 +12,33 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'NerdController'
         })
 
-        .when('/geeks', {
-            templateUrl: 'views/geek.html',
-            controller: 'GeekController'
-
-        })
         .when('/form', {
             templateUrl: 'views/form.html',
             controller: 'NerdController'
             // controller: 'FormController'
+        })
+        .when('/category/category', {
+            templateUrl: 'views/category/category.html',
+            controller: 'CatergoryController'
 
         })
+        .when('/news/categoryFrom', {
+            templateUrl: 'views/categoryFrom.html',
+            controller: 'CatergoryController'
+        })
         .when('/nerds/form', {
-            templateUrl: 'views/form.html',
+            templateUrl: 'views/categoryFrom.html',
             controller: 'NerdController'
-            //  controller: 'FormController'
 
+        })
+
+        .when('/post/post', {
+            templateUrl: 'views/post/post.html',
+            controller: 'PostController'
+        })
+        .when('/post/post/postListView', {
+            templateUrl: 'views/post/postListView.html',
+            controller: 'PostController'
         })
 
         .otherwise({

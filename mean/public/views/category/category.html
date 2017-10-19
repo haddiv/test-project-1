@@ -1,0 +1,57 @@
+<div class="jumbotron text-center">
+    <input type="button" name="submit" value="Create category" class="btn btn-primary floatRight"
+           ng-click="showCategoryForm()">
+    <div ng-show="categoryForm">
+        <form action="localhost:8080/category" method="post">
+            <div class="row">
+                <p>Category Name </p>
+                <div class="col-sm-1 col-md-4 col-lg-4">
+                    EN: <input type="name" name="name" class="form-control" ng-model="Category.name">
+                </div>
+                <div class="col-sm-1 col-md-4 col-lg-4">
+                    RU: <input type="name" name="name" class="form-control">
+                </div>
+                <div class="col-sm-1 col-md-4 col-lg-4">
+                    ARM: <input type="name" name="name" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-1 col-md-4 col-lg-4">
+                    Number: <input type="name" name="name" class="form-control" ng-model="Category.orderd">
+                </div>
+
+            </div>
+            <input type="button" value="Add" class="btn btn-primary floatRight" ng-click="addCategory()">
+        </form>
+    </div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th> N</th>
+            <th> Category name</th>
+            <th> Order</th>
+            <th> Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="category in categoris">
+            <td> {{$index + 1}}</td>
+            <td> {{category.name}}</td>
+            <td> {{category.orderd}}</td>
+            <td>
+                <a href="" ng-click="">
+                    <span class="glyphicon glyphicon-eye-open margin_right" ng-click=""> </span>
+                </a>
+                <a href="" ng-click="updateFunction()">
+                    <span class="glyphicon glyphicon-edit margin_right"></span>
+                </a>
+                <a href="" ng-click="deleteFunction(category._id)">
+                    <span class="glyphicon glyphicon-trash margin_right"></span>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+

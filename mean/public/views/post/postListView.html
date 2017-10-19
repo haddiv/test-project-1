@@ -1,0 +1,29 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th> N</th>
+        <th> Category</th>
+        <th> Title</th>
+        <th> Content</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="post in posts">
+        <td> {{$index + 1}}</td>
+        <td> {{post.category}}</td>
+        <td> {{post.title}}</td>
+        <td> {{post.content}}</td>
+        <td>
+            <a href="" ng-click="">
+                <span class="glyphicon glyphicon-eye-open margin_right" ng-click=""> </span>
+            </a>
+            <a href="" ng-click="updateFunction()">
+                <span class="glyphicon glyphicon-edit margin_right"></span>
+            </a>
+            <a href="" ng-click="deleteFunction(post._id)">
+                <span class="glyphicon glyphicon-trash margin_right"></span>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
