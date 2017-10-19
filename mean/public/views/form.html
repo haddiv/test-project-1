@@ -1,0 +1,19 @@
+<div>
+<form name="myForm" class="form-inline">
+    <label>
+         Name:
+        <input type="text" class="form-control" name="userName" ng-model="user.name">
+    </label>
+
+    <label>
+        Age:
+        <input type="text" class="form-control" name="age" ng-model="user.age">
+    </label>
+    <label>
+        Country:
+        <input type="text" class="form-control" name="country" ng-model="user.country">
+    </label><br>
+
+    <button ng-click="myFunc(user,user._id)">Edit</button>
+</form>
+</div>
