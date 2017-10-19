@@ -38,10 +38,9 @@ module.exports = function (app) {
     app.get('/api/nerd/:id', function (req, res) {
         var id = req.params.id;
         console.log(id);
-        Nerd.findOne({_id: req.params.id}, function (err, nerds) {
+        Nerd.get({_id: req.params.id}, function (err) {
             if (err)
                 res.send(err);
-
             res.json({ message: 'updated' });
         });
     });

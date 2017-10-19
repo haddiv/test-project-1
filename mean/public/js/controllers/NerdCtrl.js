@@ -27,9 +27,9 @@ angular.module('NerdCtrl', []).controller('NerdController', function ($scope, Ne
     };
     $scope.updateFunction = function (id) {
         console.log(id)
-        Nerd.get($scope.Nerd).then(function (response) {
-            $scope.nerds = response.data;
-            console.log(response.data)
+        Nerd.get($scope.nerds).then(function (response) {
+            $scope.nerds = response.response;
+            console.log($scope.nerds)
         });
     };
 
