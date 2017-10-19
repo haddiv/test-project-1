@@ -40,6 +40,10 @@ $scope.submit = function(){
 					$scope.name= this.x.name;
 					$scope.age= this.x.age;
 					$scope.city= this.x.city;
+					
+					$scope.updateUser=function(){	
+							console.log("done")
+					}
 					}
 					
 					

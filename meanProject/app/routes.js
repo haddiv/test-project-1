@@ -51,27 +51,22 @@ var Geek = require('./models/geek');
     });
 	
 	
-    /* //Update
-	app.put(function(req, res) {
+     //Update
+	/* app.put('/api/nerds/:nerd_id', function(req, rest){
+        if(!req.body) { return res.send(400); } 
 
-    // use our bear model to find the bear we want
-    Nerd.findById(req.params.nerd_id, function(err, nerd) {
-
-        if (err)
-            res.send(err);
-
-        nerd.name = req.body.name;  // update the nerds info
-
-        // save the nerd
-        nerd.save(function(err) {
-            if (err)
-                res.send(err);
-
-            res.json({ message: 'nerd updated!' });
+    Nerds.findById(req.params.nerd_id, function(e,data){  
+        if(e) { return res.send(500, e); }
+        if(!data) { return res.send(404); } 
+        var update = { name : req.body.name, age : req.body.age, city : req.body.city,  }; 
+        Nerds.updateById(req.params.nerd_id, update, function(err) {
+            if(err) {
+                return res.send(500, err);
+            }
+            res.json(data);
         });
-
     });
-})  */
+}); */
 		
 		
 		

@@ -19,10 +19,10 @@ angular.module('NerdService', []).factory('Nerd', ['$http', function($http) {
             return $http.delete('/api/nerds/' + id);
         }
 		
-		/*  // call to UPDATE a nerd
-         update : function(id) {
-            return $http.put('/api/nerds/' + id);
-        }  */
+		// call to UPDATE a nerd
+        //update : function() {
+        //  return $http.put('/api/nerds/');
+        //}  
     }       
 
 }]);

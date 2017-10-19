@@ -4,25 +4,39 @@
     <h1>Nerds and Proud</h1>
 	
 	<form action="/nerds" method="get">
-        <label>Enter Your Name<input type ="text" name = "name" id = "name" ng-model="name"></label><br>
-        <label>Enter Your Age<input type ="text" name = "age" id = "age" ng-model="age"></label><br>
-        <label>Enter Your City<input type ="text" name = "city" id = "city" ng-model="city"></label><br>
-
-       <input type = "button" value ="Send" ng-click="submit()" ng-show="show">
-       <input type = "button" value ="Update" ng-click="uptadeSave()" ng-show="!show">
+		<div class="form-group">
+			<label>Enter Your Name<input type ="text" name = "name" class="form-control" id = "name" ng-model="name"></label>
+		</div>
+        <div class="form-group">
+			<label>Enter Your Age<input type ="text" name = "age" class="form-control" id = "age" ng-model="age"></label>
+		</div>
+	<div class="form-group">		
+        <label>Enter Your City<input type ="text" name = "city"  class="form-control" id = "city" ng-model="city"></label>
+	</div>
+       <input type = "button" value ="Send" class="btn btn-primary" ng-click="submit()" ng-show="show">
+       <input type = "button" value ="Update" class="btn btn-primary" ng-click="uptadeSave()" ng-show="!show">
 
 
     </form>
-	
-    <table>
-        <tr ng-repeat="x in resArr">
-           
+	<div class="table-responsive">
+     <table class="table table-hover  table-striped .table-bordered">
+	 <thead>
+	 </thead>
+		<tr>
+		<th>Name</th>
+		<th>Age</th>
+		<th>City</th>
+		<th colspan="2">Admin tools</th>
+		
+		<tr>
+        <tr ng-repeat="x in resArr" >
             <td><input type = "hidden" name = "idNumber" ng-model = "x._id">
 			{{x.name }}</td>
             <td>{{x.age}}</td>
             <td>{{x.city}}</td>
-            <td><input type="button" ng-click="updateUser()" value="Update"></td>
-            <td><input type="button" ng-click="deleteUser()" value="Delete"></td>
+            <td><input type="button" ng-click="updateUser()" class="btn btn-primary" value="Update"></td>
+            <td><input type="button" ng-click="deleteUser()"  class="btn btn-primary" value="Delete"></td>
         </tr>
      </table>
+</div>
 </div>
