@@ -1,8 +1,12 @@
-.floatRight{
-  float : right;
-  margin-top : 5px;
+.floatRight {
+  float: right;
+  margin-top: 5px;
 }
-.margin_right{
-  padding-right : 20px;
 
+.margin_right {
+  padding-right: 20px;
+}
+
+.margin {
+  margin-right: 15px;
 }

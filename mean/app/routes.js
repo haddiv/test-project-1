@@ -28,8 +28,7 @@ module.exports = function (app) {
 
     app.delete('/api/nerds/:id', function (req, res) {
         var id = req.params.id;
-        Nerd.remove({_id: req.params.id
-        }, function(err) {
+        Nerd.remove({_id: req.params.id}, function(err) {
             if (err)
                 res.send(err);
 
@@ -39,11 +38,11 @@ module.exports = function (app) {
     app.get('/api/nerd/:id', function (req, res) {
         var id = req.params.id;
         console.log(id);
-        Nerd.findOne(_id, function (err, nerds) {
+        Nerd.findOne({_id: req.params.id}, function (err, nerds) {
             if (err)
                 res.send(err);
 
-            res.json(nerds); // return all nerds in JSON format
+            res.json({ message: 'updated' });
         });
     });
 
