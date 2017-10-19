@@ -19,6 +19,14 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
         templateUrl: 'views/form.html',
         controller: 'formController',
         controller: 'NerdController'
+    })
+
+
+.when('/news', {
+        templateUrl: 'views/news.html',
+
+        controller: 'newsController'
+
     });
 
     $locationProvider.html5Mode(true);

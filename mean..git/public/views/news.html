@@ -1,0 +1,50 @@
+<div>form:<input type="checkbox" ng-model="myVar">
+<div class="jumbotron text-center">
+
+
+
+</div>
+
+    <form ng-show="myVar" enctype="multipart/form-data">
+        <label>
+            photo:
+            <input type="file" class="form-control" name="photo" ng-model="category.data">
+        </label>
+        <select  ng-model="category.category">
+            <option>sport</option>
+            <option>politics</option>
+            <option>Economy</option>
+            <option>Show business</option>
+
+        </select>
+        <textarea ng-model="category.description">
+
+        </textarea>
+        <button ng-click="my(category,category._id)">save</button>
+    </form>
+
+<table class = "table table-hover">
+
+    <thead>
+    <tr>
+        <th>categories</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr ng-repeat="x in names">
+        <td>{{x.category}}</td>
+        <td>{{x.description}}</td>
+        <td>{{x.data}}</td>
+
+        <td><a ng-href="#" ng-click="del(x._id)">Delete</a></td>
+        <td><a href="/news"  ng-click="edit(x._id)" >Edit</a></td>
+    </tr>
+
+
+    </tbody>
+
+</table>
+
+</div>

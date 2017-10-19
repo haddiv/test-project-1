@@ -1,1 +1,1 @@
-angular.module('meanApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'NerdCtrl', 'NerdService','formCtrl']);
+angular.module('meanApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'NerdCtrl', 'NerdService','formCtrl','newsCtrl','NewsService']);
