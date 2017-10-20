@@ -1,4 +1,4 @@
-angular.module('CategoryCtrl', []).controller('CatergoryController', function ($scope, Category) {
+angular.module('CategoryCtrl', []).controller('CatergoryController', function ($scope, Post, Category) {
     angular.element(document).ready(function () {
         Category.get().then(function (response) {
             $scope.categoris = response.data;

@@ -1,6 +1,4 @@
-
-
-angular.module('PostCtrl', []).controller('PostController', function($scope, $location, Post) {
+angular.module('PostCtrl', []).controller('PostController', function($scope, $location, Category, Post) {
     $scope.createCategory=function () {
         $location.path('/category/category');
     };
@@ -11,7 +9,6 @@ angular.module('PostCtrl', []).controller('PostController', function($scope, $lo
         Post.get().then(function (response) {
             $scope.posts = response.data;
             console.log( $scope.posts);
-
         });
     });
 });
