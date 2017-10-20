@@ -6,6 +6,7 @@ angular.module('PostCtrl', []).controller('PostController', function($scope, $lo
             // $scope.categoris = Category;
             //console.log( $scope.categoris);
         });
+
     });
     $scope.createCategory=function () {
         $location.path('/category/category');
