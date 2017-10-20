@@ -4,7 +4,7 @@ angular.module('PostService', []).factory('Post', ['$http', function($http) {
             return $http.get('/api/post');
         },
         create : function(nerdData) {
-            return $http.post('/api/postListView', nerdData);
+            return $http.post('/api/post', nerdData);
         },
         delete : function(id) {
             return $http.delete('/api/post/' + id);

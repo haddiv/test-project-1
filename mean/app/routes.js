@@ -45,10 +45,10 @@ module.exports = function (app) {
             console.log('Category created!');
         });
     });
-    app.post('/api/postListView', function (req, res) {
-        var post = new Post(req.body);
+    app.post('/api/post', function (req, res) {
+        var posts = new Post(req.body);
         console.log(req.body);
-        post.save(function (err) {
+        posts.save(function (err) {
             if (err)
                 res.send(err);
             res.json({message: 'Post created!'});
