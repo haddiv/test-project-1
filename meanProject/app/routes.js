@@ -29,25 +29,19 @@ var Geek = require('./models/geek');
         });
 
 
-        app.get('/api/news/addNews', function(req, res) {
-            // use mongoose to get all nerds in the database
-            Categories.find(function(err, nerds) {
+             app.post('/api/news', function(req, res) {		   
+            var news = new Categories(req.body);
+			news.save(function(err) {
+            if (err)
+            res.send(err);
+            res.json({ message: 'Category created!' });
+    });
 
-                // if there is an error retrieving, send the error.
-                // nothing after res.send(err) will execute
-                if (err){
-                    res.send(err);
-                    console.log(err)
-                }
-                res.json(nerds); // return all nerds in JSON format
-            });
-        });
-
-
+})
 		
 		 // route to handle creating goes here (app.post)
         app.post('/api/nerds', function(req, res) {		   
-            var nerd = new Nerd(req.body);
+            var nerd = new Nerd();
 			nerd.save(function(err) {
             if (err)
             res.send(err);
