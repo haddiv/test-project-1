@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link href = "../../style/bootstrap/css/bootstrap.css" type = "text/css" rel="stylesheet">
+<link href="space.css" type="text/css" rel="stylesheet">
+</head>
+<body ng-app = "myApp" ng-controller="SpaceController">
+   
+   <div class="container-fluid">
+    <div class = "row">
+	<div class="solarSystem">
+   <img src = "../../images/solarSystem2.jpg" class = "bgImage" usemap="#planetmap" >
+  </div>
+   
+   
+   <div class = "asideBar">
+		<div class = "nav">
+			<ul>	
+				<li><a href = "../../index.html" target="_blank">Home</a></li>
+				<li><a href = "#" target="_blank">Space</a></li>
+				<li><a href = "../discovery/discoveryView.html" target="_blank">Discovery</a></li>
+			</ul>
+	</div>
+	<div class = "zoom">
+		  <div class = "Zooming">
+			<img src = "../../images/zoomIn.png" class = " zoomPic zoomIn zoomPic col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		  </div>
+		  <div class = "Zooming">
+			<img src = "../../images/Zoom_Out.png" class = " zoomPic zoomOut col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		 </div>
+	</div>
+</div>
+	
+	<div class = "search" >
+		<input type= "text" class="searchInput"  ng-model="planetName" placeholder = "enter a planet name">
+		<input type= "button" class="btn searchBtn" ng-click = "showPlanetInfo()" value = "go" >
+	</div>
+   <search-div  class="searchDiv" ng-model="planetInfo">  
+	   <p>{{planetName | uppercase}}</p>
+	   <p>{{planetInfo}}</p>
+    </search-div>
+	
+	<div ng-controller="ShowMessage">
+	</div>
+   
+   </div>
+</div>
+  
+
+
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+<script src = "../app.module.js"></script>
+<script src = "spaceDirective.js"></script>
+<script src = "spaceController.js"></script>
+<script src = "../../libs/jquery-3.2.1.js"></script>
+<script src = "../../style/bootstrap/js/bootstrap.js"></script>
+<script src = "../../style/bootstrap/js/bootstrap.min.js"></script>
+<script>
+
+</script>	
+</body>
+</html>
